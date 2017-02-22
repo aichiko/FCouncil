@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/report/report",
+    "pages/laws/laws",
+    "pages/mine/mine",
+    "pages/expert/expert"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "text",
+        "iconPath": "images/news.png",
+        "selectedIconPath": "images/news.png"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "专家报告",
+        "iconPath": "images/videos.png",
+        "selectedIconPath": "images/videos.png"
+      },
+      {
+        "pagePath": "pages/laws/laws",
+        "text": "法律法规",
+        "iconPath": "images/videos.png",
+        "selectedIconPath": "images/videos.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}
