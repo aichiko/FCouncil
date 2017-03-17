@@ -1,0 +1,8 @@
+.slide-image {
+    width: 750rpx;
+    height: 421.875rpx
+}
+.home_grayview {
+    width: 100%;
+    height: 10rpx
+}

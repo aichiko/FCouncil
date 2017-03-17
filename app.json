@@ -16,7 +16,7 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "text",
+        "text": "首页",
         "iconPath": "images/news.png",
         "selectedIconPath": "images/news.png"
       },

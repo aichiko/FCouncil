@@ -1,4 +1,5 @@
 <!--pages/laws/laws.wxml-->
+<link rel="stylesheet" type="text/css" href="style/weui.wxss" />
 <text>pages/laws/laws.wxml</text>
         <view class="weui-panel weui-panel_access">
             <view class="weui-panel__hd">文字组合列表</view>

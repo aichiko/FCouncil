@@ -1,7 +1,16 @@
 // pages/home/home.js
 Page({
   data:{
-    
+    grids: ["全部", "电话会议", "视频会议", "研讨会", "高峰论坛", "实战训练", "参观活动", "其他活动"],
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
