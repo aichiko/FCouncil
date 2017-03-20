@@ -5,7 +5,10 @@
     "pages/laws/laws",
     "pages/mine/mine",
     "pages/aboutus/aboutus",
-    "pages/expert/expert"
+    "pages/expert/expert",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/onlinechannel/onlinechannel"
   ],
   "window":{
     "backgroundTextStyle":"light",

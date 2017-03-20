@@ -1,15 +1,18 @@
 /* pages/mine/mine.wxss */
 
 .page__hd {
-    background-color: green;
+    background-color: limegreen;
     width: 100%;
     height: 300rpx;
 }
-.center {
+.headcenter {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 40rpx;
+}
+.tip_text {
   color: #fff;
-  font-size: 18px;
+  font-size: 22rpx;
+  padding-top: 15rpx;
 }
 .weui-grid__icon{
     width: 120rpx;
