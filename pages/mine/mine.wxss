@@ -1,1 +1,22 @@
 /* pages/mine/mine.wxss */
+
+.page__hd {
+    background-color: green;
+    width: 100%;
+    height: 300rpx;
+}
+.center {
+  text-align: center;
+  padding-top: 20px;
+  color: #fff;
+  font-size: 18px;
+}
+.weui-grid__icon{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    border: 4rpx solid #ececec;
+}
+section_gap {
+    height: 20rpx;
+}
