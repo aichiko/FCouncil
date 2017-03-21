@@ -1,0 +1,10 @@
+.weui-btn {
+    top: 80rpx;
+    width: 70%;
+    border-radius: 20rpx;
+    color: white;
+    background-color: green; 
+}
+.weui-cells.weui-cells_after-title{
+    margin-top: 50rpx;
+}

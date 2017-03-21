@@ -1,0 +1,22 @@
+<!--pages/onlinechannel/onlinechannel.wxml-->
+<!--头标题-->
+<view class="weui-cell weui-cell_access weui-cell_link">热门问题</view>
+<!--列表-->
+<view>
+    <view class="weui-panel">
+        <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">
+                    开办费在税务和财务上的处理</view>
+                    <!--<view class="weui-media-box__desc">处理的一些详细情况，这个总要有的吧，不加的话应该也不成问题。</view>-->
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">2017-3-21</view>
+                        <view class="weui-media-box__info__meta"></view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">所得税</view>
+                    </view>
+                </view>
+            </view>
+    </view>
+</view>
+<!--提问按钮-->
+<button class="request_btn">我要提问</button>

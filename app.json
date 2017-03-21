@@ -3,12 +3,12 @@
     "pages/home/home",
     "pages/report/report",
     "pages/laws/laws",
-    "pages/mine/mine",
-    "pages/aboutus/aboutus",
     "pages/expert/expert",
-    "pages/register/register",
-    "pages/login/login",
-    "pages/onlinechannel/onlinechannel"
+    "pages/mine/mine",
+    "pages/mine/aboutus/aboutus",
+    "pages/mine/register/register",
+    "pages/mine/login/login",
+    "pages/mine/onlinechannel/onlinechannel"
   ],
   "window":{
     "backgroundTextStyle":"light",

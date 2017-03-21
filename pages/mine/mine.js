@@ -13,7 +13,7 @@ Page({
         console.log(res.data)
         if (res.data.isLogin) {
           _this.setData ({
-            logintips: '已登录'
+            logintips: '用户名'
           })
         }
       }
@@ -33,16 +33,7 @@ Page({
   },
   loginAction: function () {
     wx.navigateTo({
-      url: '../login/login',
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
+      url: './login/login'
     })
     console.log('登录事件！')
   }

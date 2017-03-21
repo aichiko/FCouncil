@@ -10,10 +10,18 @@ Page({
     // 立即注册
   registerNow: function () {
     console.log('跳至注册界面')
+    wx.navigateTo({
+      url: '../register/register'
+    })
   },
     // 登录
   login: function (name, password) {
     console.log('登录啦!用户名和密码分别是' + this.data.name + '/' + this.data.password)
+    wx.showToast({
+      title: '登录成功！',
+      icon: 'success',
+      duration: 2000
+    })
     this.setData ({
         userInfo: {
             isLogin: true
