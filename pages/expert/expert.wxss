@@ -1,9 +1,20 @@
 /* pages/expert/expert.wxss */
+.whole_page {
+    background-color: #eee;
+}
 .section_gap {
-    margin-top: 40rpx;
+    margin-top: 20rpx;
     background-color: #ccc;
     border-bottom: 1rpx solid #ccc;
 }
+.section__title {
+    padding: 14rpx;
+    background-color: white;
+}
 .label {
+    padding: 16rpx;
+    font-size: 30rpx;
+    background-color: white;
     border-bottom: 1rpx solid #ccc;
+    border-top: 1rpx solid #ccc;
 }
