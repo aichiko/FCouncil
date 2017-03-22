@@ -1,5 +1,6 @@
 <!--pages/expert/expert.wxml-->
 <!--头像-->
+<view class="whole_page">
 <view class="weui-panel">
     <view class="weui-panel__bd">
         <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
@@ -14,7 +15,7 @@
     </view>
 </view>
 <!--联系方式-->
-<view class="section section_gap"></view>
+<view class="section section_gap" ></view>
 <view class="section__title">联系方式</view>
 <view class="label">
     <view>
@@ -27,5 +28,8 @@
 <!--专家详细介绍-->
 <view class="section section_gap"></view>
 <view class="section__title">专家介绍</view>
-<text>{{expertDesc}}</text>
+<view class="label">
+    <text class="expert_desc">{{expertDesc}}分hiUSD和覅US和VC诶付宏伟护肤is不好吃被hiu还不错群君奥思无君多时间长技术牛发文件时间比较哈省纪委就撒比较差那基恩副科级那就看科技部成交额父亲节我记事本九年级</text>
+</view>
+</view>
 

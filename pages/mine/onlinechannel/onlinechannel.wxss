@@ -7,3 +7,6 @@
     background-color: limegreen;
     color: white;
 }
+.weui-media-box__info {
+    font-style: black;
+}
