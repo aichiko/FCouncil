@@ -1,1 +1,9 @@
 /* pages/expert/expert.wxss */
+.section_gap {
+    margin-top: 40rpx;
+    background-color: #ccc;
+    border-bottom: 1rpx solid #ccc;
+}
+.label {
+    border-bottom: 1rpx solid #ccc;
+}

@@ -1,9 +1,7 @@
-<view class="page">
-    <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1332227473,1845219837&fm=11&gp=0.jpg"></image>
+<image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1332227473,1845219837&fm=11&gp=0.jpg"></image>
     <view class="weui-article__p">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat.
                     </view>
-</view>

@@ -1,0 +1,31 @@
+<view class="weui-cells weui-cells_after-title">
+<!--输入框-->
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">用户名</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入用户名" bindinput="nameInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">密码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" password="true" placeholder="请输入密码" bindinput="passwordInput"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">确认密码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" password="true" placeholder="请再输入密码" bindinput="passwordInput"/>
+        </view>
+    </view>
+</view>
+<!--注册按钮-->
+<view class="button-sp-area">
+    <button class="weui-btn" type="default" bindtap="registerAction">注册</button>
+</view>

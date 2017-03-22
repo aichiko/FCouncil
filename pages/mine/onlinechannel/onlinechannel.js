@@ -1,14 +1,8 @@
-// pages/expert/expert.js
+// pages/onlinechannel/onlinechannel.js
 Page({
-  data:{
-    expertDesc: ''
-  },
+  data:{},
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    console.log(options.expertDesc)
-    this.setData({
-      expertDesc: options.expertDesc 
-    })
   },
   onReady:function(){
     // 页面渲染完成
@@ -21,5 +15,13 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  onShareAppMessage: function() {
+    // 用户点击右上角分享
+    return {
+      title: 'title', // 分享标题
+      desc: 'desc', // 分享描述
+      path: 'path' // 分享路径
+    }
   }
 })

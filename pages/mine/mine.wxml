@@ -1,19 +1,19 @@
 <!--pages/mine/mine.wxml-->
 <!--头部-->
 <view class="page__hd">
-<view class="center">
-  <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1508364460,2197421654&fm=21&gp=0.jpg" class="weui-grid__icon" mode="scaleToFill"></image>
-  <text>{{logintips}}</text>
+<view class="headcenter">
+  <image class="weui-grid__icon" bindtap="loginAction" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1508364460,2197421654&fm=21&gp=0.jpg" mode="scaleToFill"></image>
+  <text class="tip_text">{{logintips}}</text>
   </view>
 </view>
 <!--我的注册和问答-->
 <view class="weui-cells__title"></view>
         <view class="weui-cells weui-cells_after-title">
-            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="./register/register" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">我的注册</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
-            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="./onlinechannel/onlinechannel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">在线问答</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                 <view class="weui-cells weui-cells_after-title"></view>
@@ -22,7 +22,7 @@
 <!--关于我们-->
 <view class="weui-cells__title"> </view>
         <view class="weui-cells weui-cells_after-title">
-            <navigator url="../aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="./aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">关于我们</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>

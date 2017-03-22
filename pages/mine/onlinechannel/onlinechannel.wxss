@@ -1,0 +1,9 @@
+/* pages/onlinechannel/onlinechannel.wxss */
+.request_btn {
+    position: fixed;
+    bottom: 0rpx;
+    width: 100%;
+    height: 80rpx;
+    background-color: limegreen;
+    color: white;
+}

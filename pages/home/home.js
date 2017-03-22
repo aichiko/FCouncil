@@ -7,6 +7,20 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
+    expertsList: [
+      {
+        name: '专家一', 
+        desc: '春天来了，夏天还会远吗',
+        expertTel: '021-62703381',
+        expertEmail:'liuyun@163fcouncil.com'
+      },
+      {
+        name: '专家二', 
+        desc: '春天来了，你不会来了',
+        expertTel: '021-62703381',
+        expertEmail:'liuyun@163fcouncil.com'
+      }
+    ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
