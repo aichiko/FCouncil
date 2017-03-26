@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="style/weui.wxss" />
+<view class="container" style="padding:0rpx">
+    <scroll-view scroll-y="true" style="height: 500px;" bindscrolltoupper="refresh" bindscrolltolower="loadMore" bindscroll="scroll" scroll-top="{{scrollTop}}">
+        <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd" bindtap="toDetail">
+            <block wx:for-items="{{registerlist}}" wx:key="{{index}}">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{registerlist[index].name}}</view>
+                    <view class="weui-media-box__desc">注册时间：{{registerlist[index].create_time}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+    </scroll-view>
+    <view class="body-view">
+        <loading hidden="{{hidden}}">
+        加载中...
+        </loading>
+    </view>
+</view>

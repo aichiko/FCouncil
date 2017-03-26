@@ -1,0 +1,8 @@
+<view class="page">
+    <view class="ask_answer_view">
+        <view class="titlelabel">提问:</view>
+        <view class="ask_view">老师您好！跨境出口申请免税，对应那些进项我也不知打哦说啊啥子哟</view>
+        <view class="titlelabel">回答:</view>
+        <view class="anser_view">老师您好！跨境出口申请免税，对应那些进项我也不知打哦说啊啥子哟</view>
+    </view>
+</view>

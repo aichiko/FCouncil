@@ -1,0 +1,5 @@
+.weui-media-box__desc {
+    color: deepskyblue;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+}
