@@ -1,0 +1,39 @@
+<view class="section">
+<!--问题标题-->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+        <view class="weui-label">问题标题:</view>
+    </view>
+    <view class="weui-cell__bd">
+        <input class="weui-input" bindinput="bindKeyInput" placeholder="单行输入"/>
+    </view>
+  </view>
+</view>
+<!--所属分类-->
+<view class="section">
+  <view class="weui-cells__title"></view>
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArr}}">
+            <view class="picker">
+                所属分类：{{typeArr[index]}}
+            </view>
+        </picker>
+    </view>
+  </view>
+</view>
+<!--问题内容-->
+<view class="section">
+  <view class="weui-cells__title"></view>
+  <view class="question-content">
+    <view class="weui-cell__hd">
+        <text>问题内容:</text>
+        <textarea class="content_textarea" plplaceholder="多行输入"/>
+    </view>
+  </view>
+</view>
+<!--提交-->
+<view class="section">
+  <button class="weui-btn" bindtap="commitQuestion">提交</button>
+</view>

@@ -1,6 +1,5 @@
-// pages/onlinechannel/onlinechannel.js
+var url = "http://www.imooc.com/course/ajaxlist"
 var page_index = 0;
-var url = 'http://www.imooc.com/course/ajaxlist';
 
 // 获取数据
 var GetList = function (that) {
@@ -20,13 +19,13 @@ var GetList = function (that) {
             unlearn : 0
         },
         success:function(res){
-            var list = that.data.list;
+            var list = that.data.registerlist;
             console.info(list);
             for(var i = 0; i < res.data.list.length; i++)            {
               list.push(res.data.list[i]);
             }
             that.setData({
-                list : list
+                registerlist : list
             });
             page_index ++;
             console.log('success')
@@ -39,20 +38,9 @@ var GetList = function (that) {
 Page({
   data:{
     hidden: true,
-    list: []
-  },
-  // 跳至详情
-  toQuestionDetail: function () {
-    wx.navigateTo({
-      url: './questiondetail/questiondetail'
-    })
-  },
-  // 跳至提问页面
-  askQuestion: function () {
-    console.log('跳至提问页面')
-    wx.navigateTo({
-      url: './askquestion/askquestion'
-    })
+    registerlist: [],
+    scrollTop: 0,
+    scrollHeight:0
   },
   refresh:function(event){
     // 该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
@@ -77,8 +65,9 @@ Page({
      });
   },
   onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
-    var that = this;
+    // 生命周期函数--监听页面加载
+    // 微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
+      var that = this;
       wx.getSystemInfo({
           success:function(res){
               console.info(res.windowHeight);
@@ -89,19 +78,30 @@ Page({
       });
   },
   onReady:function(){
-    // 页面渲染完成
+    // 生命周期函数--监听页面初次渲染完成
+    
   },
   onShow:function(){
-    // 页面显示
+    // 生命周期函数--监听页面显示
     // 在页面展示之后先获取一次数据
     var that = this;
     GetList(that);
   },
   onHide:function(){
-    // 页面隐藏
+    // 生命周期函数--监听页面隐藏
+    
   },
   onUnload:function(){
-    // 页面关闭
+    // 生命周期函数--监听页面卸载
+    
+  },
+  onPullDownRefresh: function() {
+    // 页面相关事件处理函数--监听用户下拉动作
+    
+  },
+  onReachBottom: function() {
+    // 页面上拉触底事件的处理函数
+    
   },
   onShareAppMessage: function() {
     // 用户点击右上角分享

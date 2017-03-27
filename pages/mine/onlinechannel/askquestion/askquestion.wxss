@@ -1,0 +1,12 @@
+.question-content {
+    padding: 36rpx 36rpx 36rpx 36rpx;
+}
+.content_textarea {
+    border: 1rpx solid #ccc;
+    box-shadow: 5rpx 5rpx 2rpx #888888;
+    border-radius: 20rpx;
+}
+.weui-btn {
+    background-color: green;
+    color: white;
+}

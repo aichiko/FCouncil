@@ -15,7 +15,7 @@
     <view class="page__bd">
         <view class="weui-grids">
             <block wx:for-items="{{grids}}" wx:key="{{index}}">
-                <navigator url="./detail/detail" class="weui-grid" hover-class="weui-grid_active">
+                <navigator class="weui-grid" hover-class="weui-grid_active" url="../activityList/activityList?index={{index}}">
                     <image class="weui-grid__icon" src="../images/icon_tabbar.png" />
                     <view class="weui-grid__label">{{grids[index]}}</view>
                 </navigator>
@@ -43,8 +43,6 @@
         </view>
         <view class="weui-panel__ft">
             <view class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">查看更多</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </view>
         </view>
     </view>

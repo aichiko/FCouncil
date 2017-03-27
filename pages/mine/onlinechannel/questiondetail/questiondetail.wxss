@@ -1,0 +1,20 @@
+.ask_view {
+    font-size: 35rpx;
+    border-bottom: 1rpx solid #ccc;
+    display: block wrap;
+    padding: 20rpx 20rpx;
+}
+.anser_view {
+    background-color: limegreen;
+    font-size: 35rpx;
+    display: block wrap;
+    padding: 20rpx 20rpx;
+}
+.titlelabel {
+    color: lightblue;
+    font-size: 40rpx;
+    padding: 0rpx 20rpx 0rpx 20rpx;
+}
+.ask_answer_view {
+    border-bottom: 1rpx solid #ccc;
+}

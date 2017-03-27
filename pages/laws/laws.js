@@ -24,6 +24,13 @@ Page({
       },
     ]
   },
+  // 跳至法律法规详情页
+  toLawDetail: function () {
+    console.log('跳至法律法规详情')
+    wx.navigateTo({
+      url: './lawdetail/lawdetail'
+    })
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     // 如果是网络请求或是别的方法传出的值调用“this”,不能直接用，需要用变量接收“this” 再使用(如mine.js中的用法)
