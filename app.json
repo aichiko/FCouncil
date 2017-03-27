@@ -1,11 +1,13 @@
 {
   "pages":[
     "pages/home/home",
-    "pages/index/index",
+    "pages/home/detail/detail",
+    "pages/home/class/class",
     "pages/report/report",
     "pages/laws/laws",
     "pages/laws/lawdetail/lawdetail",
     "pages/expert/expert",
+    "pages/expertList/expertList",
     "pages/mine/mine",
     "pages/mine/aboutus/aboutus",
     "pages/mine/register/register",
