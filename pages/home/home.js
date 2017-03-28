@@ -2,11 +2,7 @@
 Page({
   data:{
     grids: ["全部", "电话会议", "视频会议", "研讨会", "高峰论坛", "实战训练", "参观活动", "其他活动"],
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
+    imgUrls: [],
     expertsList: [
       {
         name: '专家一', 
@@ -28,15 +24,23 @@ Page({
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
-    
+    var tempThis = this
     wx.request({
-      url: 'https://www.lcouncil.com/index.php/Home/Api/banner',
+      url: 'https://www.fcouncil.com/index.php/Home/Api/banner',
       data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
         // success
         console.log(res)
+        var urlLists = tempThis.data.imgUrls
+        for(var i = 0; i < res.data.length; i++) {
+          urlLists.push('https://www.fcouncil.com/' + res.data[i].PicUrl);
+        }
+        tempThis.setData({
+          imgUrls : urlLists
+        })
+        // console.log(tempThis.data.imgUrls)
       },
       fail: function() {
         // fail
