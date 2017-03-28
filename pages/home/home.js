@@ -1,4 +1,6 @@
 // pages/home/home.js
+var app = getApp()
+
 Page({
   data:{
     grids: ["全部", "电话会议", "视频会议", "研讨会", "高峰论坛", "实战训练", "参观活动", "其他活动"],
@@ -28,25 +30,62 @@ Page({
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
-    
+    this.bannerRequest()
+    this.expertRequest()
+  },
+
+  bannerRequest: function() {
+    var that = this
     wx.request({
-      url: 'https://www.lcouncil.com/index.php/Home/Api/banner',
+      url: app.globalData.host+'banner',
       data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
         // success
         console.log(res)
+        let arr = res.data.data
+        console.log(arr)
+        var pics = []
+        for (var i=0;i<arr.length;i++) {
+          pics.push(app.globalData.imageHost+arr[i].PicUrl)
+        }
+        console.log(pics)
+        that.setData({
+          imgUrls: pics
+        })
       },
-      fail: function() {
+      fail: function(error) {
         // fail
+        console.log(error)
       },
       complete: function() {
         // complete
       }
     })
-
   },
+
+  expertRequest: function() {
+    var that = this
+    wx.request({
+      url: app.globalData.host+'teacher',
+      data: {},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res)
+      },
+      fail: function(error) {
+        // fail
+        console.log(error)
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
 
   onReady:function(){
     // 生命周期函数--监听页面初次渲染完成

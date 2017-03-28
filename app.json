@@ -1,8 +1,6 @@
 {
   "pages":[
     "pages/home/home",
-    "pages/home/detail/detail",
-    "pages/home/class/class",
     "pages/report/report",
     "pages/laws/laws",
     "pages/laws/lawdetail/lawdetail",

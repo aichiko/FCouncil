@@ -25,6 +25,8 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    imageHost: "https://www.fcouncil.com/",
+    host: "https://www.fcouncil.com/index.php/Home/Api/"
   }
 })
