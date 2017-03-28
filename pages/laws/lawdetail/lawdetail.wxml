@@ -7,8 +7,14 @@
         <view class="weui-cells__title">关于《国家税务总局 国土资源部关于落实资源税改革优惠政策若干事项的公告》的解读</view>
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell">
-                <view class="weui-cell__bd">标题文字</view>
-                <view class="weui-cell__ft">说明文字</view>
+              <view class="lefttext">
+                <view class="left-upper">发文机关：股价国家国家国家税务局</view>
+                <view class="left-lower">发文日期：2017-02-04</view>
+              </view>
+              <view class="lefttext">
+                <view class="left-upper">内容分类：税务</view>
+                <view class="left-lower">生效日期：2017-02-04</view>
+              </view>
             </view>
         </view>
         <view class="weui-cells__title"></view>
