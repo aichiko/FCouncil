@@ -1,13 +1,32 @@
 // pages/expert/expert.js
 Page({
   data:{
-    expertDesc: ''
+    expert: {}
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    console.log(options.expertDesc)
+    console.log(options.index)
+    var that = this
+    wx.getStorage({
+      key: 'expertsList',
+      success: function(res){
+        // success
+        let expert = res.data[options.index]
+        console.log(expert)
+        that.setData({
+          expert: expert
+        })
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+
     this.setData({
-      expertDesc: options.expertDesc 
+      expertDesc: options.expert 
     })
   },
   onReady:function(){

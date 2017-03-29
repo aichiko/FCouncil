@@ -1,0 +1,20 @@
+.filter__bg {
+    width: 100%;
+    display: flex;
+}
+
+.filter__item {
+    width: 248rpx;
+    height: 60rpx;
+    background-color: red;
+    position: relative;
+    float: left;
+    top: 0;
+    text-align: center;
+    border-right: 1rpx solid #D9D9D9;
+    border-bottom: 1rpx solid #D9D9D9;
+    padding-top: 5rpx;
+}
+.weui-panel {
+    margin-top: 0;
+}

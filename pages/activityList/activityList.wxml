@@ -1,4 +1,6 @@
-<link rel="stylesheet" type="text/css" href="style/weui.wxss" />
+<view class="filter__bg">
+    <view class="filter__item" wx:for-items="{{filterArray}}" wx:key="{{index}}">{{filterArray[index]}}</view>
+</view>
 <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd" bindtap="toDetail">
         <block wx:for-items="{{activityList}}" wx:key="{{index}}">
