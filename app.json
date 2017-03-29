@@ -4,6 +4,7 @@
     "pages/home/detail/detail",
     "pages/home/class/class",
     "pages/report/report",
+    "pages/report/reportdetail/reportdetail",
     "pages/laws/laws",
     "pages/laws/lawdetail/lawdetail",
     "pages/expert/expert",

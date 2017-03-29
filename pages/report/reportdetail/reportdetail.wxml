@@ -1,0 +1,5 @@
+<view class="page">
+    <view class="doc-title">个人所得税的改革展望</view>
+    <view class="doc-part-content">这是个测试数据，欧式一大堆，不写一大堆看不出效果，不知道写什么，乱七八糟的我看着难受，想好好写也不知道写什么，有浪费h时间。恩祥系诶段歌词，可是一时半会儿又没记起来，写着写着结果自己唱上了，可还行。然后就想好吧，来个意识流，瞎写吧，这不，一会就写这么多了，一点也不卡哈哈哈哈。我这絮絮叨叨的，还怕没得写？只是写这么一大段，我也很绝望啊。</view>
+    <button class="read-wholedoc" bindtap="readCompleteDoc">查看完整文档</button>
+</view>

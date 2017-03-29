@@ -1,0 +1,46 @@
+.page {
+    position: relative;
+}
+.doc-title {
+    display: block;
+    font-weight: 800;
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: center;
+}
+.doc-part-content {
+    position: relative;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 20px;
+    /*text-align: left;*/
+    text-indent: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 96px;
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.doc-part-content:after {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 2em;
+    background: #fff;
+    text-align: right;
+}
+.tapbutton {
+    text-align: center;
+    width: 100%;
+    
+}
+.read-wholedoc {
+    margin-top: 20px;
+    background-color: #5fd93a;
+    border-radius: 4px;
+    width: 10em;
+    /*position: absolute;*/
+}

@@ -3,7 +3,7 @@
 <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd">
         <block wx:for-items="{{reports}}" wx:key="{{index}}">
-            <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box weui-media-box_text" bindtap="toReportDetail">
                 <view class="weui-media-box__title weui-media-box__title_in-text">{{reports[index].title}}</view>
                 <view class="weui-media-box__desc">{{reports[index].content}}</view>
                 <view class="weui-media-box__info">

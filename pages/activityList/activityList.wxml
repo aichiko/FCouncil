@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="style/weui.wxss" />
 <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd" bindtap="toDetail">
         <block wx:for-items="{{activityList}}" wx:key="{{index}}">
