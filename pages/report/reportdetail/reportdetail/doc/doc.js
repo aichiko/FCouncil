@@ -1,46 +1,13 @@
 Page({
   data:{
-    // 活动id,用来请求详情
-    id: '',
-    // 控制展开
-    isStructFold: false,
-    isContactFold: false,
-    isDescFold: false,
-    isAttentionFold: false,
-  },
-  foldCheck: function (e) {
-    
-    var tag = e.target.dataset.tag
-    console.log(tag)
-    switch (tag) {
-      case 1:
-        this.setData({
-          isStructFold: !this.isStructFold
-        })
-        break;
-      case 2:
-        this.setData({
-          isContactFold: !this.isContactFold
-        })
-        break;
-      case 3:
-        this.setData({
-          isDescFold: !this.isDescFold
-        })
-        break;
-      case 4:
-        this.setData({
-          isAttentionFold: !this.isAttentionFold
-        })
-        break;
-    }
+    content: ''
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
+    console.log(options.content)
     this.setData({
-        id: options.id
+        content: options.content
     })
-    console.log(options.id)
   },
   onReady:function(){
     // 生命周期函数--监听页面初次渲染完成
