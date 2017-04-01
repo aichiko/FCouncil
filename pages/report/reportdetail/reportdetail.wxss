@@ -1,0 +1,62 @@
+.page {
+    position: relative;
+}
+.doc-title {
+    display: block;
+    font-weight: 800;
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: center;
+}
+.doc-part-content {
+    position: relative;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 20px;
+    text-indent: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 225px;
+
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:14;
+}
+/*.doc-part-content:after {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 2em;
+    background: #fff;
+    text-align: right;
+}*/
+/*.tapbutton {
+    text-align: center;
+    width: 100%;
+    
+}*/
+.read-wholedoc {
+    width: 10em;
+    height: 2em;
+    line-height: 2em;
+    top: 3em;
+    color: #fff;
+    background-color: #9ccc65;
+    border-color: #7cb342;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    font-size: 14.0px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto
+}

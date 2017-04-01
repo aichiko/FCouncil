@@ -1,0 +1,5 @@
+<view class="page">
+    <view class="doc-title">个人所得税的改革展望</view>
+    <view class="doc-part-content">{{content}}</view>
+    <button class="read-wholedoc" bindtap="readCompleteDoc">查看完整文档</button>
+</view>

@@ -1,1 +1,95 @@
-<view>这是活动详情页面</view>
+<view class="page">
+    <!--<view class="page__hd">
+        <view class="page__title"></view>
+    </view>-->
+    <view class="page__bd">
+        <!--标题-->
+        <!--<view class="weui-cells__title"></view>-->
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="content_area">
+                    <view class="toptitle_view">
+                        <view class="toptitle">这是一个大标题，这么长差不多了吧</view>
+                        <view class="titletime_view">时间：2017-3-31 14:00-15:00</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--活动概况-->
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="content_area">
+                    <view class="imgtitle">
+                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <view class="title">活动概况</view>
+                        <view bindtap="foldCheck" data-tag="1">展开</view>
+                    </view>
+                    <view class="struct_content">
+                        <view class="struct_upper_text">
+                            <view class="struct_text_detail">地点：不限</view>
+                            <view class="struct_text_detail">限定人数：200人</view>
+                            <view class="struct_text_detail">语言：中文</view>
+                        </view>
+                        <view class="struct_lower_text">
+                            <view class="struct_text_detail">参与对象：中外资企业--财务主管、经理及专员</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--活动联系人-->
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="content_area">
+                    <view class="imgtitle">
+                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <view class="title">活动联系人</view>
+                    </view>
+                    <view class="contact_content">
+                        <view class="contact_left_text">
+                            <view class="contact_text_detail">姓名：某某</view>
+                            <view class="contact_text_detail">传真：00099888</view>
+                        </view>
+                        <view class="contact_right_text">
+                            <view class="contact_text_detail">客服热线：010982828</view>
+                            <view class="contact_text_detail">客服邮箱：cl@qwer.163.com</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--活动描述-->
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="content_area">
+                    <view class="imgtitle">
+                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <view class="title">活动描述</view>
+                    </view>
+                    <view class="desc_content">我与父亲不相年余了，我最不能忘记与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母的是他的背影。那年冬天，祖母死了，父亲的差使也交了，行。</view>
+                </view>
+            </view>
+        </view>
+        <!--注意事项-->
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="content_area">
+                    <view class="imgtitle">
+                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <view class="title">注意事项</view>
+                    </view>
+                    <view class="attention_content">我与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交了，行。</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--立即注册-->
+    <view class="register_view">
+        <view class="tagview">会员价：¥1,000</view>
+        <button class="registernow_btn">立即注册</button>
+    </view>
+</view>

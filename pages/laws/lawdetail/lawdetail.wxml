@@ -9,10 +9,10 @@
             <view class="weui-cell">
               <view class="lefttext">
                 <view class="left-upper">发文机关：股价国家国家国家税务局</view>
-                <view class="left-lower">发文日期：2017-02-04</view>
-              </view>
+                 <view class="left-lower">发文日期：2017-02-04</view>
+               </view>
               <view class="lefttext">
-                <view class="left-upper">内容分类：税务</view>
+                 <view class="left-upper">内容分类：税务</view>
                 <view class="left-lower">生效日期：2017-02-04</view>
               </view>
             </view>
@@ -27,5 +27,4 @@
             </view>
         </view>
     </view>
-
 </view>

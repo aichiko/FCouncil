@@ -2,6 +2,8 @@
   "pages":[
     "pages/home/home",
     "pages/report/report",
+    "pages/report/reportdetail/reportdetail",
+    "pages/report/reportdetail/doc/doc",
     "pages/laws/laws",
     "pages/laws/lawdetail/lawdetail",
     "pages/expert/expert",
