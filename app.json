@@ -1,8 +1,6 @@
 {
   "pages":[
     "pages/home/home",
-    "pages/home/detail/detail",
-    "pages/home/class/class",
     "pages/report/report",
     "pages/report/reportdetail/reportdetail",
     "pages/report/reportdetail/doc/doc",
@@ -22,9 +20,10 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#3399FF",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "list": [

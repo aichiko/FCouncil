@@ -1,4 +1,5 @@
 //app.js
+import 'utils/CCRequest.js'
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
@@ -25,6 +26,8 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    imageHost: "https://www.fcouncil.com/",
+    host: "https://www.fcouncil.com/index.php/Home/Api/"
   }
 })

@@ -5,11 +5,11 @@
     <view class="weui-panel__bd">
         <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=251175572,1528660824&fm=206&gp=0.jpg" />
+                <image class="weui-media-box__thumb" src="{{expert.PicPath}}" />
             </view>
             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">刘筠</view>
-                <view class="weui-media-box__desc">上海市局稽查局资深所长</view>
+                <view class="weui-media-box__title">{{expert.Name}}</view>
+                <view class="weui-media-box__desc">{{expert.Title}}</view>
             </view>
         </navigator>
     </view>
@@ -19,17 +19,17 @@
 <view class="section__title">联系方式</view>
 <view class="label">
     <view>
-        <text>电话：{{expert.expertTel}}</text>
+        <text>电话：{{expert.Tel}}</text>
     </view>
     <view>
-        <text>邮箱：{{expert.expertEmail}}</text>
+        <text>邮箱：{{expert.Email}}</text>
     </view>
 </view>
 <!--专家详细介绍-->
 <view class="section section_gap"></view>
 <view class="section__title">专家介绍</view>
 <view class="label">
-    <text class="expert_desc">{{expertDesc}}分hiUSD和覅US和VC诶付宏伟护肤is不好吃被hiu还不错群君奥思无君多时间长技术牛发文件时间比较哈省纪委就撒比较差那基恩副科级那就看科技部成交额父亲节我记事本九年级</text>
+    <text class="expert_desc">{{expert.Desc}}</text>
 </view>
 </view>
 

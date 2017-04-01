@@ -1,14 +1,38 @@
-<view class="weui-panel weui-panel_access">
+
+
+
+<!--筛选功能-->
+<view class="page">
+    <view class="filter__bg">
+        <view bindtap="filterAction" data-hi="{{index}}" class="filter__item {{shownavindex == index? 'active' : ''}}" wx:for-items="{{filterArray}}" wx:key="{{index}}">
+            <view id="filter_{{index}}" class="content">{{filterArray[index]}}</view>
+            <view class="icon"></view>
+        </view>
+    </view>
+    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+        <view data-filter="{{index}}" wx:for="{{content[shownavindex]}}" bindtap="filterItemAction" class="weui-cell__bd weui-cell_primary">
+            {{item}}
+        </view>
+    </view>
+    <view hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>
+<!--list 列表-->
+<view class="weui-panel weui-panel_access {{nzopen ?'hidden':''}}">
     <view class="weui-panel__bd" bindtap="toDetail">
         <block wx:for-items="{{activityList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text">
-                <view class="weui-media-box__title weui-media-box__title_in-text">{{activityList[index].title}}</view>
-                <view class="weui-media-box__desc">{{activityList[index].content}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{activityList[index].Name}}</view>
+                <view class="weui-media-box__desc">desc</view>
                 <view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta">2017.3.22</view>
-                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">类型：税务</view>
+                    <view class=" weui-media-box__info__meta">{{activityList[index].ADate}}</view>
+                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{activityList[index].labDesc}}</view>
                 </view>
             </view>
         </block>
     </view>
 </view>
+
+
+
+
+

@@ -6,3 +6,10 @@
     width: 100%;
     height: 10rpx
 }
+
+.page__title {
+    font-size: 32rpx
+}
+/*.weui-grid {
+    height: 20rpx
+}*/

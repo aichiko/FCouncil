@@ -10,40 +10,40 @@
 <view class="page">
     <view class="page__hd">
         <view class="page__title">活动类型</view>
-        <!--<view class="page__desc">九宫格</view>-->
+        <view class="page__desc"></view>
     </view>
     <view class="page__bd">
         <view class="weui-grids">
             <block wx:for-items="{{grids}}" wx:key="{{index}}">
-                <navigator class="weui-grid" hover-class="weui-grid_active" url="../activityList/activityList?index={{index}}">
-                    <image class="weui-grid__icon" src="../images/icon_tabbar.png" />
-                    <view class="weui-grid__label">{{grids[index]}}</view>
-                </navigator>
+                <template is="guradcell" data="{{...grids[index]}}" ></template>
             </block>
         </view>
     </view>
 </view>
-<view class = "home_grayview" ></view>
 <!--专家 图文组合列表-->
 <view class="page__bd">
     <view class="weui-panel weui-panel_access">
         <view class="weui-panel__hd">专家团队</view>
         <view class="weui-panel__bd" >
         <block wx:for-items="{{expertsList}}" wx:key="{{index}}">
-            <navigator url="../expert/expert?expertDesc=laikankankaknkank" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <navigator url="../expert/expert?index={{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <image class="weui-media-box__thumb" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2764447214,2476845992&fm=206&gp=0.jpg" />
+                    <image class="weui-media-box__thumb" src="{{expertsList[index].PicPath}}" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                    <view class="weui-media-box__title">{{expertsList[index].name}}</view>
-                    <view class="weui-media-box__desc">{{expertsList[index].desc}}</view>
+                    <view class="weui-media-box__title">{{expertsList[index].Name}}</view>
+                    <view class="weui-media-box__desc">{{expertsList[index].Title}}</view>
                 </view>
             </navigator>
             </block>
         </view>
-        <view class="weui-panel__ft">
-            <view class="weui-cell weui-cell_access weui-cell_link">
-            </view>
-        </view>
     </view>
 </view>
+
+<!--guradcell 模版-->
+<template name="guradcell">
+    <navigator class="weui-grid" hover-class="weui-grid_active" url="../activityList/activityList?index={{ID}}">
+        <image class="weui-grid__icon" src="{{PicUrl}}"/>
+        <view class="weui-grid__label">{{Desc}}</view>        
+    </navigator>
+</template>
