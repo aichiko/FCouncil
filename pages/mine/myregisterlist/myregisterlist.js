@@ -32,6 +32,11 @@ var GetList = function (that) {
             that.setData({
                 hidden:true
             });
+        },
+        failure: function() {
+            that.setData({
+                hidden:true
+            });
         }
     });
 }

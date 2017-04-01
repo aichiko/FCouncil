@@ -182,7 +182,7 @@ Page({
         // success
         console.log(res)
         that.setData({
-          
+          grids: res.data.data
         })
       },
       fail: function(error) {
