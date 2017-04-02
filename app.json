@@ -27,27 +27,27 @@
   },
   "tabBar": {
       "color":"white",
-      "selectedColor": "white",
+      "selectedColor": "#3ddcd2",
       "backgroundColor": "#137FC1",
       "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "images/news1.png",
-        "selectedIconPath": "images/news.png"
+        "iconPath": "images/home1.png",
+        "selectedIconPath": "images/home.png"
       },
       {
         "pagePath": "pages/report/report",
         "text": "专家报告",
-        "iconPath": "images/videos1.png",
-        "selectedIconPath": "images/videos.png"
+        "iconPath": "images/report1.png",
+        "selectedIconPath": "images/report.png"
       },
       {
         "pagePath": "pages/laws/laws",
         "text": "法律法规",
-        "iconPath": "images/videos1.png",
-        "selectedIconPath": "images/videos.png"
+        "iconPath": "images/laws1.png",
+        "selectedIconPath": "images/laws.png"
       },
       {
         "pagePath": "pages/mine/mine",

@@ -2,8 +2,8 @@
     
 }
 .page__bd {
-    margin-bottom: 90rpx;
-    position: relative;
+    padding-bottom: 90rpx;
+    /*position: relative;*/
     background-color: #EFEFEF;
 }
 /*头部标题*/
@@ -133,7 +133,7 @@
     height: 90rpx;
 }
 .tagview {
-    color: red;
+    color: #DF3C43;
     font-size: 24rpx;
     float: left;
     text-align: center;
@@ -143,6 +143,7 @@
 }
 .registernow_btn {
     float: right;
+    font-size: 36rpx;
     width: 50%;
     height: 90rpx;
     line-height: 90rpx;
@@ -150,6 +151,6 @@
     background: transparent;
     border: none;
     border-radius: 0rpx;
-    padding: 0;
-    background-color: red;
+    color: white;
+    background-color: #DF3C43;
 }
