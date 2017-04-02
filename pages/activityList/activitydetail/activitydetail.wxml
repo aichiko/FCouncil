@@ -23,7 +23,6 @@
                     <view class="imgtitle">
                         <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
                         <view class="title">活动概况</view>
-                        <view bindtap="foldCheck" data-tag="1">展开</view>
                     </view>
                     <view class="struct_content">
                         <view class="struct_upper_text">
@@ -82,7 +81,7 @@
                         <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
                         <view class="title">注意事项</view>
                     </view>
-                    <view class="attention_content">我与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交了，行。</view>
+                    <view class="attention_content">我与父亲不相年余了，父亲不相年余了父亲不相年余了父亲不相年余了父亲不相年余了父亲不相年余了我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交了，行。</view>
                 </view>
             </view>
         </view>

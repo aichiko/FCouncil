@@ -1,4 +1,3 @@
-
 .page{
     font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
     height: 100%;
@@ -10,7 +9,6 @@
     overflow: hidden;
     position: fixed
 }
-
 
 .filter__bg {
     position: relative;
@@ -71,8 +69,8 @@
 }
 
 .temp view{
-    border-bottom: 1px solid #d1d3d4;
-    font-size: 14px;
+    border-bottom: 1rpx solid #d1d3d4;
+    font-size: 34rpx;
     color: #666;
 }
 
@@ -89,10 +87,42 @@
 .fullopacity{
     opacity: 0.5;
 }
-
+/*列表item*/
 .weui-panel {
     margin-top: 0;
 }
+.weui-media-box__title {
+    /*标题*/
+    font-size: 34rpx;
+    color: #3c3c3c;
+}
+.weui-media-box__desc {
+    /*内容*/
+    font-size: 30rpx;
+    padding-right: 15px;
+    color: #999999;
+}
+.activity_info {
+    position: relative;
+    display: block;
+    font-size: 30rpx;
+    color: #3c3c3c;
+}
+.activity_info_detail {
+    display: inline-block;
+    padding: 8px 0 8rpx 0;
+    width:30%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    word-wrap:normal;
+}
+/*.weui-media-box__info__meta {*/
+    /*时间*/
+    /*font-size: 30rpx;*/
+    /*color: #3c3c3c;*/
+/*}*/
+
 
 @keyframes slidown{
     from{

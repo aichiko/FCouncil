@@ -2,6 +2,7 @@
     
 }
 .page__bd {
+    margin-bottom: 90rpx;
     position: relative;
     background-color: #EFEFEF;
 }
@@ -20,10 +21,11 @@
 .titletime_view {
     padding-top: 24rpx;
     color: #3c3c3c;
-    font-size: 28rpx;
-    /*overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;*/
+    font-size: 30rpx;
+    /*overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    word-wrap:normal;*/
 }
 /*标题下内容区域*/
 .content_area {
@@ -79,7 +81,7 @@
     /*line-height: 4rpx;*/
     padding-left: 36rpx;
     padding-right: 20rpx;
-    font-size: 28rpx;
+    font-size: 30rpx;
     text-align: left;
     color: gray;
 }
@@ -97,7 +99,7 @@
     padding-right: 20rpx;
     padding-top: 12rpx;
     padding-bottom: 12rpx;
-    font-size: 28rpx;
+    font-size: 30rpx;
     text-align: left;
     color: gray;
 }
@@ -107,18 +109,17 @@
     padding-right: 20rpx;
     padding-top: 12rpx;
     padding-bottom: 12rpx;
-    font-size: 28rpx;
+    font-size: 30rpx;
     text-align: left;
     color: gray;
 }
 /*注意事项*/
 .attention_content {
-    margin-bottom: 90rpx;
     padding-left: 36rpx;
     padding-right: 20rpx;
     padding-top: 12rpx;
     padding-bottom: 12rpx;
-    font-size: 28rpx;
+    font-size: 30rpx;
     text-align: left;
     color: gray;
 }

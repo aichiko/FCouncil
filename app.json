@@ -20,35 +20,39 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#3399FF",
+    "navigationBarBackgroundColor": "#137FC1",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh": false
   },
   "tabBar": {
+      "color":"white",
+      "selectedColor": "white",
+      "backgroundColor": "#137FC1",
+      "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "images/news.png",
+        "iconPath": "images/news1.png",
         "selectedIconPath": "images/news.png"
       },
       {
         "pagePath": "pages/report/report",
         "text": "专家报告",
-        "iconPath": "images/videos.png",
+        "iconPath": "images/videos1.png",
         "selectedIconPath": "images/videos.png"
       },
       {
         "pagePath": "pages/laws/laws",
         "text": "法律法规",
-        "iconPath": "images/videos.png",
+        "iconPath": "images/videos1.png",
         "selectedIconPath": "images/videos.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",
-        "iconPath": "images/mine.png",
+        "iconPath": "images/mine1.png",
         "selectedIconPath": "images/mine.png"
       }
     ]

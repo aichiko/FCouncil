@@ -3,7 +3,7 @@
 }
 .weui-cell__ft_in-access {
   padding-right: 13px;
-  position: relative;
+  /*position: relative;*/
 }
 .weui-cell__ft_in-access:after {
   content: " ";
@@ -17,7 +17,7 @@
           transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
   position: relative;
   top: -2px;
-  position: absolute;
+  /*position: absolute;*/
   top: 50%;
   margin-top: -4px;
   right: 2px;
