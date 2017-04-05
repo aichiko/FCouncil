@@ -5,7 +5,7 @@
     padding: 20rpx 20rpx;
 }
 .anser_view {
-    background-color: limegreen;
+    background-color: #4ec046;
     font-size: 35rpx;
     display: block wrap;
     padding: 20rpx 20rpx;

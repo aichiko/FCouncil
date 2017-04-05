@@ -7,10 +7,26 @@ Page({
     activity: {},
 
     // 控制展开
-    isStructFold: false,
-    isContactFold: false,
-    isDescFold: false,
-    isAttentionFold: false,
+    isDescFold: true,
+    descHeight: '12em'
+  },
+  foldOrExtend:function() {
+    console.log('点击折叠。。。。')
+    var isFold = this.data.isDescFold
+    this.setData({
+      isDescFold: !isFold,
+    })
+    if(this.data.isDescFold) {
+      this.setData({
+        descHeight: '12em',
+      })
+    }else {
+      this.setData({
+        descHeight: 'auto',
+      })
+    }
+    console.log(this.data.isDescFold)
+    
   },
   registerNow:function(){
     wx.showModal({

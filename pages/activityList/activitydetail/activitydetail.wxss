@@ -30,9 +30,9 @@
 /*标题下内容区域*/
 .content_area {
     background-color: white;
-     color: #3c3c3c;
-     width: 100%;
-     bottom: 24rpx;
+    color: #3c3c3c;
+    width: 100%;
+    bottom: 24rpx;
 }
 /*带图标题*/
 .imgtitle {
@@ -58,17 +58,26 @@
     font-weight: 600;
     padding-right: 24rpx;
 }
-/*.title::after {
+/*展开收起*/
+.fold_extend1 {
     content: '展开';
-}*/
-/*活动概况*/
-.struct_content {
-    /*background-color: red;*/
-    /*height: 80rpx*/
+    font-size: 32rpx;
+    float: right;
+    padding-right: 20rpx;
 }
-.struct_content_fold {
-    /*background-color: yellow;*/
-    /*height: 40rpx;*/
+.fold_extend2 {
+    content: '收起';
+    font-size: 32rpx;
+    float: right;
+    color: #45AB59;
+    padding-right: 20rpx;
+}
+/*活动概况*/
+.desc_content {
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: auto;
 }
 .struct_upper_text {
     padding: 0rpx;
@@ -79,8 +88,8 @@
 .struct_text_detail {
     display: inline-block;
     /*line-height: 4rpx;*/
-    padding-left: 36rpx;
-    padding-right: 20rpx;
+    padding-left: 24rpx;
+    padding-right: 16rpx;
     font-size: 30rpx;
     text-align: left;
     color: gray;
@@ -95,8 +104,8 @@
     justify-content: space-between;
 }
 .contact_text_detail {
-    padding-left: 36rpx;
-    padding-right: 20rpx;
+    padding-left: 28rpx;
+    padding-right: 16rpx;
     padding-top: 12rpx;
     padding-bottom: 12rpx;
     font-size: 30rpx;
@@ -105,8 +114,8 @@
 }
 /*活动描述*/
 .desc_content {
-    padding-left: 36rpx;
-    padding-right: 20rpx;
+    padding-left: 28rpx;
+    padding-right: 16rpx;
     padding-top: 12rpx;
     padding-bottom: 12rpx;
     font-size: 30rpx;
@@ -115,8 +124,8 @@
 }
 /*注意事项*/
 .attention_content {
-    padding-left: 36rpx;
-    padding-right: 20rpx;
+    padding-left: 28rpx;
+    padding-right: 16rpx;
     padding-top: 12rpx;
     padding-bottom: 12rpx;
     font-size: 30rpx;

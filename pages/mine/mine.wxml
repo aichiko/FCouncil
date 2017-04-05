@@ -1,38 +1,42 @@
 <!--pages/mine/mine.wxml-->
 <!--头部-->
-<view class="page__hd">
-    <view class="headcenter">
-        <image class="weui-grid__icon" bindtap="loginAction" src="isLogin?'https://img6.bdstatic.com/img/image/smallpic/w6.jpg':''" mode="scaleToFill"></image>
-        <text class="tip_text">{{logintips}}</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="headcenter">
+            <image class="weui-grid__icon" bindtap="loginAction" src="{{isLogin?'http://img6.bdstatic.com/img/image/smallpic/w6.jpg':''}}" mode="scaleToFill"></image>
+            <text class="tip_text">{{logintips}}</text>
+        </view>
     </view>
-</view>
-<!--我的注册和问答-->
-<view class="weui-cells__title"></view>
+    <!--我的注册和问答-->
+    <view class="weui-cells__title"></view>
+            <view class="weui-cells weui-cells_after-title">
+                <navigator url="./myregisterlist/myregisterlist" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">我的注册</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+                <navigator url="./onlinechannel/onlinechannel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">在线问答</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    <view class="weui-cells weui-cells_after-title"></view>
+                </navigator>
+            </view>
+    <!--关于我们-->
+    <view class="weui-cells__title"> </view>
         <view class="weui-cells weui-cells_after-title">
-            <navigator url="./myregisterlist/myregisterlist" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">我的注册</view>
+            <navigator url="./aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">关于我们</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
-            <navigator url="./onlinechannel/onlinechannel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">在线问答</view>
+        </view>
+    <!--退出登录-->
+    <view class="weui-cells__title"> </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view bindtap="logOut" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">退出登录</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                <view class="weui-cells weui-cells_after-title"></view>
-            </navigator>
+            </view>
         </view>
-<!--关于我们-->
-<view class="weui-cells__title"> </view>
-    <view class="weui-cells weui-cells_after-title">
-        <navigator url="./aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__bd">关于我们</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-        </navigator>
-    </view>
-<!--退出登录-->
-<view class="weui-cells__title"> </view>
-    <view class="weui-cells weui-cells_after-title">
-        <view bindtap="logOut" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__bd">退出登录</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-        </view>
-    </view>
+    <!--<view class="weui-cells__title"> </view>-->
+        <!--<view class="weui-cells weui-cells_after-title"></view>-->
+</view>
 

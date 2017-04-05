@@ -1,8 +1,10 @@
 /* pages/mine/mine.wxss */
-
+.page {
+    background-color: #EFEFEF;
+}
 .page__hd {
     background: transparent;
-    background-color: rgba(19,127,193,0.7);
+    background-color: rgba(19,127,193,0.5);
     /*opacity: 0.5;*/
     width: 100%;
     height: 300rpx;
@@ -13,15 +15,25 @@
 }
 .tip_text {
   color: #fff;
-  font-size: 22rpx;
-  padding-top: 15rpx;
+  font-size: 28rpx;
+  margin-top: 40rpx;
 }
 .weui-grid__icon{
     width: 120rpx;
     height: 120rpx;
     border-radius: 50%;
     border: 4rpx solid #ececec;
+    margin-bottom:20rpx;
 }
 section_gap {
     height: 20rpx;
+}
+.weui-cell__ft_in-access {
+    /*分区箭头位置和字体大小调整*/
+    padding-right:20rpx;
+    overflow: visible;
+}
+.weui-cells__title {
+    background-color: #fff;
+
 }

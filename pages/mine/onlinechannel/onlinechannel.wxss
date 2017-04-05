@@ -3,10 +3,10 @@
     position: fixed;
     bottom: 0rpx;
     width: 100%;
-    height: 80rpx;
-    line-height: 80rpx;
-    background-color: limegreen;
-    color: white;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #137FC1;
+    color: #fff;
 }
 .weui-media-box__info {
     color: gray;

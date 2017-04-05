@@ -8,13 +8,15 @@
 }
 .reg_text {
     color: green;
-    font-size: 20rpx;
+    font-size: 28rpx;
 }
 .weui-btn {
-    width: 70%;
+    width: 80%;
+    height: 88rpx;
     border-radius: 20rpx;
     color: white;
     background-color: #137FC1;
+    line-height: 88rpx;
 }
 /*.weui-cells {
     border: solid 1rpx;

@@ -95,7 +95,7 @@ Page({
     // 页面显示
     // 在页面展示之后先获取一次数据
     var that = this;
-    GetList(that);
+    // GetList(that);
   },
   onHide:function(){
     // 页面隐藏

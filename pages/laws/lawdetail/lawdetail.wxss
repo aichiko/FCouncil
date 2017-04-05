@@ -1,12 +1,13 @@
 .page {
     background-color: rgba(239, 239, 239, 1.0)
 }
-.law_title {background-color: white;
+.law_title {
+    background-color: #fff;
     color: black;
     font-size: 36rpx;
     font-weight: 700;
-    padding-left: 20rpx;
-    padding-right: 20rpx;
+    padding-left: 35rpx;
+    padding-right: 35rpx;
     padding-bottom: 20rpx;
  }
 .content_area {
@@ -17,19 +18,15 @@
     width: 100%;
 }
 .title {
-    /*margin-top: .77em;*/
-    /*margin-bottom: .3em;*/
     padding-left: 20rpx;
     padding-right: 20rpx;
     line-height: 40rpx;
     text-align: left;
 }
 .title_content {
-    /*margin-top: .77em;*/
-    /*margin-bottom: .3em;*/
-    padding-left: 20rpx;
-    padding-right: 20rpx;
-    padding-bottom: 20rpx;
+    padding-left: 35rpx;
+    padding-right: 35rpx;
+    padding-bottom: 35rpx;
     padding-top: 20rpx; 
     text-align: left;
     text-indent: 2em;
@@ -37,28 +34,41 @@
 .weui-cell {
     padding-left: 20rpx;
     padding-right: 20rpx;
-}
-.spase-between_text {
+    flex: 0 50%;
     display:flex;
     justify-content:space-between;
-    /*padding: 2px;*/
+    color: #3c3c3c;
 }
 .lefttext {
-    flex: 0 50%;
-    color: #3c3c3c;
+    /*flex: 0 50%;*/
+    /*display:flex;
+    justify-content:space-between;
+    color: #3c3c3c;*/
     font-size: 32rpx;
-    white-space: nowrap;
+    width: 50%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis;
+    /*white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
 }
 .left-upper {
-    width: 200rpx;
     margin-top: .3em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+.left_middle {
+    margin-top: .3em;
+    margin-bottom: 1em;
+    padding-left: 20rpx;
     padding-right: 20rpx;
 }
 .left-lower {
-    margin-top: 1em;
+    margin-top: .3em;
     margin-bottom: .3em;
+    padding-left: 20rpx;
     padding-right: 20rpx;
 }

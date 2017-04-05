@@ -85,10 +85,13 @@ Page({
     })
   },
   // 跳至法律法规详情页
-  toLawDetail: function () {
+  toLawDetail: function (e) {
+    // console.log(e)
+    var ID = e.currentTarget.dataset.id
+    // console.log(ID)
     console.log('跳至法律法规详情')
     wx.navigateTo({
-      url: './lawdetail/lawdetail'
+      url: './lawdetail/lawdetail?ID='+ID
     })
   },
   onLoad:function(options){

@@ -3,7 +3,7 @@
 <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd">
         <block wx:for-items="{{lawsList}}" wx:key="{{index}}">
-            <view class="weui-media-box weui-media-box_text" bindtap="toLawDetail">
+            <view class="weui-media-box weui-media-box_text" data-ID="{{lawsList[index].ID}}" bindtap="toLawDetail">
                 <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{lawsList[index].Title}}</view>
                 <!--<view class="weui-media-box__desc">{{lawsList[index].Content}}</view>-->
                 <view class="weui-media-box__info">
