@@ -1,3 +1,10 @@
-/*.weui-article__p {
+.page {
+    text-align: center;
+}
+.logo_pic {
+    width: 375rpx;
+    height:375rpx;
+    margin: 80rpx;
 
-}*/
+    /*text-align: center;*/
+}

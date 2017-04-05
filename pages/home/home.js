@@ -45,7 +45,7 @@ Page({
         },
         {
             "ID":"7",
-            "Desc":"实战训练营",
+            "Desc":"实战训练",
             "Ctype":"1",
             "IsDelete":"0",
             "Aorder":"6",

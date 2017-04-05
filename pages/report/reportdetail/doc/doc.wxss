@@ -1,1 +1,21 @@
-/* pages/report/reportdetail/doc/doc.wxss */
+/* pages/report/reportdetail/reportdetail/doc/doc.wxss */
+.doc_tittle {
+    display: block;
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: 600;
+    margin-top: 40rpx;
+}
+.doc_content {
+    display: flex;
+    font-size: 32rpx;
+    line-height: 40rpx;
+    letter-spacing: 4rpx;
+    color: #3c3c3c;
+    text-align: left;
+    text-indent: 2em;
+    padding: 20rpx;
+    margin: 20rpx;
+    /*margin-bottom: 40rpx;*/
+
+}

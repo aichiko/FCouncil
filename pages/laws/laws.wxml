@@ -2,13 +2,13 @@
 <link rel="stylesheet" type="text/css" href="style/weui.wxss" />
 <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd">
-        <block wx:for-items="{{laws}}" wx:key="{{index}}">
+        <block wx:for-items="{{lawsList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toLawDetail">
-                <view class="weui-media-box__title weui-media-box__title_in-text">{{laws[index].title}}</view>
-                <view class="weui-media-box__desc">{{laws[index].content}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{lawsList[index].Title}}</view>
+                <!--<view class="weui-media-box__desc">{{lawsList[index].Content}}</view>-->
                 <view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta">2017.3.22</view>
-                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">类型：税务</view>
+                    <view class=" weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">2017.3.22</view>
+                    <view class="weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">类型：{{lawsList[index].classDesc}}</view>
                 </view>
             </view>
         </block>

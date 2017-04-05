@@ -1,2 +1,2 @@
-<!--pages/report/reportdetail/doc/doc.wxml-->
-<text>pages/report/reportdetail/doc/doc.wxml</text>
+<view class="doc_tittle">hi呼呼鱼肝油关于膏腴贵游预告与云</view>
+<text class="doc_content">{{content}}</text>

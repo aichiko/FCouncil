@@ -4,19 +4,20 @@
 .doc-title {
     display: block;
     font-weight: 800;
-    font-size: 16px;
-    margin-top: 5px;
+    font-size: 36rpx;
+    margin-top: 15rpx;
     text-align: center;
 }
 .doc-part-content {
     position: relative;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 20px;
+    font-size: 32rpx;
+    line-height: 36rpx;
+    color: #3c3c3c;
+    margin-top: 30rpx;
     text-indent: 2em;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 225px;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    height: 50%;
 
     display: -webkit-box;
     overflow: hidden;
@@ -25,33 +26,19 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp:14;
 }
-/*.doc-part-content:after {
-    content: '...';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 2em;
-    background: #fff;
-    text-align: right;
-}*/
-/*.tapbutton {
-    text-align: center;
-    width: 100%;
-    
-}*/
 .read-wholedoc {
     width: 10em;
-    height: 2em;
-    line-height: 2em;
+    height: 2.5em;
+    line-height: 2.5em;
     top: 3em;
     color: #fff;
-    background-color: #9ccc65;
-    border-color: #7cb342;
+    background-color: #137FC1;
+    border-color: #ccc;
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
-    font-size: 14.0px;
-    border-radius: 8px;
-    border-width: 1px;
+    font-size: 32rpx;
+    border-radius: 12rpx;
+    border-width: 1rpx;
     border-style: solid;
     text-align: center;
     font-weight: normal;

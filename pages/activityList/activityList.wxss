@@ -91,6 +91,9 @@
 .weui-panel {
     margin-top: 0;
 }
+.weui-media-box {
+    padding-bottom: 0rpx;
+}
 .weui-media-box__title {
     /*标题*/
     font-size: 34rpx;

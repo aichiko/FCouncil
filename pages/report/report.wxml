@@ -2,13 +2,14 @@
 <link rel="stylesheet" type="text/css" href="style/weui.wxss" />
 <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd">
-        <block wx:for-items="{{reports}}" wx:key="{{index}}">
+        <block wx:for-items="{{reportsList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toReportDetail">
-                <view class="weui-media-box__title weui-media-box__title_in-text">{{reports[index].title}}</view>
-                <view class="weui-media-box__desc">{{reports[index].content}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{reportsList[index].Title}}</view>
+                <!--报告内容-->
+                <!--<view class="weui-media-box__desc">{{reportsList[index].content}}</view>-->
                 <view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta">2017.3.22</view>
-                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">类型：税务</view>
+                    <view class=" weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">2017.3.22</view>
+                    <view class="weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">类型：{{reportsList[index].classDesc}}</view>
                 </view>
             </view>
         </block>

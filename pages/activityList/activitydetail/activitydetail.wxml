@@ -89,6 +89,6 @@
     <!--立即注册-->
     <view class="register_view">
         <view class="tagview">会员价：¥1,000</view>
-        <button class="registernow_btn">立即注册</button>
+        <button class="registernow_btn" bindtap="registerNow">立即注册</button>
     </view>
 </view>

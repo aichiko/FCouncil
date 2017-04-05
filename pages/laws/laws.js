@@ -1,28 +1,88 @@
 // pages/laws/laws.js
+var app = getApp()
 Page({
   data:{
-    laws: [
-      {
-        title: '标题名称',
-        content: '法律法规的内容，比较简单的，只是为了显示效果，随便加点东西'
+    lawsList: [],
+    page: 1,
+    parameters: {},
+  },
+  // 法律法规列表
+  lawsListRquest: function() {
+    var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    this.setData({
+        parameters: {"Page": this.data.page}
+    })
+    console.log(this.data.parameters)
+    wx.request({
+      url: app.globalData.host+'law',
+      data: this.data.parameters,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        wx.stopPullDownRefresh
+        console.log(res)
+        wx.hideLoading()
+        that.setData({
+          lawsList: res.data.data
+        })
       },
-      {
-        title: '标题名称',
-        content: '法律法规的内容，比较简单的，只是为了显示效果，随便加点东西'
+      fail: function(res) {
+        // fail
+        wx.stopPullDownRefresh
+        console.log(res)
+        wx.hideLoading()
       },
-      {
-        title: '标题名称',
-        content: '法律法规的内容，比较简单的，只是为了显示效果，随便加点东西'
+      complete: function(res) {
+        // complete
+      }
+    })
+  },
+  onPullDownRefresh: function() {
+    // 页面相关事件处理函数--监听用户下拉动作
+    this.lawsList()
+  },
+  onReachBottom: function() {
+    // 页面上拉触底事件的处理函数
+    this.loadmoreData()
+  },
+  loadmoreData: function() {
+    let page = this.data.parameters.Page
+    page += 1
+    let dic = this.data.parameters
+    dic.Page = page
+    var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    console.log(dic)
+    wx.request({
+      url: app.globalData.host+'law',
+      data: dic,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res)
+        wx.hideLoading()
+        let arr = that.data.lawsList.concat(res.data.data)
+        console.log(arr)
+        that.setData({
+          parameters: dic,
+          lawsList: arr
+        })
       },
-      {
-        title: '标题名称',
-        content: '法律法规的内容，比较简单的，只是为了显示效果，随便加点东西'
+      fail: function(res) {
+        // fail
+        wx.hideLoading()
       },
-      {
-        title: '标题名称',
-        content: '法律法规的内容，比较简单的，只是为了显示效果，随便加点东西'
-      },
-    ]
+      complete: function(res) {
+        // complete
+      }
+    })
   },
   // 跳至法律法规详情页
   toLawDetail: function () {
@@ -34,6 +94,7 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     // 如果是网络请求或是别的方法传出的值调用“this”,不能直接用，需要用变量接收“this” 再使用(如mine.js中的用法)
+    this.lawsListRquest()
     console.log(this.data.laws)
   },
   onReady:function(){

@@ -31,6 +31,19 @@ Page({
       key: 'userInfo',
       data: this.data.userInfo
     })
+    // 跳转至个人中心
+    wx.redirectTo({
+      url: '../mine',
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   },
     // 获取输入的用户名
   nameInput: function (e) {

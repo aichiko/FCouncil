@@ -27,5 +27,5 @@
 </view>
 <!--注册按钮-->
 <view class="button-sp-area">
-    <button class="weui-btn" type="default" bindtap="registerAction">注册</button>
+    <button class="weui-btn" bindtap="registerAction">注册</button>
 </view>

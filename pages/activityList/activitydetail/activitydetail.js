@@ -2,38 +2,19 @@ Page({
   data:{
     // 活动id,用来请求详情
     id: '',
-    // 控制展开
-    isStructFold: false,
-    isContactFold: false,
-    isDescFold: false,
-    isAttentionFold: false,
   },
-  foldCheck: function (e) {
-    
-    var tag = e.target.dataset.tag
-    console.log(tag)
-    switch (tag) {
-      case 1:
-        this.setData({
-          isStructFold: !this.isStructFold
-        })
-        break;
-      case 2:
-        this.setData({
-          isContactFold: !this.isContactFold
-        })
-        break;
-      case 3:
-        this.setData({
-          isDescFold: !this.isDescFold
-        })
-        break;
-      case 4:
-        this.setData({
-          isAttentionFold: !this.isAttentionFold
-        })
-        break;
-    }
+  registerNow:function(){
+    wx.showModal({
+      title: '提示',
+      content: '您确定要注册吗？',
+      success: function(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载

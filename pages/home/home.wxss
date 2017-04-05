@@ -34,8 +34,8 @@
     width: 46rpx;
     height: 46rpx;
     margin-top: 8rpx;
-    padding-right: 14rpx;
-    padding-left: 14rpx;
+    padding-right: 10rpx;
+    padding-left: 10rpx;
     vertical-align: center;
 }
 .weui-grid__label {

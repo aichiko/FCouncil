@@ -23,5 +23,5 @@
 </view>
 <!--登录按钮-->
 <view class="button-sp-area">
-    <button class="weui-btn" type="default" bindtap="login">登录</button>
+    <button class="weui-btn" bindtap="login">登录</button>
 </view>

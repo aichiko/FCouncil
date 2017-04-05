@@ -1,7 +1,9 @@
 /* pages/mine/mine.wxss */
 
 .page__hd {
-    background-color: limegreen;
+    background: transparent;
+    background-color: rgba(19,127,193,0.7);
+    /*opacity: 0.5;*/
     width: 100%;
     height: 300rpx;
 }

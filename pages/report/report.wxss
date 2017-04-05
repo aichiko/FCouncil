@@ -1,1 +1,4 @@
 /* pages/report/report.wxss */
+.weui-media-box__info {
+    color: black;
+}
