@@ -1,14 +1,28 @@
 <!--pages/laws/laws.wxml-->
-<link rel="stylesheet" type="text/css" href="style/weui.wxss" />
-<view class="weui-panel weui-panel_access">
+<!--筛选功能-->
+<view class="page">
+    <view class="filter__bg">
+        <view bindtap="filterAction" data-hi="{{index}}" class="filter__item {{shownavindex == index? 'active' : ''}}" wx:for-items="{{filterArray}}" wx:key="{{index}}">
+            <view id="filter_{{index}}" class="content">{{filterArray[index]}}</view>
+            <view class="icon"></view>
+        </view>
+    </view>
+    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+        <view data-filter="{{index}}" wx:for="{{content[shownavindex]}}" bindtap="filterItemAction" class="weui-cell__bd weui-cell_primary">
+            {{item}}
+        </view>
+    </view>
+    <view hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>
+<view class="weui-panel weui-panel_access {{nzopen ?'hidden':''}}">
     <view class="weui-panel__bd">
         <block wx:for-items="{{reportsList}}" wx:key="{{index}}">
-            <view class="weui-media-box weui-media-box_text" bindtap="toReportDetail">
+            <view class="weui-media-box weui-media-box_text" bindtap="toReportDetail" data-detailID="{{index}}">
                 <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{reportsList[index].Title}}</view>
                 <!--报告内容-->
                 <!--<view class="weui-media-box__desc">{{reportsList[index].content}}</view>-->
                 <view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">2017.3.22</view>
+                    <view class=" weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">{{reportsList[index].AddDate}}</view>
                     <view class="weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">类型：{{reportsList[index].classDesc}}</view>
                 </view>
             </view>

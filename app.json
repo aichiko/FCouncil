@@ -39,7 +39,7 @@
       },
       {
         "pagePath": "pages/report/report",
-        "text": "专家报告",
+        "text": "专业报告",
         "iconPath": "images/report1.png",
         "selectedIconPath": "images/report.png"
       },

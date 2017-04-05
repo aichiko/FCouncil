@@ -1,5 +1,6 @@
-.page {
+.report_page {
     position: relative;
+    height: 1000rpx
 }
 .doc-title {
     display: block;
@@ -15,9 +16,8 @@
     color: #3c3c3c;
     margin-top: 30rpx;
     text-indent: 2em;
-    padding-left: 20rpx;
-    padding-right: 20rpx;
-    height: 50%;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
 
     display: -webkit-box;
     overflow: hidden;
@@ -27,11 +27,11 @@
     -webkit-line-clamp:14;
 }
 .read-wholedoc {
-    width: 10em;
-    height: 2.5em;
-    line-height: 2.5em;
-    top: 3em;
-    color: #fff;
+    width: 85%;
+    height: 88rpx;
+    line-height: 88rpx;
+    top: 50rpx;
+    color:#ffffff;
     background-color: #137FC1;
     border-color: #ccc;
     transform: rotate(0deg);

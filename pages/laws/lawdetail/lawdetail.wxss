@@ -13,9 +13,10 @@
 .content_area {
     /*padding: 10px;*/
     padding-top: 20rpx;
+    padding-left: 5%;
     font-size: 32rpx;
     color: #3c3c3c;
-    width: 100%;
+    width: 90%;
 }
 .title {
     padding-left: 20rpx;
@@ -61,14 +62,16 @@
     padding-right: 20rpx;
 }
 .left_middle {
+
+    width: 300rpx;
     margin-top: .3em;
     margin-bottom: 1em;
-    padding-left: 20rpx;
-    padding-right: 20rpx;
+    padding-right: 10rpx;
+    font-size: 32rpx;
 }
 .left-lower {
     margin-top: .3em;
     margin-bottom: .3em;
-    padding-left: 20rpx;
-    padding-right: 20rpx;
+    padding-right: 10rpx;
+    font-size: 32rpx;
 }

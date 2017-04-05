@@ -3,3 +3,131 @@
 .weui-media-box__info {
     color: black;
 }
+
+/*列表item*/
+.weui-panel {
+    margin-top: 0;
+}
+
+
+
+@keyframes slidown{
+    from{
+        transform:  translateY(-100%);
+    }
+    to{
+        transform:  translateY(0%);
+    }
+}
+.slidown{
+    display: block;
+    animation: slidown .2s ease-in both;
+}
+@keyframes slidup{
+    from{
+        transform:  translateY(0%);
+    }
+    to{
+        transform:  translateY(-100%);
+    }
+}
+.slidup{
+    display: block;
+    animation: slidup .2s ease-in both;
+}
+.disappear{
+    display: none;
+}
+
+
+
+
+.page{
+    font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.hidden {
+    overflow: hidden;
+    position: fixed
+}
+
+.filter__bg {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    border-top: 1px solid #d1d3d4;
+    border-bottom: 1px solid #d1d3d4;
+    background: #fff;
+}
+
+.filter__item {
+    width: 187rpx;
+    height: 60rpx;
+    position: relative;
+    float: left;
+    top: 0;
+    text-align: center;
+    border-right: 1rpx solid #D9D9D9;
+    /*border-bottom: 1rpx solid #D9D9D9;*/
+    padding-top: 5rpx;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content:center;
+    font-size: 14px;
+}
+
+.content{
+    display: inline-block;
+}
+.icon{
+    display: inline-block;
+    border: 4px solid transparent;
+    border-top: 4px solid #9b9b9b;
+    margin-left: 5px;
+}
+
+.filter__item.active .content{
+    color: #61beff;
+}
+.filter__item.active .icon{
+    border-bottom: 4px solid #61beff;
+    border-top:0;
+}
+
+.temp{
+    position: fixed;
+    z-index: 4;
+}
+.temp1{
+    display: none;
+    width: 100%;
+    max-height: 550rpx;
+    overflow-y: scroll;
+    padding: 0 0 0 20rpx;
+    line-height:100rpx;
+    background: #fff;
+}
+
+.temp view{
+    border-bottom: 1rpx solid #d1d3d4;
+    font-size: 34rpx;
+    color: #666;
+}
+
+.fullbg{
+    position: fixed;
+    top:0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgb(1, 1, 1);
+    transition: all 2s;
+    opacity: 0;
+}
+.fullopacity{
+    opacity: 0.5;
+}
