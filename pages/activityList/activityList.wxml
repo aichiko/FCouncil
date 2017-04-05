@@ -15,21 +15,16 @@
 </view>
 <!--list 列表-->
 <view class="weui-panel weui-panel_access {{nzopen ?'hidden':''}}">
-    <view class="weui-panel__bd" bindtap="toDetail">
+    <view class="weui-panel__bd">
         <block wx:for-items="{{activityList}}" wx:key="{{index}}">
-            <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box weui-media-box_text" bindtap="toDetail" data-detailID="{{index}}">
                 <view class="weui-media-box__title weui-media-box__title_in-text">{{activityList[index].Name}}</view>
-                <!--详情-->
-                <view class="weui-media-box__desc"></view>
+                <!--<view class="weui-media-box__desc">{{activityList[index].Name}}</view>-->
                 <view class="activity_info">
                     <view class="activity_info_detail">{{activityList[index].ADate}}</view>
                     <view class="activity_info_detail">{{activityList[index].labDesc}}</view>
-                    <view class="activity_info_detail">费用:¥1000</view>
+                    <view class="activity_info_detail">费用:¥{{activityList[index].fee}}</view>
                 </view>
-                <!--<view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta">{{activityList[index].ADate}}</view>
-                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{activityList[index].labDesc}}</view>
-                </view>-->
             </view>
         </block>
     </view>

@@ -72,9 +72,12 @@ Page({
 
     activityList: []
   },
-  toDetail: function () {
+  toDetail: function (e) {
+    let index = e.currentTarget.dataset.detailid
+    let item = this.data.activityList[index]
+    let ID = item.ID
     wx.navigateTo({
-      url: './activitydetail/activitydetail?id=活动id'
+      url: './activitydetail/activitydetail?id='+ID
     })
   },
   onLoad:function(options){
@@ -99,9 +102,16 @@ Page({
       success: function(res){
         // success
         console.log(res)
-        that.setData({
-          typeList: res.data.data
-        })
+        if (res.data.status == 0) {
+          that.setData({
+            typeList: res.data.data
+          })
+        }else {
+          that.setData({
+            typeList: []
+          })
+        }
+        
       },
       fail: function(res) {
         // fail
@@ -184,8 +194,6 @@ Page({
     })
   },
 
-
-
   activityListRequest: function(TypeID) {
     console.log(TypeID)
     var that = this
@@ -193,7 +201,7 @@ Page({
       title: '加载中',
     })
     this.setData({
-        parameters: {"Page": this.data.page, "TypeID": TypeID}
+        parameters: {"page": this.data.page, "TypeID": TypeID}
     })
     console.log(this.data.parameters)
     wx.request({
@@ -202,14 +210,25 @@ Page({
 
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       success: function(res){
         // success
         wx.stopPullDownRefresh
         console.log(res)
         wx.hideLoading()
-        that.setData({
-          activityList: res.data.data
-        })
+
+        if (res.data.status == 0) {
+          that.setData({
+            activityList: res.data.data
+          })
+        }else {
+          that.setData({
+            activityList: []
+          })
+        }
+        
 
       },
       fail: function(res) {
@@ -220,6 +239,7 @@ Page({
       },
       complete: function(res) {
         // complete
+        wx.stopPullDownRefresh
       }
     })
   },
@@ -250,10 +270,10 @@ Page({
   },
 
   loadmoreData: function() {
-    let page = this.data.parameters.Page
+    let page = this.data.parameters.page
     page += 1
     let dic = this.data.parameters
-    dic.Page = page
+    dic.page = page
     var that = this
     wx.showLoading({
       title: '加载中',
@@ -264,12 +284,23 @@ Page({
       data: dic,
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       success: function(res){
         // success
         console.log(res)
         wx.hideLoading()
-        let arr = that.data.activityList.concat(res.data.data)
-        console.log(arr)
+        var arr = []
+        if (res.data.status == 0) {
+          let arr1 = that.data.activityList
+          let arr2 = res.data.data
+          //console.log(arr2)
+          arr = arr1.concat(res.data.data)
+        }else {
+          arr = that.data.activityList
+        }
+        //console.log(arr)
         that.setData({
           parameters: dic,
           activityList: arr
@@ -312,13 +343,13 @@ Page({
       filterArray[keyindex] = item
       let key = keys[keyindex]
       if (this.data.shownavindex == 0) {
-        parameters[key] = this.data.typeList[index].ID
+        parameters[key] = this.data.typeList[index-1].ID
       }else if(this.data.shownavindex == 1){
-        parameters[key] = this.data.cityList[index].ID
+        parameters[key] = this.data.cityList[index-1].ID
       }else if(this.data.shownavindex == 2){
-        parameters[key] = this.data.cityList[index]
+        parameters[key] = this.data.yearList[index-1]
       }else if(this.data.shownavindex == 3){
-        parameters[key] = this.data.tagList[index].ID
+        parameters[key] = this.data.tagList[index-1].ID
       }
       this.setData({
         filterindex: index,
@@ -338,21 +369,32 @@ Page({
       title: '加载中',
     })
     let parameters = this.data.parameters
-    parameters.Page = 1
+    parameters.page = 1
     console.log(parameters)
     wx.request({
       url: app.globalData.host+'videolist',
       data: parameters,
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       success: function(res){
         // success
         wx.hideLoading()
         console.log(res)
-        that.setData({
-          parameters: parameters,
-          activityList: res.data.data
-        })
+        if (res.data.status == 0) {
+          that.setData({
+            parameters: parameters,
+            activityList: res.data.data
+          })
+        }else {
+          that.setData({
+            parameters: parameters,
+            activityList: []
+          })
+        }
+        
       },
       fail: function(res) {
         // fail

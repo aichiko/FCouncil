@@ -41,6 +41,7 @@
 .weui-grid__label {
     display: inline-block;
     font-size: 28rpx;
+    font-size-adjust: true;
 }
 /*分区的字体和箭头布局*/
 .weui-cell__ft_in-access {

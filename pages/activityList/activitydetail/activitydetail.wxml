@@ -1,3 +1,4 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
 <view class="page">
     <!--<view class="page__hd">
         <view class="page__title"></view>
@@ -9,8 +10,8 @@
             <view class="weui-cell">
                 <view class="content_area">
                     <view class="toptitle_view">
-                        <view class="toptitle">这是一个大标题，这么长差不多了吧</view>
-                        <view class="titletime_view">时间：2017-3-31 14:00-15:00</view>
+                        <view class="toptitle">{{activity.Name}}</view>
+                        <view class="titletime_view">时间：{{activity.ADate}} {{activity.ADatearea}}</view>
                     </view>
                 </view>
             </view>
@@ -26,12 +27,12 @@
                     </view>
                     <view class="struct_content">
                         <view class="struct_upper_text">
-                            <view class="struct_text_detail">地点：不限</view>
-                            <view class="struct_text_detail">限定人数：200人</view>
-                            <view class="struct_text_detail">语言：中文</view>
+                            <view class="struct_text_detail">地点：{{activity.cityDesc}}</view>
+                            <view class="struct_text_detail">限定人数：{{activity.Aperoper}}人</view>
+                            <view class="struct_text_detail">语言：{{activity.Aleague}}</view>
                         </view>
                         <view class="struct_lower_text">
-                            <view class="struct_text_detail">参与对象：中外资企业--财务主管、经理及专员</view>
+                            <view class="struct_text_detail">参与对象：{{activity.Can}}</view>
                         </view>
                     </view>
                 </view>
@@ -48,12 +49,12 @@
                     </view>
                     <view class="contact_content">
                         <view class="contact_left_text">
-                            <view class="contact_text_detail">姓名：某某</view>
-                            <view class="contact_text_detail">传真：00099888</view>
+                            <view class="contact_text_detail">姓名：{{activity.kfname}}</view>
+                            <view class="contact_text_detail">传真：{{activity.kffax}}</view>
                         </view>
                         <view class="contact_right_text">
-                            <view class="contact_text_detail">客服热线：010982828</view>
-                            <view class="contact_text_detail">客服邮箱：cl@qwer.163.com</view>
+                            <view class="contact_text_detail">客服热线：{{activity.kftel}}</view>
+                            <view class="contact_text_detail">客服邮箱：{{activity.kfemail}}</view>
                         </view>
                     </view>
                 </view>
@@ -68,7 +69,9 @@
                         <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
                         <view class="title">活动描述</view>
                     </view>
-                    <view class="desc_content">我与父亲不相年余了，我最不能忘记与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母与父亲不相年余了，我最不能忘记的是他的背影。那年冬天，祖母的是他的背影。那年冬天，祖母死了，父亲的差使也交了，行。</view>
+                    <!--这里data中article为bindName-->
+                    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+                    <!--<view class="desc_content">{{activity.videodesc}}</view>-->
                 </view>
             </view>
         </view>
@@ -81,7 +84,15 @@
                         <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
                         <view class="title">注意事项</view>
                     </view>
-                    <view class="attention_content">我与父亲不相年余了，父亲不相年余了父亲不相年余了父亲不相年余了父亲不相年余了父亲不相年余了我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交了，行。</view>
+                    <view class="attention_content">1、如确认参加此活动，请尽快报名以便我们为您安排席位；</view>
+                    <!--<br/>-->
+                    <view class="attention_content"> 2、如您有相关问题希望与活动嘉宾互动，请尽快将您的问题提交给F-Council，我们将尽量为您安排；</view>
+                    <!--<br/>-->
+                    <view class="attention_content">3、活动确认函将于活动前1-3个工作日发送至参会代表邮箱，届时请注意查收，若未如期收到请及时致电咨询；</view>
+                    <!--<br/>-->
+                    <view class="attention_content">4、F-Council不排除活动嘉宾因临时时间变动无法如期出席的可能性，如发生类似情况，我们将第一时间通知参会代表；</view>
+                    <!--<br/>-->
+                    <view class="attention_content">5、F-Council对上述内容具有最终解释权。</view>
                 </view>
             </view>
         </view>

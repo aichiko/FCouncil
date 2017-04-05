@@ -137,7 +137,7 @@
 }
 .slidown{
     display: block;
-    animation: slidown .7s ease-in both;
+    animation: slidown .2s ease-in both;
 }
 @keyframes slidup{
     from{
@@ -149,7 +149,7 @@
 }
 .slidup{
     display: block;
-    animation: slidup .7s ease-in both;
+    animation: slidup .2s ease-in both;
 }
 .disappear{
     display: none;
