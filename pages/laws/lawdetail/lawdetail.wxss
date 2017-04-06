@@ -1,3 +1,6 @@
+.page__hd {
+    background-color: #EFEFEF;
+}
 .weui-cells__title {
     color: black;
     font-size: 14px;
