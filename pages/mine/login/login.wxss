@@ -10,17 +10,22 @@
     color: green;
     font-size: 28rpx;
 }
+.weui-label {
+    font-size: 34rpx;
+    width: 180rpx;
+}
+.weui-input {
+    font-size: 34rpx;
+}
 .weui-btn {
-    width: 80%;
+    width: 90%;
     height: 88rpx;
+    font-size: 34rpx;
     border-radius: 20rpx;
     color: white;
     background-color: #137FC1;
     line-height: 88rpx;
 }
-/*.weui-cells {
-    border: solid 1rpx;
-}*/
 .weui-cells.weui-cells_after-title{
     margin-top: 50rpx;
 }

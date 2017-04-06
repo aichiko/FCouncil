@@ -22,8 +22,10 @@
             <view class="weui-cell">
                 <view class="content_area">
                     <view class="imgtitle">
-                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <image class="title_left_img" src="../../../images/structure.png"></image>
                         <view class="title">活动概况</view>
+                        <text class="voice" bindtap="listenVoice">录音</text>
+                        <text class="voice" bindtap="watchVideo">视频</text>
                     </view>
                     <view class="struct_content">
                         <view class="struct_upper_text">
@@ -44,7 +46,7 @@
             <view class="weui-cell">
                 <view class="content_area">
                     <view class="imgtitle">
-                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <image class="title_left_img" src="../../../images/contact.png"></image>
                         <view class="title">活动联系人</view>
                     </view>
                     <view class="contact_content">
@@ -66,7 +68,7 @@
             <view class="weui-cell">
                 <view class="content_area">
                     <view class="imgtitle">
-                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <image class="title_left_img" src="../../../images/desc.png"></image>
                         <view class="title">活动描述</view><view class="{{isDescFold?'fold_extend1':'fold_extend2'}}" bindtap="foldOrExtend">{{isDescFold?'展开':'收起'}}</view>
                     </view>
                     <!--这里data中article为bindName-->
@@ -83,7 +85,7 @@
             <view class="weui-cell">
                 <view class="content_area">
                     <view class="imgtitle">
-                        <image class="title_left_img" src="https://img6.bdstatic.com/img/image/smallpic/w6.jpg"></image>
+                        <image class="title_left_img" src="../../../images/attention.png"></image>
                         <view class="title">注意事项</view>
                     </view>
                     <view class="attention_content">1、如确认参加此活动，请尽快报名以便我们为您安排席位；</view>

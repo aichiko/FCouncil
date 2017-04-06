@@ -4,7 +4,7 @@
     <view class="page__hd">
         <view class="headcenter">
             <image class="weui-grid__icon" bindtap="loginAction" src="{{isLogin?'http://img6.bdstatic.com/img/image/smallpic/w6.jpg':''}}" mode="scaleToFill"></image>
-            <text class="tip_text">{{logintips}}</text>
+            <text class="tip_text">{{isLogin?'已登录':logintips}}</text>
         </view>
     </view>
     <!--我的注册和问答-->

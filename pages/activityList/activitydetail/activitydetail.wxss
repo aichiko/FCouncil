@@ -58,6 +58,16 @@
     font-weight: 600;
     padding-right: 24rpx;
 }
+.voice {
+    float: left;
+    color: #DF3C43;
+    line-height: 30rpx;
+    font-size: 30rpx;
+    border: 1rpx solid #DF3C43;
+    border-radius: 6rpx;
+    padding: 6rpx;
+    margin-right: 15rpx;
+}
 /*展开收起*/
 .fold_extend1 {
     content: '展开';

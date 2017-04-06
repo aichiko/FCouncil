@@ -2,6 +2,7 @@
 Page({
   data:{
     isLogin: Boolean,
+    userInfo: {},
     logintips: '您还没有登录'
   },
   onLoad:function(options){
@@ -14,24 +15,29 @@ Page({
   onShow:function(){
     // 页面显示
     var _this = this
+    // 获取登录状态
+    wx.getStorage({
+      key: 'isLogin',
+      success: function(res){
+        // success
+        console.log(res)
+        _this.setData ({
+          isLogin: res.data
+        })
+      }
+    })
+    // 获取已登录用户信息
     wx.getStorage({
       key: 'userInfo',
       success: function(res){
         // success
-        console.log(res.data)
-        if (res.data.isLogin) {
-          _this.setData ({
-            isLogin: true,
-            logintips: '用户名'
-          })
-        }else{
-          _this.setData ({
-            isLogin: false,
-            logintips: '请登录'
-          })
-        }
+        console.log(res)
+        _this.setData ({
+          userInfo: res.data
+        })
       }
     })
+    console.log(this.data)
   },
   onHide:function(){
     // 页面隐藏
@@ -40,10 +46,16 @@ Page({
     // 页面关闭
   },
   loginAction: function () {
-    wx.navigateTo({
-      url: './login/login'
-    })
-    console.log('登录事件！')
+    if(this.data.isLogin){
+      // 已经登录不跳至登录页面
+      console.log('您已经登录!')
+    }else{
+      // 未登录，跳至登录页面
+      wx.navigateTo({
+        url: './login/login'
+      })
+      console.log('登录事件！')
+    }
   },
   logOut:function(){
     var _this = this
@@ -52,20 +64,12 @@ Page({
       content: '您确定要退出登录吗？',
       success: function(res) {
         if (res.confirm) {
-          var data = {}
-          wx.getStorage({
-            key: 'userInfo',
-            success: function(res){
-              // success
-              console.log(res.data)
-              res.data.isLogin = false
-              data = res.data
-              _this.logintips = '请登录'
-            }
+          _this.setData({
+            isLogin: false
           })
           wx.setStorage({
-            key: 'userInfo',
-            data: data,
+            key: 'isLogin',
+            data: false,
             success: function(res){
               console.log('退出登录后用户信息更新成功')
             },

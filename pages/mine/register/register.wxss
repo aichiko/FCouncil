@@ -1,10 +1,33 @@
 .weui-btn {
-    top: 80rpx;
-    width: 70%;
+    top: 20rpx;
+    width: 90%;
+    height: 88rpx;
+    font-size: 34rpx;
     border-radius: 20rpx;
-    color: white;
+    color: #fff;
     background-color: #137FC1; 
+}
+.weui-label {
+    font-size: 34rpx;
+    width: 180rpx;
+}
+.weui-input {
+    font-size: 34rpx;
 }
 .weui-cells.weui-cells_after-title{
     margin-top: 50rpx;
+}
+.page {
+    overflow: visible;
+}
+.btn {
+    overflow: visible;
+}
+.tip {
+    text-align: center;
+    color: #DF3C43;
+    font-size: 34rpx;
+    padding: 20rpx;
+    /*margin-top: 20rpx;
+    margin-bottom: 20rpx;*/
 }

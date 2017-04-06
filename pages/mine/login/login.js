@@ -1,11 +1,10 @@
+var app = getApp()
+let loginurl = app.globalData.host+'login'
+// var util = require('../../utils/util.js')
 Page({
   data:{
-    name: String,
-    password: String,
-    userInfo: {
-        isLogin: Boolean,
-        name: String,
-    }
+    name: '',
+    password: ''
   },
     // 立即注册
   registerNow: function () {
@@ -15,35 +14,94 @@ Page({
     })
   },
     // 登录
-  login: function (name, password) {
+  login: function () {
     console.log('登录啦!用户名和密码分别是' + this.data.name + '/' + this.data.password)
-    wx.showToast({
-      title: '登录成功！',
-      icon: 'success',
-      duration: 2000
-    })
-    this.setData ({
-        userInfo: {
-            isLogin: true
-        }
-    });
-    wx.setStorage({
-      key: 'userInfo',
-      data: this.data.userInfo
-    })
-    // 跳转至个人中心
-    wx.redirectTo({
-      url: '../mine',
-      success: function(res){
-        // success
-      },
-      fail: function(res) {
-        // fail
-      },
-      complete: function(res) {
-        // complete
+    // 用户名和密码均不为空时可以登录
+    var name = this.data.name
+    var pwd = this.data.password
+    var that = this
+    if(name.length!=0 && pwd.length!=0){
+      var params = {
+        "username": name,
+        "password": pwd
       }
-    })
+      console.log(params)
+      wx.request({
+        url: loginurl,
+        data: params,
+        method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+        // header: {}, // 设置请求的 header
+        header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+        success: function(res){
+          // success
+          console.log(res)
+          if(res.data.status==0){
+            // 请求登录成功
+          
+            // 提示用户登录成功
+            wx.showToast({
+              title: '登录成功！',
+              icon: 'success',
+              duration: 2000
+            })
+            console.log(res.data.data)
+            // 将用户信息进行本地存储
+            wx.setStorage({
+              key: 'userInfo',
+              data: res.data.data
+            })
+            wx.setStorage({
+              key: 'isLogin',
+              data: true
+            })
+            // 加时间戳
+            var date = new Date()
+            wx.setStorage({
+              key: 'logintime',
+              data: date
+            })
+            // 跳转至个人中心
+            setTimeout(back, 2000)
+            function back() {
+              wx.navigateBack({
+                delta: 1, // 回退前 delta(默认为1) 页面
+                success: function(res){
+                  // success
+                },
+              })
+            }
+            // wx.switchTab({
+            //   url: '../mine',
+            //   success: function(res){
+            //     // success
+            //     console.log('回到个人中心')
+            //   },
+            //   fail: function(res) {
+            //     // fail
+            //     console.log('tiaozhuanshibai')
+            //   },
+            //   complete: function(res) {
+            //     // complete
+            //   }
+            // })
+          }else{
+            // 登录失败
+            console.log(res.data.info)
+          }
+        },
+        fail: function(res) {
+          // fail
+          console.log(res)
+        },
+        complete: function(res) {
+          // complete
+        }
+      })
+    }
+    
+    
   },
     // 获取输入的用户名
   nameInput: function (e) {

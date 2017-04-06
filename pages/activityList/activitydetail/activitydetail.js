@@ -41,6 +41,14 @@ Page({
       }
     })
   },
+  // 看视频
+  watchVideo:function(){
+    console.log('看视频')
+  },
+  // 听录音
+  listenVoice:function(){
+    console.log('听录音')
+  },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
     this.setData({

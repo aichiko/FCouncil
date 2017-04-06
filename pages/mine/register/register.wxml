@@ -1,31 +1,61 @@
-<view class="weui-cells weui-cells_after-title">
-<!--输入框-->
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">用户名</view>
+<view class="page">
+    <view class="weui-cells weui-cells_after-title">
+    <!--输入框-->
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">用户名:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入用户名" bindinput="nameInput"/>
+            </view>
         </view>
-        <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入用户名" bindinput="nameInput"/>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">密码:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" password="true" placeholder="请输入密码" bindinput="passwordInput"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">确认密码:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" password="true" placeholder="请再输入密码" bindinput="passwordConfirmInput"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">姓名（*真实）:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" password="true" placeholder="请输入姓名" bindinput="passwordInput"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">手机:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" password="true" placeholder="请输入手机号" bindinput="passwordInput"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">邮箱:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" password="true" placeholder="请输入邮箱" bindinput="passwordInput"/>
+            </view>
         </view>
     </view>
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">密码</view>
-        </view>
-        <view class="weui-cell__bd">
-            <input class="weui-input" password="true" placeholder="请输入密码" bindinput="passwordInput"/>
-        </view>
+    <!--提示标签-->
+    <view class="tip" style="text-align:center">
+        <text class="error_text" wx:if="{{showErr}}">提示：{{errorText}}</text>
     </view>
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">确认密码</view>
-        </view>
-        <view class="weui-cell__bd">
-            <input class="weui-input" password="true" placeholder="请再输入密码" bindinput="passwordInput"/>
-        </view>
-    </view>
-</view>
-<!--注册按钮-->
-<view class="button-sp-area">
+    <!--注册按钮-->
+    <view class="btn">
     <button class="weui-btn" bindtap="registerAction">注册</button>
+    </view>
 </view>

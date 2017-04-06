@@ -90,6 +90,21 @@
 /*列表item*/
 .weui-panel {
     margin-top: 0;
+    /*overflow: visible;*/
+}
+.weui-panel__bd {
+    overflow: visible;
+}
+.weui-media-box {
+    padding:15px;
+    position:relative;
+    border-top: 1rpx solid #EFEFEF;
+}
+.weui-media-box::before {
+    border-top: 0;
+}
+view{
+    word-break:break-all; overflow:visible;
 }
 .weui-media-box {
     padding-bottom: 0rpx;

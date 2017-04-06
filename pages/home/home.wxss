@@ -80,15 +80,11 @@
 }
 .weui-media-box__thumb {
     /*头像*/
-    height: 120rpx;
-    width: 120rpx;
-    /*border-radius: 60rpx;*/
     border: 1rpx solid #EFEFEF;
     -webkit-box-shadow: #666 0rpx 0rpx 10rpx;  
     -moz-box-shadow: #666 0rpx 0rpx 10rpx;  
     box-shadow: #666 0rpx 0rpx 10rpx;  
     background: #fff;
-    margin-top: 15rpx;
 }
 .weui-media-box__title {
     font-size: 32rpx;
