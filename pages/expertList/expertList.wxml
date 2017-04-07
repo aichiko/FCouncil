@@ -1,2 +1,14 @@
 <!--pages/expertList/expertList.wxml-->
-<text>pages/expertList/expertList.wxml</text>
+<view class="weui-panel__bd" >
+    <block wx:for-items="{{expertsList}}" wx:key="{{index}}">
+        <navigator url="../expert/expert?index={{expertsList[index].ID}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{expertsList[index].PicPath}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{expertsList[index].Name}}</view>
+                <view class="weui-media-box__desc">{{expertsList[index].Title}}</view>
+            </view>
+        </navigator>
+    </block>
+</view>

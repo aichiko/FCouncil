@@ -1,5 +1,6 @@
 var app = getApp()
 let loginurl = app.globalData.host+'login'
+let weixinpic = app.globalData.host+'weixinpic'
 // var util = require('../../utils/util.js')
 Page({
   data:{
@@ -38,9 +39,11 @@ Page({
           // success
           console.log(res)
           if(res.data.status==0){
+
             // 请求登录成功
           
             // 提示用户登录成功
+
             wx.showToast({
               title: '登录成功！',
               icon: 'success',
@@ -62,15 +65,14 @@ Page({
               key: 'logintime',
               data: date
             })
-            // 跳转至个人中心
-            setTimeout(back, 2000)
-            function back() {
-              wx.navigateBack({
-                delta: 1, // 回退前 delta(默认为1) 页面
-                success: function(res){
-                  // success
-                },
-              })
+            try {
+              let wx_userinfo = wx.getStorageSync('wx_userInfo')
+              console.log("wx_userInfo",wx_userinfo)
+              let userinfo = res.data.data
+              console.log("userInfo",res.data)
+              that.bindWxPic(wx_userinfo.avatarUrl, wx_userinfo.nickName,userinfo.ID)
+            }catch (e){
+              
             }
           }else{
             // 登录失败
@@ -86,10 +88,56 @@ Page({
         }
       })
     }
-    
-    
   },
-    // 获取输入的用户名
+
+  bindWxPic: function(pic,name,id){
+    console.log(pic,name,id)
+    wx.showLoading({
+      title: '加载中',
+    })
+    var that = this
+    wx.request({
+      url: weixinpic,
+      data: {
+        "UID": id,
+        "weixinpic": pic,
+        "weixinID": name
+      },
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log("修改头像成功！！！")
+        console.log(res)
+        wx.hideLoading()
+        if (res.data.status == 0) {
+          //更改成功
+          wx.setStorage({
+            key: 'userInfo',
+            data: res.data.data
+          })
+          // 跳转至个人中心
+          setTimeout(back, 2000)
+          function back() {
+            wx.navigateBack({
+              delta: 1, // 回退前 delta(默认为1) 页面
+              success: function(res){
+                // success
+              },
+            })
+          }
+        }
+      },
+      fail: function(res) {
+        // fail
+        console.log(res)
+        wx.hideLoading()
+      },
+    })
+  },
+  // 获取输入的用户名
   nameInput: function (e) {
     console.log(e.detail.value)
     this.setData ({

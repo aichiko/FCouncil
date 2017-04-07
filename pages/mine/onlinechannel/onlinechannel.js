@@ -4,42 +4,39 @@ var url = 'http://www.imooc.com/course/ajaxlist';
 
 // 获取数据
 var GetList = function (that) {
-  that.setData({
-        hidden:false
-    });
-    wx.request({
-        url:url,
-        method: 'GET',// 默认为GET，必须大写
-        data:{// 参数字典
-            page_index : 0,
-            page_size : 6,
-            sort : 'last',
-            is_easy : 0,
-            lange_id : 0,
-            pos_id : 0,
-            unlearn : 0
-        },
-        success:function(res){
-            var list = that.data.list;
-            console.info(list);
-            for(var i = 0; i < res.data.list.length; i++)            {
-              list.push(res.data.list[i]);
-            }
-            that.setData({
-                list : list
-            });
-            page_index ++;
-            console.log('success')
-            that.setData({
-                hidden:true
-            });
-        }
-    });
+  
+  wx.request({
+      url:url,
+      method: 'GET',// 默认为GET，必须大写
+      data:{// 参数字典
+          page_index : 0,
+          page_size : 6,
+          sort : 'last',
+          is_easy : 0,
+          lange_id : 0,
+          pos_id : 0,
+          unlearn : 0
+      },
+      success:function(res){
+          var list = that.data.list;
+          console.info(list);
+          for(var i = 0; i < res.data.list.length; i++)            {
+            list.push(res.data.list[i]);
+          }
+          that.setData({
+              list : list
+          });
+          page_index ++;
+          console.log('success')
+          that.setData({
+              hidden:true
+          });
+      }
+  });
 }
 Page({
   data:{
-    hidden: true,
-    list: []
+    list: [{}, {}]
   },
   // 跳至详情
   toQuestionDetail: function () {

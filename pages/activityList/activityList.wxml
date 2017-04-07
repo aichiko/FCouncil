@@ -19,7 +19,6 @@
         <block wx:for-items="{{activityList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toDetail" data-detailID="{{index}}">
                 <view class="weui-media-box__title weui-media-box__title_in-text">{{activityList[index].Name}}</view>
-                <!--<view class="weui-media-box__desc">{{activityList[index].Name}}</view>-->
                 <view class="activity_info">
                     <view class="activity_info_detail">{{activityList[index].ADate}}</view>
                     <view class="activity_info_detail">{{activityList[index].labDesc}}</view>

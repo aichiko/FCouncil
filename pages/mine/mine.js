@@ -1,14 +1,43 @@
 // pages/mine/mine.js
+var app = getApp()
+
 Page({
   data:{
     isLogin: Boolean,
     userInfo: {},
-    logintips: '请登录'
+    logintips: '请登录',
+    nickname: '',//登录后的昵称
+    wx_userInfo: {}
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    
+    this.saveWxInfo()
   },
+
+  saveWxInfo: function(){
+    var that = this
+
+    try {
+      let userinfo = wx.getStorageSync('wx_userInfo')
+      console.log(res.data)
+      that.setData({
+        wx_userInfo: res.data
+      })
+    }catch (e){
+      app.getUserInfo(function(userInfo){
+        //更新数据
+        that.setData({
+          wx_userInfo: userInfo
+        })
+        //console.log(that.data.wx_userInfo)
+        wx.setStorage({
+          key: 'wx_userInfo',
+          data: userInfo,
+        })
+      })
+    }
+  },
+
   onReady:function(){
     // 页面渲染完成
   },
@@ -33,11 +62,11 @@ Page({
         // success
         console.log(res)
         _this.setData ({
-          userInfo: res.data
+          userInfo: res.data,
+          nickname: res.data.Weixin_Name
         })
       }
     })
-    console.log(this.data)
   },
   onHide:function(){
     // 页面隐藏

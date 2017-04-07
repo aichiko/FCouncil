@@ -87,6 +87,7 @@
 .fullopacity{
     opacity: 0.5;
 }
+
 /*列表item*/
 .weui-panel {
     margin-top: 0;
@@ -114,7 +115,7 @@ view{
 }
 .weui-media-box__title {
     /*标题*/
-    font-size: 34rpx;
+    font-size: 32rpx;
     color: #3c3c3c;
 }
 .weui-media-box__title_in-text {
@@ -127,6 +128,7 @@ view{
     padding-right: 15px;
     color: #999999;
 }
+
 .activity_info {
     position: relative;
     display: block;
@@ -142,11 +144,6 @@ view{
     white-space:nowrap;
     word-wrap:normal;
 }
-/*.weui-media-box__info__meta {*/
-    /*时间*/
-    /*font-size: 30rpx;*/
-    /*color: #3c3c3c;*/
-/*}*/
 
 
 @keyframes slidown{

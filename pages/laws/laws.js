@@ -23,7 +23,6 @@ Page({
 
     // 假数据
     filterArray: ["类型"],
-
   },
 
   typeRquest: function() {

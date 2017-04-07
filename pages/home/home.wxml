@@ -32,7 +32,7 @@
                 </navigator>
                 <view class="weui-panel__bd" >
                     <block wx:for-items="{{expertsList}}" wx:key="{{index}}">
-                        <navigator url="../expert/expert?index={{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                        <navigator url="../expert/expert?index={{expertsList[index].ID}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
                             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                                 <image class="weui-media-box__thumb" src="{{expertsList[index].PicPath}}" />
                             </view>

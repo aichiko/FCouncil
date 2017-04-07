@@ -1,6 +1,7 @@
 /* pages/mine/mine.wxss */
 .page {
     background-color: #EFEFEF;
+    height: 100%
 }
 .page__hd {
     background: transparent;
@@ -36,4 +37,8 @@ section_gap {
 .weui-cells__title {
     background-color: #fff;
 
+}
+
+.hide {
+    display:none
 }

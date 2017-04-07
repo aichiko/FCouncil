@@ -215,7 +215,7 @@ Page({
       },
       success: function(res){
         // success
-        wx.stopPullDownRefresh
+        wx.stopPullDownRefresh()
         console.log(res)
         wx.hideLoading()
 
@@ -233,13 +233,13 @@ Page({
       },
       fail: function(res) {
         // fail
-        wx.stopPullDownRefresh
+        wx.stopPullDownRefresh()
         console.log(res)
         wx.hideLoading()
       },
       complete: function(res) {
         // complete
-        wx.stopPullDownRefresh
+        wx.stopPullDownRefresh()
       }
     })
   },
