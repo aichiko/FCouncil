@@ -283,7 +283,6 @@ Page({
         arr1.push(element.Desc)
       }
       content[index] = arr1
-      
     }
     console.log(content)
     return content

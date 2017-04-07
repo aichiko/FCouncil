@@ -7,37 +7,6 @@
     margin-top: 0;
 }
 
-
-@keyframes slidown{
-    from{
-        transform:  translateY(-100%);
-    }
-    to{
-        transform:  translateY(0%);
-    }
-}
-.slidown{
-    display: block;
-    animation: slidown .2s ease-in both;
-}
-@keyframes slidup{
-    from{
-        transform:  translateY(0%);
-    }
-    to{
-        transform:  translateY(-100%);
-    }
-}
-.slidup{
-    display: block;
-    animation: slidup .2s ease-in both;
-}
-.disappear{
-    display: none;
-}
-
-
-
 .page{
     font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
     height: 100%;
@@ -126,4 +95,33 @@
 }
 .fullopacity{
     opacity: 0.5;
+}
+
+
+@keyframes slidown{
+    from{
+        transform:  translateY(-100%);
+    }
+    to{
+        transform:  translateY(0%);
+    }
+}
+.slidown{
+    display: block;
+    animation: slidown .2s ease-in both;
+}
+@keyframes slidup{
+    from{
+        transform:  translateY(0%);
+    }
+    to{
+        transform:  translateY(-100%);
+    }
+}
+.slidup{
+    display: block;
+    animation: slidup .2s ease-in both;
+}
+.disappear{
+    display: none;
 }
