@@ -1,12 +1,4 @@
-.weui-btn {
-    top: 20rpx;
-    width: 90%;
-    height: 88rpx;
-    font-size: 34rpx;
-    border-radius: 20rpx;
-    color: #fff;
-    background-color: #137FC1; 
-}
+
 .weui-label {
     font-size: 34rpx;
     width: 180rpx;
@@ -20,14 +12,24 @@
 .page {
     overflow: visible;
 }
-.btn {
-    overflow: visible;
-}
 .tip {
+    position: relative;
     text-align: center;
     color: #DF3C43;
     font-size: 34rpx;
     padding: 20rpx;
     /*margin-top: 20rpx;
     margin-bottom: 20rpx;*/
+}
+.btn {
+    overflow: visible;
+}
+.weui-btn {
+    top: 20rpx;
+    width: 90%;
+    height: 88rpx;
+    font-size: 34rpx;
+    border-radius: 20rpx;
+    color: #fff;
+    background-color: #137FC1; 
 }

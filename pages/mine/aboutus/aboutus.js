@@ -1,6 +1,9 @@
+var app = getApp()
+let aboutusurl = app.globalData.host+'Aboutus'
 Page({
   data:{
-    
+    content: '',
+    picURL: ''
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数

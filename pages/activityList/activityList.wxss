@@ -33,7 +33,7 @@
     display: flex;
     flex: 1;
     justify-content:center;
-    font-size: 14px;
+    font-size: 28rpx;
 }
 
 .content{
@@ -41,16 +41,16 @@
 }
 .icon{
     display: inline-block;
-    border: 4px solid transparent;
-    border-top: 4px solid #9b9b9b;
-    margin-left: 5px;
+    border: 8rpx solid transparent;
+    border-top: 8rpx solid #9b9b9b;
+    margin-left: 10rpx;
 }
 
 .filter__item.active .content{
     color: #61beff;
 }
 .filter__item.active .icon{
-    border-bottom: 4px solid #61beff;
+    border-bottom: 8rpx solid #61beff;
     border-top:0;
 }
 
@@ -104,13 +104,20 @@
     border-top: 0;
 }
 view{
-    word-break:break-all; overflow:visible;
+    word-break:break-all; 
+    overflow:visible;
 }
 .weui-media-box {
     padding-bottom: 0rpx;
+    font-size: 34rpx;
+    color: #3c3c3c;
 }
 .weui-media-box__title {
     /*标题*/
+    font-size: 34rpx;
+    color: #3c3c3c;
+}
+.weui-media-box__title_in-text {
     font-size: 34rpx;
     color: #3c3c3c;
 }

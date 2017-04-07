@@ -159,6 +159,7 @@
     width: 50%;
     height: 90rpx;
     line-height: 90rpx;
+    border-top: 1rpx solid #EFEFEF;
 }
 .registernow_btn {
     float: right;
@@ -167,9 +168,22 @@
     height: 90rpx;
     line-height: 90rpx;
     z-index: 100;
-    background: transparent;
-    border: none;
-    border-radius: 0rpx;
-    color: white;
+    border-top: 1rpx solid #EFEFEF;
+     vertical-align: center;
+     text-align:center;
+    color: #fff;
     background-color: #DF3C43;
+}
+.disabled_registernow_btn {
+    float: right;
+    font-size: 36rpx;
+    width: 50%;
+    height: 90rpx;
+    line-height: 90rpx;
+    z-index: 100;
+    border-top: 1rpx solid #EFEFEF;
+    vertical-align: center;
+    text-align:center;
+    color: #fff;
+    background-color: #ccc;
 }

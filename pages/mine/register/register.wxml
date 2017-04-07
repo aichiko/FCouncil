@@ -27,10 +27,10 @@
         </view>
         <view class="weui-cell weui-cell_input">
             <view class="weui-cell__hd">
-                <view class="weui-label">姓名（*真实）:</view>
+                <view class="weui-label">姓名:</view>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" password="true" placeholder="请输入姓名" bindinput="passwordInput"/>
+                <input class="weui-input" placeholder="请输入姓名" bindinput="principleInput"/>
             </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -38,7 +38,7 @@
                 <view class="weui-label">手机:</view>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" password="true" placeholder="请输入手机号" bindinput="passwordInput"/>
+                <input class="weui-input" placeholder="请输入手机号" bindinput="mobileInput"/>
             </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -46,13 +46,13 @@
                 <view class="weui-label">邮箱:</view>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" password="true" placeholder="请输入邮箱" bindinput="passwordInput"/>
+                <input class="weui-input" placeholder="请输入邮箱" bindinput="emailInput"/>
             </view>
         </view>
     </view>
     <!--提示标签-->
     <view class="tip" style="text-align:center">
-        <text class="error_text" wx:if="{{showErr}}">提示：{{errorText}}</text>
+        <text class="error_text" wx:if="{{showErr}}">{{errorText}}</text>
     </view>
     <!--注册按钮-->
     <view class="btn">

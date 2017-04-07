@@ -72,20 +72,6 @@ Page({
                 },
               })
             }
-            // wx.switchTab({
-            //   url: '../mine',
-            //   success: function(res){
-            //     // success
-            //     console.log('回到个人中心')
-            //   },
-            //   fail: function(res) {
-            //     // fail
-            //     console.log('tiaozhuanshibai')
-            //   },
-            //   complete: function(res) {
-            //     // complete
-            //   }
-            // })
           }else{
             // 登录失败
             console.log(res.data.info)

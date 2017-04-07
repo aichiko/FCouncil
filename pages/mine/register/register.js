@@ -5,6 +5,10 @@ Page({
     name: '',
     password: '',
     confirmPassword: '',
+    principle: '',
+    mobile: '',
+    email: '',
+
     showErr: false,
     errorText: ''
   },
@@ -18,13 +22,23 @@ Page({
     var name = this.data.name
     var pwd = this.data.password
     var confirmPwd = this.data.confirmPassword
+    var principle = this.data.principle
+    var mobile = this.data.mobile
+    var email = this.data.email
     
-    if(name.length!=0 && pwd.length!=0 && confirmPwd!=0){
+    if(name.length!=0 && pwd.length!=0 && confirmPwd.length!=0&& principle.length!=0 && mobile.length!=0 && email.length!=0){
       var params = {
         "username": name,
-        "password": pwd
+        "password": pwd,
+        "principle": principle,
+        "mobile": mobile,
+        "email": email
       }
-      if(pwd === confirmPwd){
+      var regPhone = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/
+      var regMail = /^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.){1,4}[a-z]{2,3}$/
+      var isPhone = regPhone.test(mobile)
+      var isMail = regMail.test(email)
+      if(pwd === confirmPwd && isPhone && isMail){
         // 请求
         var that = this
         console.log(params)
@@ -74,12 +88,29 @@ Page({
           }
         })
       }else{
-        console.log('密码输入不一致,请重新输入')
-        this.setData({
-          showErr: true,
-          errorText: '密码输入不一致,请重新输入'
-        })
+        // 按优先级排，在前面的最后判断，则最终显示的为最后的错误提示
+        if(!isMail){
+          console.log('邮箱不合法')
+          this.setData({
+            showErr: true,
+            errorText: '请输入正确邮箱'
+          })
+        }
+        if(!isPhone){
+          console.log('手机号不合法')
+          this.setData({
+            showErr: true,
+            errorText: '请输入正确手机号'
+          })
+        }
       }
+        if(pwd != confirmPwd){
+          console.log('密码输入不一致,请重新输入')
+          this.setData({
+            showErr: true,
+            errorText: '密码输入不一致,请重新输入'
+          })
+        }
     }else{
       console.log('请输入完整信息')
       this.setData({
@@ -104,6 +135,24 @@ Page({
     console.log(e.detail.value)
     this.setData({
       confirmPassword: e.detail.value
+    })
+  },
+  principleInput:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      principle: e.detail.value
+    })
+  },
+  mobileInput:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      mobile: e.detail.value
+    })
+  },
+  emailInput:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      email: e.detail.value
     })
   },
   onLoad:function(options){
