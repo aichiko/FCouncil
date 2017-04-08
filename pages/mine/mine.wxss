@@ -38,6 +38,10 @@ section_gap {
     background-color: #fff;
 
 }
+.weui-cell__hd image {
+    margin-top: 10rpx
+}
+
 
 .hide {
     display:none

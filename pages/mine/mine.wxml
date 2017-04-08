@@ -11,20 +11,28 @@
     <view class="weui-cells__title"></view>
             <view class="weui-cells weui-cells_after-title">
                 <navigator url="./myregisterlist/myregisterlist" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                    <view class="weui-cell__bd">我的注册</view>
+                    <view class="weui-cell__hd"><image src="../../images/registerList.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>我的注册</view>
+                    </view>
                     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                 </navigator>
                 <navigator url="./onlinechannel/onlinechannel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                    <view class="weui-cell__bd">在线问答</view>
+                    <view class="weui-cell__hd"><image src="../../images/answer.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                    <view class="weui-cell__bd weui-cell_primary">
+                        <view>在线问答</view>
+                    </view>
                     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                    <view class="weui-cells weui-cells_after-title"></view>
                 </navigator>
             </view>
     <!--关于我们-->
     <view class="weui-cells__title"> </view>
         <view class="weui-cells weui-cells_after-title">
             <navigator url="./aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">关于我们</view>
+                <view class="weui-cell__hd"><image src="../../images/about_us.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                <view class="weui-cell__bd weui-cell_primary">
+                    <view>关于我们</view>
+                </view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
         </view>
@@ -32,7 +40,10 @@
     <view class="weui-cells__title"> </view>
         <view class="weui-cells weui-cells_after-title">
             <view bindtap="logOut" class="weui-cell weui-cell_access {{isLogin?'':'hide'}}" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">退出登录</view>
+                <view class="weui-cell__hd"><image src="../../images/cancel_login.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                <view class="weui-cell__bd weui-cell_primary">
+                    <view>退出登录</view>
+                </view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </view>
         </view>

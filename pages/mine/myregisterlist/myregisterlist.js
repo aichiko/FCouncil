@@ -4,11 +4,11 @@ Page({
   data:{
     registerlist: [
       {
-        name: "huiyimbiaoti",
+        Name: "huiyimbiaoti",
         create_time: "2017-04-04"
       }, 
       {
-        name: "huiyimbiaoti",
+        Name: "huiyimbiaoti",
         create_time: "2017-04-04"
       } 
     ],

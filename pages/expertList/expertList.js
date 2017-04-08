@@ -1,6 +1,6 @@
 // pages/expertList/expertList.js
 var app = getApp()
-let requestUrl = app.globalData.host+'teacher'
+let requestUrl = app.globalData.host+'teacherall'
 Page({
   data:{
     expertsList: [

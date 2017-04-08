@@ -3,3 +3,11 @@
     font-size: 30rpx;
     margin-top: 40rpx;
 }
+
+.weui-media-box_appmsg {
+    height: 88rpx;
+}
+.weui-media-box__thumb {
+    height: 60rpx;
+    width: 30rpx
+}
