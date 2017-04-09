@@ -6,6 +6,7 @@ Page({
   data:{
     // 活动id,用来请求详情
     id: '',
+    userID: '',
     activity: {},
     canReg: true,
     regBtnText: '',
@@ -32,9 +33,9 @@ Page({
     console.log(this.data.isDescFold)
   },
   registerNow:function(){
+    var that = this
     if(this.data.canReg){
       // 可注册
-      var that = this
       wx.showModal({
         title: '提示',
         content: '您确定要注册吗？',
@@ -43,7 +44,7 @@ Page({
             console.log('用户点击确定')
             wx.request({
               url: regVideoUrl,
-              data: that.data.params,
+              data: {"userID": that.data.userID,"VideoID": that.data.id},
               method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
               header: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -60,7 +61,8 @@ Page({
                   // 将显示文字修改成取消注册
                   that.setData({
                     canReg: false,
-                    regBtnText: '取消注册'
+                    regBtnText: '取消注册',
+                    'activity.Isreg': 1
                   })
                 }else{
                   console.log(res.data.info)
@@ -80,52 +82,62 @@ Page({
           }
         }
       })
+      // ==============华丽分割线====================
     }else{
-      if(this.data.activity.Isreg&&!this.data.activity.Isold){
-        // 取消关注,取消成功，只要未过期，就还可注册
-        console.log('取消关注')
-        wx.request({
-          url: videoRegCancelUrl,
-          data: that.data.params,
-          method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          success: function(res){
-            // success
-            // 提示用户注册成功
-            if(res.data.status==0){
-              wx.showToast({
-                title: '取消注册成功！',
-                icon: 'success',
-                duration: 2000
+      if(!this.data.activity.Isold){
+        // 不可注册的两种情况（1.已过期，2.未过期已经注册可取消）
+        // 未过期
+        wx.showModal({
+          title: '提示',
+          content: '您确定要取消注册吗？',
+          success: function(res) {
+            if (res.confirm) {
+              console.log('取消关注')
+              wx.request({
+                url: videoRegCancelUrl,
+                data: {"userID": that.data.userID,"VideoID": that.data.id},
+                method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+                header: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
+                success: function(res){
+                  // success
+                  // 提示用户注册成功
+                  if(res.data.status==0){
+                    wx.showToast({
+                      title: '取消注册成功！',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    // 将显示文字修改成取消注册
+                    that.setData({
+                      canReg: true,
+                      regBtnText: '立即注册',
+                      'activity.Isreg': 0
+                    })
+                  }else{
+                    console.log(res.data.info)
+                  }
+                },
+                fail: function(res) {
+                  // fail
+                  console.log(res)
+                },
+                complete: function(res) {
+                  // complete
+                }
               })
-              // 将显示文字修改成取消注册
-              that.setData({
-                canReg: true,
-                regBtnText: '立即注册'
-              })
-            }else{
-              console.log(res.data.info)
+            } else if (res.cancel) {
+              console.log('用户点击取消')
             }
-          },
-          fail: function(res) {
-            // fail
-            console.log(res)
-          },
-          complete: function(res) {
-            // complete
           }
         })
+        // ================华丽分割线================
       }else{
         // 已过期,不做任何操作
         console.log('已过期')
       }
     }
-  },
-  // 取消注册
-  cancelRegister:function(){
-
   },
   // 看视频
   watchVideo:function(){
@@ -137,27 +149,24 @@ Page({
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
+    this.getRegParams()
     this.setData({
         id: options.id
     })
     console.log(options.id)
-    this.getRegParams()
-    this.prepareData()
-
   },
   getRegParams:function() {
-    var videoID = this.data.id
     var that = this
+    var videoID = this.data.id
+    var regParams = this.data.regParams
     wx.getStorage({
       key: 'userInfo',
       success: function(res){
-        // success
         that.setData({
-          params: {
-            userID: res.data.ID,
-            VideoID: videoID
-          }
+          userID: res.data.ID
         })
+        that.prepareData()
+        // console.log(that.data)
       }
     })
     
@@ -167,9 +176,11 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
+    var UID = this.data.userID
+    console.log('请求详情的userID参数'+UID)
     wx.request({
       url: app.globalData.host+'videodetail',
-      data: { "ID": this.data.id },
+      data: { "ID": this.data.id,"UID": this.data.userID},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
        header: {
          "Content-Type": "application/x-www-form-urlencoded"
@@ -190,10 +201,12 @@ Page({
             // 未注册未过期
             canReg = true
             regBtnText = '立即注册'
-          }else if(activity.Isreg){
+          }else if(activity.Isreg && !activity.Isold){
+            // 已注册未过期
             canReg = false
             regBtnText = '取消注册'
           }else {
+            // 过期
             canReg = false
             regBtnText = '已过期'
           }
@@ -201,7 +214,7 @@ Page({
             canReg: canReg,
             regBtnText: regBtnText
           })
-          console.log(WxParse)
+          // console.log(WxParse)
           var article = '<div>'+that.data.activity.videodesc+'</div>';
           /**
           * WxParse.wxParse(bindName , type, data, target,imagePadding)
@@ -213,9 +226,6 @@ Page({
           */
           WxParse.wxParse('article', 'html', article, that, 5);
         }
-
-        
-
       },
       fail: function(res) {
         // fail

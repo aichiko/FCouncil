@@ -1,13 +1,48 @@
+.weui-media-box__hd_in-appmsg {
+    float: right;
+    margin-right:0rpx;
+    width:120rpx;
+    height:100rpx;
+    line-height:100rpx;
+    text-align:center;
+    margin-top:20rpx;
+}
+.weui-media-box__thumb{
+    width: 80rpx;
+    height: 80rpx;
+}
+.weui-media-box__title {
+    font-size: 36rpx;
+}
 .weui-media-box__desc {
-    color: deepskyblue;
-    font-size: 30rpx;
-    margin-top: 40rpx;
+    /*color: deepskyblue;*/
+    font-size: 28rpx;
+    color: #B3B3B3;
+    margin-top: 20rpx;
 }
-
-.weui-media-box_appmsg {
-    height: 88rpx;
+.text {
+    padding-right: 15rpx;
 }
-.weui-media-box__thumb {
-    height: 60rpx;
-    width: 30rpx
+.resign {
+    width: auto;
+    height: 80rpx;
+    line-height: 80rpx;
+    vertical-align: center;
+    color: #EF5C2F;
+    border: 1rpx #EF5C2F solid;
+    font-size: 34rpx;
+    border-radius: 8rpx;
+}
+.resigned {
+    width: auto;
+    height: 80rpx;
+    line-height: 80rpx;
+    vertical-align: center;
+    color: #ccc;
+    font-size: 34rpx;
+    border: 1rpx #ccc solid;
+    border-radius: 8rpx;
+}
+.view {
+    overflow: visible;
 }

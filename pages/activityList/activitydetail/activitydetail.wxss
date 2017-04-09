@@ -168,7 +168,6 @@
     height: 90rpx;
     line-height: 90rpx;
     z-index: 100;
-    border-top: 1rpx solid #EFEFEF;
      vertical-align: center;
      text-align:center;
     color: #fff;
@@ -181,7 +180,6 @@
     height: 90rpx;
     line-height: 90rpx;
     z-index: 100;
-    border-top: 1rpx solid #EFEFEF;
     vertical-align: center;
     text-align:center;
     color: #fff;

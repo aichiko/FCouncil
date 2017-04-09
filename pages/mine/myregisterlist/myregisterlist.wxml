@@ -1,13 +1,18 @@
-<view class="weui-panel__bd" >
+
+<view class="weui-panel weui-panel_access">
     <block wx:for-items="{{registerlist}}" wx:key="{{index}}">
-        <navigator url="../expert/expert?index={{registerlist[index].ID}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="../../../images/registerList.png" />
-            </view>
+        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                 <view class="weui-media-box__title">{{registerlist[index].Name}}</view>
-                <view class="weui-media-box__desc">{{registerlist[index].create_time}}</view>
+                <view class="weui-media-box__desc">
+                    <text class="text">费用:¥{{registerlist[index].Meetfee}}</text>
+                    <text class="text">注册时间:{{registerlist[index].regAddtime}}</text>
+                </view>
             </view>
-        </navigator>
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <!--<image class="weui-media-box__thumb" src="../../../images/history.png" />-->
+                <view class="{{registerlist[index].Issign?'resigned':'resign'}}" bindtap="resignAction" data-index="{{index}}">{{registerlist[index].Issign?'已签到':'签到'}}</view>
+            </view>
+        </view>
     </block>
 </view>
