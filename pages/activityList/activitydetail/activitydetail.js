@@ -36,6 +36,15 @@ Page({
     console.log(this.data.isDescFold)
   },
   registerNow:function(){
+    if (app.globalData.isLogin == false) {
+      //未登录
+      wx.navigateTo({
+        url: '../../mine/login/login'
+      })
+      return
+    }
+
+
     var that = this
     if(this.data.canReg){
       // 可注册
@@ -190,7 +199,6 @@ Page({
         // console.log(that.data)
       }
     })
-    
   },
   prepareData: function() {
     var that = this
@@ -198,10 +206,16 @@ Page({
       title: '加载中',
     })
     var UID = this.data.userID
+    var dic
+    if (app.globalData.isLogin) {
+      dic = { "ID": this.data.id,"UID": this.data.userID}
+    }else{
+      dic = { "ID": this.data.id }
+    }
     console.log('请求详情的userID参数'+UID)
     wx.request({
       url: app.globalData.host+'videodetail',
-      data: { "ID": this.data.id,"UID": this.data.userID},
+      data: dic, 
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
        header: {
          "Content-Type": "application/x-www-form-urlencoded"

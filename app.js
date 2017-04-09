@@ -6,6 +6,10 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+    let isLogin = wx.getStorageSync('isLogin')
+    this.globalData.isLogin = isLogin
+
   },
   getUserInfo:function(cb){
     var that = this
@@ -26,6 +30,7 @@ App({
     }
   },
   globalData:{
+    isLogin: false,
     userInfo:null,
     imageHost: "https://www.fcouncil.com/",
     host: "https://www.fcouncil.com/index.php/Home/Api/"

@@ -1,7 +1,15 @@
 /* pages/onlinechannel/onlinechannel.wxss */
-
-.container {
-    align-items: flex-start
+page,
+.page,
+.page__bd{
+    /*height: 100%;*/
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    /*padding-top: 60px;*/
+    /*text-align: center;*/
 }
 
 .weui-cell_access {
@@ -14,9 +22,9 @@
 }
 
 .weui-panel__bd {
-    margin-top: 2rpx;
     margin-bottom: 88rpx;
 }
+
 .request_btn {
     position: fixed;
     bottom: 0rpx;
@@ -32,10 +40,19 @@
 }
 
 .weui-media-box__info__meta {
-    float: left;
-    width: 200rpx;
+    
+    /*width: 40%;*/
     height:30rpx;
-    padding-right: 4em;
+    /*padding-right: 4em;*/
     overflow:hidden;
     text-overflow:ellipsis;
 }
+
+.weui-media-box__info__meta .timeLabel {
+    padding-left: 0rpx; 
+}
+
+.weui-media-box__info__meta .typeLabel {
+    padding-left: 30rpx; 
+}
+
