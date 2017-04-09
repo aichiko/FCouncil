@@ -1,21 +1,20 @@
+/*.weui-media-box {
+    padding: 10rpx;
+}*/
 .weui-media-box__hd_in-appmsg {
     float: right;
-    margin-right:0rpx;
-    width:120rpx;
+    margin-right: 8rpx;
+    width:130rpx;
     height:100rpx;
     line-height:100rpx;
     text-align:center;
     margin-top:20rpx;
-}
-.weui-media-box__thumb{
-    width: 80rpx;
-    height: 80rpx;
-}
+    overflow: visible;
+}s
 .weui-media-box__title {
     font-size: 36rpx;
 }
 .weui-media-box__desc {
-    /*color: deepskyblue;*/
     font-size: 28rpx;
     color: #B3B3B3;
     margin-top: 20rpx;
@@ -27,22 +26,40 @@
     width: auto;
     height: 80rpx;
     line-height: 80rpx;
-    vertical-align: center;
     color: #EF5C2F;
     border: 1rpx #EF5C2F solid;
-    font-size: 34rpx;
+    font-size: 32rpx;
     border-radius: 8rpx;
+    margin-right: 10rpx;
 }
 .resigned {
     width: auto;
     height: 80rpx;
     line-height: 80rpx;
-    vertical-align: center;
     color: #ccc;
-    font-size: 34rpx;
+    font-size: 32rpx;
     border: 1rpx #ccc solid;
     border-radius: 8rpx;
+    margin-right: 10rpx;
 }
 .view {
     overflow: visible;
+}
+/*提示框*/
+.myToast{
+  width:auto;
+  height:130rpx;
+  line-height: 130rpx;
+  padding: 0 10rpx 0 10rpx;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  border-radius:20rpx;
+  background-color: rgb(114,113,113);
+  color:rgb(255,255,255);
+  font-size: 36rpx;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.85;
 }

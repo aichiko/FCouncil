@@ -50,10 +50,8 @@
             </view>
         </view>
     </view>
-    <!--提示标签-->
-    <view class="tip" style="text-align:center">
-        <text class="error_text" wx:if="{{showErr}}">{{errorText}}</text>
-    </view>
+    <!--我的提示框-->
+    <view class="myToast" style="display:{{showMyToast?'block':'none'}}">{{myToastText}}</view>
     <!--注册按钮-->
     <view class="btn">
     <button class="weui-btn" bindtap="registerAction">注册</button>

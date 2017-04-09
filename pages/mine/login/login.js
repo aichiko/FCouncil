@@ -39,11 +39,8 @@ Page({
           // success
           console.log(res)
           if(res.data.status==0){
-
             // 请求登录成功
-          
             // 提示用户登录成功
-
             wx.showToast({
               title: '登录成功！',
               icon: 'success',

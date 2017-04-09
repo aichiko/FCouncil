@@ -18,11 +18,11 @@
     <view class="weui-panel__bd">
         <block wx:for-items="{{activityList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toDetail" data-detailID="{{index}}">
-                <view class="weui-media-box__title weui-media-box__title_in-text">{{activityList[index].Name}}</view>
-                <view class="activity_info">
-                    <view class="activity_info_detail">{{activityList[index].ADate}}</view>
-                    <view class="activity_info_detail">{{activityList[index].labDesc}}</view>
-                    <view class="activity_info_detail">费用:¥{{activityList[index].fee}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx;line-height:36rpx;">{{activityList[index].Name}}</view>
+                <view class="weui-media-box__info" style="font-size:32rpx;line-height:32rpx">
+                    <view class="weui-media-box__info__meta">{{activityList[index].ADate}}</view>
+                    <view class="weui-media-box__info__meta">{{activityList[index].labDesc}}</view>
+                    <view class="weui-media-box__info__meta">费用:¥{{activityList[index].fee}}</view>
                 </view>
             </view>
         </block>

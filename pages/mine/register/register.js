@@ -9,8 +9,8 @@ Page({
     mobile: '',
     email: '',
 
-    showErr: false,
-    errorText: ''
+    showMyToast: false,
+    myToastText: ''
   },
   registerAction: function () {
     this.setData({
@@ -25,7 +25,7 @@ Page({
     var principle = this.data.principle
     var mobile = this.data.mobile
     var email = this.data.email
-    
+    var that = this
     if(name.length!=0 && pwd.length!=0 && confirmPwd.length!=0&& principle.length!=0 && mobile.length!=0 && email.length!=0){
       var params = {
         "username": name,
@@ -40,7 +40,6 @@ Page({
       var isMail = regMail.test(email)
       if(pwd === confirmPwd && isPhone && isMail){
         // 请求
-        var that = this
         console.log(params)
         wx.request({
           url: registerurl,
@@ -73,10 +72,14 @@ Page({
               // 注册失败
               console.log(res.data.info)
               that.setData({
-                showErr: true,
-                errorText: res.data.info
+                showMyToast: true,
+                myToastText: res.data.info
               })
-              // alert(res.data.info)
+              setTimeout(function(){
+                that.setData({
+                  showMyToast: false
+                }) //1秒之后弹窗隐藏
+              },2000)
             }
           },
           fail: function(res) {
@@ -92,31 +95,51 @@ Page({
         if(!isMail){
           console.log('邮箱不合法')
           this.setData({
-            showErr: true,
-            errorText: '请输入正确邮箱'
+            showMyToast: true,
+            myToastText: '请输入正确邮箱'
           })
+          setTimeout(function(){
+            that.setData({
+              showMyToast: false
+            }) //1秒之后弹窗隐藏
+          },2000)
         }
         if(!isPhone){
           console.log('手机号不合法')
           this.setData({
-            showErr: true,
-            errorText: '请输入正确手机号'
+            showMyToast: true,
+            myToastText: '请输入正确手机号'
           })
+          setTimeout(function(){
+            that.setData({
+              showMyToast: false
+            }) //1秒之后弹窗隐藏
+          },2000)
         }
       }
         if(pwd != confirmPwd){
           console.log('密码输入不一致,请重新输入')
           this.setData({
-            showErr: true,
-            errorText: '密码输入不一致,请重新输入'
+            showMyToast: true,
+            myToastText: '密码输入不一致,请重新输入'
           })
+          setTimeout(function(){
+            that.setData({
+              showMyToast: false
+            }) //1秒之后弹窗隐藏
+          },2000)
         }
     }else{
       console.log('请输入完整信息')
       this.setData({
-        showErr: true,
-        errorText: '请输入完整信息'
+        showMyToast: true,
+        myToastText: '请输入完整信息'
       })
+      setTimeout(function(){
+        that.setData({
+          showMyToast: false
+        }) //1秒之后弹窗隐藏
+      },2000)
     }
   },
   nameInput:function(e) {

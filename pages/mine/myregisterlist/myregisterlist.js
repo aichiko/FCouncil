@@ -6,6 +6,9 @@ Page({
     params: {},
     page: 1,
     registerlist: [],
+
+    showMyToast: false,
+    myToastText: ''
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
@@ -40,6 +43,15 @@ Page({
                 // success
                 if(res.data.status==0) {
                   console.log('签到成功！')
+                  that.setData({
+                    showMyToast: true,
+                    myToastText: res.data.info
+                  })
+                  setTimeout(function(){
+                    that.setData({
+                      showMyToast: false
+                    }) //1秒之后弹窗隐藏
+                  },2000)
                   var list = that.data.registerlist
                   list[index].Issign = 1
                   that.setData({

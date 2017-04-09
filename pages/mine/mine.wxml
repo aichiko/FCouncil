@@ -10,14 +10,14 @@
     <!--我的注册和问答-->
     <view class="weui-cells__title"></view>
             <view class="weui-cells weui-cells_after-title">
-                <navigator url="./myregisterlist/myregisterlist" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <navigator url="{{isLogin?'./myregisterlist/myregisterlist':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                     <view class="weui-cell__hd"><image src="../../images/registerList.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
                     <view class="weui-cell__bd weui-cell_primary">
                         <view>我的注册</view>
                     </view>
                     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                 </navigator>
-                <navigator url="./onlinechannel/onlinechannel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <navigator url="{{isLogin?'./onlinechannel/onlinechannel':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                     <view class="weui-cell__hd"><image src="../../images/answer.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
                     <view class="weui-cell__bd weui-cell_primary">
                         <view>在线问答</view>

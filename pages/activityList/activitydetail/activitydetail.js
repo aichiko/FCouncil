@@ -13,7 +13,10 @@ Page({
     regParams: {},
     // 控制展开
     isDescFold: true,
-    descHeight: '12em'
+    descHeight: '12em',
+
+    showMyToast: false,
+    myToastText: ''
   },
   foldOrExtend:function() {
     console.log('点击折叠。。。。')
@@ -53,11 +56,20 @@ Page({
                 // success
                 // 提示用户注册成功
                 if(res.data.status==0){
-                  wx.showToast({
-                  title: '注册成功！',
-                  icon: 'success',
-                  duration: 2000
+                  // wx.showToast({
+                  // title: '注册成功！',
+                  // icon: 'success',
+                  // duration: 2000
+                  // })
+                  that.setData({
+                    showMyToast: true,
+                    myToastText: '注册成功！'
                   })
+                  setTimeout(function(){
+                    that.setData({
+                      showMyToast: false
+                    }) //1秒之后弹窗隐藏
+                  },2000)
                   // 将显示文字修改成取消注册
                   that.setData({
                     canReg: false,
@@ -104,11 +116,20 @@ Page({
                   // success
                   // 提示用户注册成功
                   if(res.data.status==0){
-                    wx.showToast({
-                      title: '取消注册成功！',
-                      icon: 'success',
-                      duration: 2000
+                    // wx.showToast({
+                    //   title: '取消注册成功！',
+                    //   icon: 'success',
+                    //   duration: 2000
+                    // })
+                    that.setData({
+                      showMyToast: true,
+                      myToastText: '取消注册成功！'
                     })
+                    setTimeout(function(){
+                      that.setData({
+                        showMyToast: false
+                      })//1秒之后弹窗隐藏
+                    },2000)
                     // 将显示文字修改成取消注册
                     that.setData({
                       canReg: true,

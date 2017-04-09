@@ -1,3 +1,16 @@
+
+/*列表item*/
+.weui-media-box__info {
+    color: black;
+}
+/*列表item*/
+.weui-panel {
+    margin-top: 0;
+}
+.view{
+    overflow: visible;
+}
+
 .page{
     font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
     height: 100%;
@@ -87,63 +100,17 @@
 .fullopacity{
     opacity: 0.5;
 }
-
-/*列表item*/
-.weui-panel {
-    margin-top: 0;
-    /*overflow: visible;*/
-}
-.weui-panel__bd {
-    overflow: visible;
-}
-.weui-media-box {
-    padding:15px;
-    position:relative;
-    border-top: 1rpx solid #EFEFEF;
-}
-.weui-media-box::before {
-    border-top: 0;
-}
-view{
+.view{
     word-break:break-all; 
     overflow:visible;
 }
-.weui-media-box {
+/*.weui-media-box {
     padding-bottom: 0rpx;
     font-size: 34rpx;
     color: #3c3c3c;
-}
-.weui-media-box__title {
-    /*标题*/
-    font-size: 32rpx;
-    color: #3c3c3c;
-}
-.weui-media-box__title_in-text {
-    font-size: 34rpx;
-    color: #3c3c3c;
-}
-.weui-media-box__desc {
-    /*内容*/
-    font-size: 30rpx;
-    padding-right: 15px;
-    color: #999999;
-}
-
-.activity_info {
-    position: relative;
-    display: block;
-    font-size: 30rpx;
-    color: #3c3c3c;
-}
-.activity_info_detail {
-    display: inline-block;
-    padding: 8px 0 8rpx 0;
-    width:30%;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    word-wrap:normal;
-}
+    position:relative;
+    border-top: 1rpx solid #EFEFEF;
+}*/
 
 
 @keyframes slidown{
