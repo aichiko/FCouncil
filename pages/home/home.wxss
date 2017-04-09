@@ -55,8 +55,14 @@
     /*分区添加下边框*/
     border-bottom: 1rpx solid #ccc;
 }
+
+.weui-cell__ft_in-access {
+    margin-left: 60%;
+}
+
 .weui-cell__ft_in-access:after {
     content: " ";
+    margin-left: 50%;
     display: inline-block;
     height: 6px;
     width: 6px;

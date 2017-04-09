@@ -1,4 +1,22 @@
 /* pages/onlinechannel/onlinechannel.wxss */
+
+.container {
+    align-items: flex-start
+}
+
+.weui-cell_access {
+    padding: 20rpx 20rpx;
+}
+
+.weui-cell_access text {
+    font-size: 30rpx;
+    color: #137FC1
+}
+
+.weui-panel__bd {
+    margin-top: 2rpx;
+    margin-bottom: 88rpx;
+}
 .request_btn {
     position: fixed;
     bottom: 0rpx;
@@ -8,9 +26,11 @@
     background-color: #137FC1;
     color: #fff;
 }
+
 .weui-media-box__info {
     color: gray;
 }
+
 .weui-media-box__info__meta {
     float: left;
     width: 200rpx;

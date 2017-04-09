@@ -1,42 +1,18 @@
 // pages/onlinechannel/onlinechannel.js
-var page_index = 0;
-var url = 'http://www.imooc.com/course/ajaxlist';
+var app = getApp()
+let requesturl = app.globalData.host+'answerhot'
 
-// 获取数据
-var GetList = function (that) {
-  
-  wx.request({
-      url:url,
-      method: 'GET',// 默认为GET，必须大写
-      data:{// 参数字典
-          page_index : 0,
-          page_size : 6,
-          sort : 'last',
-          is_easy : 0,
-          lange_id : 0,
-          pos_id : 0,
-          unlearn : 0
-      },
-      success:function(res){
-          var list = that.data.list;
-          console.info(list);
-          for(var i = 0; i < res.data.list.length; i++)            {
-            list.push(res.data.list[i]);
-          }
-          that.setData({
-              list : list
-          });
-          page_index ++;
-          console.log('success')
-          that.setData({
-              hidden:true
-          });
-      }
-  });
-}
 Page({
   data:{
-    list: [{}, {}]
+    page: 1,
+    hostQuestionList:[
+        {
+          
+        },
+        {
+
+        }
+      ],
   },
   // 跳至详情
   toQuestionDetail: function () {
@@ -51,40 +27,49 @@ Page({
       url: './askquestion/askquestion'
     })
   },
-  refresh:function(event){
-    // 该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
-      page_index = 0;
-      this.setData({
-          registerlist : [],
-          scrollTop : 0
-      });
-      console.log('refresh')
-      GetList(this)
-  },
-  loadMore:function(){
-    // 该方法绑定了页面滑动到底部的事件
-      var that = this;
-      GetList(that);
-  },
-  scroll: function(event) {
-    console.log(event)
-    // 该方法绑定了页面滚动时的事件，记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
-     this.setData({
-         scrollTop : event.detail.scrollTop
-     });
-  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-    var that = this;
-      wx.getSystemInfo({
-          success:function(res){
-              console.info(res.windowHeight);
-              that.setData({
-                  scrollHeight:res.windowHeight
-              });
-          }
-      });
+    this.questionListRquest()
   },
+
+  // 专业报告列表
+  questionListRquest: function() {
+    var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    this.setData({
+        parameters: {"page": this.data.page}
+    })
+    wx.request({
+      url: requesturl,
+      data: this.data.parameters,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function(res){
+        // success
+        wx.hideLoading()
+        console.log(res)
+        if (res.data.status == 0){
+          that.setData({
+            hostQuestionList: res.data.data
+          })
+        }
+      },
+      fail: function(res) {
+        // fail
+        console.log(res)
+        wx.hideLoading()
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+  },
+
   onReady:function(){
     // 页面渲染完成
   },

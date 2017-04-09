@@ -28,6 +28,9 @@
             <view class="weui-cells weui-cells_after-title">
                 <navigator url="../expertList/expertList" class="weui-cell weui-cell_access">
                     <text class="activity_type">答疑专家</text>
+                    <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+                        <view style="display: inline-block;vertical-align:center; font-size: 26rpx;">查看更多</view>
+                    </view>
                     <!--<view class="weui-cell__ft weui-cell__ft_in-access">全部</view>-->
                 </navigator>
                 <view class="weui-panel__bd" >

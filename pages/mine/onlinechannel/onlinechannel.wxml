@@ -1,23 +1,26 @@
 <!--pages/onlinechannel/onlinechannel.wxml-->
 <!--头标题-->
-<view class="container" style="padding:0rpx">
-  <view class="weui-cell weui-cell_access weui-cell_link">热门问题</view>
-<!--列表-->
-  <view wx:for-items="{{list}}" wx:key="{{index}}" class="weui-panel" bindtap="toQuestionDetail">
-    <view class="weui-panel__bd">
-      <view class="weui-media-box weui-media-box_text">
-          <view class="weui-media-box__title weui-media-box__title_in-text">
-          {{list[index].name}}</view>
-              <view class="weui-media-box__info">
-                  <view class="weui-media-box__info__meta">{{list[index].create_time}}</view>
-                  <view class="weui-media-box__info__meta">所得税</view>
-              </view>
-          </view>
-      </view>
-  </view>
-  <view class="body-view">
-  </view>
-  <!--提问按钮-->
+<!--专家 图文组合列表-->
+<view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+            <text class="activity_type">热门问题</text>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" style="height: 2rpx background-color: #137FC1"></view>
+        <view class="weui-panel__bd">
+            <block wx:for-items="{{hostQuestionList}}" wx:key="{{index}}">
+                <view class="weui-media-box weui-media-box_text" bindtap="toReportDetail" data-detailID="{{index}}">
+                    <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{hostQuestionList[index].Title}}</view>
+                    <!--报告内容-->
+                    <!--<view class="weui-media-box__desc">{{reportsList[index].content}}</view>-->
+                    <view class="weui-media-box__info">
+                        <view class=" weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">{{hostQuestionList[index].AddDate}}</view>
+                        <view class="weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">类型：{{hostQuestionList[index].classDesc}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <!--提问按钮-->
   <button class="request_btn" bindtap="askQuestion">我要提问</button>
 </view>
-
