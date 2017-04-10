@@ -6,10 +6,8 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     let isLogin = wx.getStorageSync('isLogin')
     this.globalData.isLogin = isLogin
-
   },
   getUserInfo:function(cb){
     var that = this

@@ -179,26 +179,18 @@ Page({
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
-    this.getRegParams()
+    
     this.setData({
         id: options.id
     })
     console.log(options.id)
+    this.getRegParams()
   },
   getRegParams:function() {
     var that = this
     var videoID = this.data.id
     var regParams = this.data.regParams
-    wx.getStorage({
-      key: 'userInfo',
-      success: function(res){
-        that.setData({
-          userID: res.data.ID
-        })
-        that.prepareData()
-        // console.log(that.data)
-      }
-    })
+    that.prepareData()
   },
   prepareData: function() {
     var that = this
@@ -208,6 +200,10 @@ Page({
     var UID = this.data.userID
     var dic
     if (app.globalData.isLogin) {
+      let userInfo = wx.getStorageSync('userInfo')
+      this.setData({
+        userID: userInfo.ID
+      })
       dic = { "ID": this.data.id,"UID": this.data.userID}
     }else{
       dic = { "ID": this.data.id }
@@ -301,9 +297,8 @@ Page({
   onShareAppMessage: function() {
     // 用户点击右上角分享
     return {
-      title: 'title', // 分享标题
-      desc: 'desc', // 分享描述
-      path: 'path' // 分享路径
+      // title: '活动详情', // 分享标题
+      path: 'pages/activityList/activitydetail/activitydetail' // 分享路径
     }
-  }
+  },
 })

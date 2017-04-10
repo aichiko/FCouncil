@@ -1,41 +1,45 @@
 <view class="page">
-  <view class="section">
+  
   <!--问题标题-->
-    <view class="weui-cells__title"></view>
-    <view class="weui-cell weui-cell_input">
-      <view class="weui-cell__hd">
-          <view class="weui-label">问题标题:</view>
-      </view>
-      <view class="weui-cell__bd">
-          <input class="weui-input" bindinput="bindKeyInput" placeholder="单行输入"/>
-      </view>
-    </view>
-  </view>
-  <!--所属分类-->
-  <view class="section">
-    <view class="weui-cells__title"></view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArr}}">
-                <view class="picker">
-                    所属分类：{{typeArr[index]}}
-                </view>
-            </picker>
+  <form bindsubmit="bindButtonSubmit" bindreset="">
+    <view class="section">
+      <view class="weui-cells__title"></view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">问题标题:</view>
+          </view>
+          <view class="weui-cell__bd">
+              <input name='title' class="weui-input" bindinput="bindKeyInput" placeholder="请输入问题"/>
+          </view>
         </view>
       </view>
-  </view>
-  <!--问题内容-->
-  <view class="section">
-    <view class="weui-cells__title"></view>
-    <view class="question-content">
-      <view class="weui-cell__hd">
-          <text>问题内容:</text>
-          <textarea class="content_textarea" plplaceholder="多行输入"/>
+    <!--所属分类-->
+    <view class="section">
+        <view class="weui-cells__title"></view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <picker name='picker' mode = "selector" bindchange="bindPickerChange" value="{{index}}"  range="{{typeList}}" range-key="Desc">
+                    <view class="picker">
+                        所属分类：{{typeList[index].Desc}}
+                    </view>
+                </picker>
+            </view>
+          </view>
       </view>
-    </view>
-  </view>
-  <!--提交-->
-  <view class="btn_section">
-    <button class="weui-btn" bindtap="commitQuestion">提交</button>
-  </view>
+    <!--问题内容-->
+    <view class="section">
+        <view class="weui-cells__title"></view>
+        <view class="question-content">
+          <view class="weui-cell__hd">
+              <text>问题内容:</text>
+              <textarea name='content' class="content_textarea" placeholder="问题详细内容"/>
+          </view>
+        </view>
+      </view>
+      <!--提交-->
+      <view class="btn_section">
+        <button formType="submit" class="weui-btn">提交</button>
+      </view>
+  </form>
+    
 </view>

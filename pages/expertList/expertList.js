@@ -69,5 +69,13 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  onShareAppMessage: function() {
+    // 用户点击右上角分享
+    return {
+      // title: '专家列表', // 分享标题
+      // desc: '专家列表', // 分享描述
+      path: 'pages/expertList/expertList' // 分享路径
+    }
   }
 })
