@@ -19,7 +19,7 @@
                             <view class="weui-media-box weui-media-box_text" bindtap="toQuestionDetail" data-detailID="{{hostQuestionList[index].ID}}">
                                 <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{hostQuestionList[index].Title}}</view>
                                 <view class="weui-media-box__info">
-                                    <view class=" weui-media-box__info__meta timeLabel" style="font-size:32rpx;line-height:32rpx;">提问时间:{{hostQuestionList[index].AddDate}}</view>
+                                    <view class="weui-media-box__info__meta timeLabel" style="font-size:32rpx;line-height:32rpx;">提问时间:{{hostQuestionList[index].AddDate}}</view>
                                     <view class="weui-media-box__info__meta typeLabel" style="font-size:32rpx;line-height:32rpx;">类型:{{hostQuestionList[index].classDesc}}</view>
                                 </view>
                             </view>

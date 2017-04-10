@@ -82,6 +82,19 @@
     color: #45AB59;
     padding-right: 20rpx;
 }
+.fold_extend_textextend {
+    overflow: visible;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.fold_extend_textfold {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
 /*活动概况*/
 .desc_content {
     word-break: break-all;
@@ -203,4 +216,7 @@
   position: fixed;
   z-index: 100;
   opacity: 0.85;
+}
+.wxParse-div {
+    overflow: visible;
 }

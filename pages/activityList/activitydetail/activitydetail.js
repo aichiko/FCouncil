@@ -218,6 +218,7 @@ Page({
        }, // 设置请求的 header
       success: function(res){
         // success
+        console.log('详情结果：')
         console.log(res)
         var activity = res.data.data
         wx.hideLoading()

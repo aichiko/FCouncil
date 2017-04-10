@@ -72,7 +72,7 @@
                         <view class="title">活动描述</view><view class="{{isDescFold?'fold_extend1':'fold_extend2'}}" bindtap="foldOrExtend">{{isDescFold?'展开':'收起'}}</view>
                     </view>
                     <!--这里data中article为bindName-->
-                    <view class="desc_content" style="height:{{descHeight}}">
+                    <view class="desc_content {{isDescFold?'fold_extend_textfold':'fold_extend_textextend'}}">
                         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
                     </view>
                     <!--<view class="desc_content">{{activity.videodesc}}</view>-->

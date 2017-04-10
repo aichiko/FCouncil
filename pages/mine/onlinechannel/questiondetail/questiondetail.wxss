@@ -1,20 +1,179 @@
-.ask_view {
-    font-size: 35rpx;
-    border-bottom: 1rpx solid #ccc;
-    display: block wrap;
-    padding: 20rpx 20rpx;
+.page {
+    /*background-color: #E1E2FE;*/
+    position: relative;
 }
-.anser_view {
-    background-color: #4ec046;
-    font-size: 35rpx;
-    display: block wrap;
-    padding: 20rpx 20rpx;
+.page__hd {
+    font-size: 32rpx;
+    color: #3c3c3c;
+    border-bottom: 1rpx solid #CECECE;
 }
-.titlelabel {
-    color: lightblue;
-    font-size: 40rpx;
-    padding: 0rpx 20rpx 0rpx 20rpx;
+.question_title {
+    background-color: #fff;
+    color: #3c3c3c;
+    font-size: 36rpx;
+    font-weight: 700;
+    text-align: center;
+    padding: 20rpx;
+    /*padding-right: 20rpx;
+    padding-bottom: 10rpx;*/
+    /*border-bottom: 1rpx solid #CECECE;*/
+ }
+.desc_view {
+    display: block;
+    text-align: left;
+    width: 300rpx;
 }
-.ask_answer_view {
-    border-bottom: 1rpx solid #ccc;
+.desc_image {
+    height: 30rpx;
+    width: 30rpx;
+    margin-left: 40rpx;
+    margin-right: 5rpx;
+    margin-bottom: 25rpx;
+    /*vertical-align: center;*/
+}
+.question_desc_label {
+    display: inline-block;
+    font-size: 28rpx;
+    margin: 20rpx 20rpx 15rpx 5rpx;
+    width: auto;
+    /*text-align: left;*/
+    /*padding: 40rpx;*/
+}
+ .question_desc {
+     padding: 0rpx 20rpx 20rpx 60rpx;
+     font-size: 28rpx;
+     color: #3c3c3c;
+ }
+
+.weui-panel__bd {
+    font-size: 32rpx;
+    color: #3c3c3c;
+    border-bottom: 1rpx solid #CECECE;
+}
+.question_view {
+    /*border-top: 1rpx solid #CECECE;*/
+}
+.name_title{
+    padding: 20rpx 20rpx 10rpx 20rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center; 
+}
+.left {
+    background-color: #B9D264;
+    margin: 0rpx 40rpx 40rpx 40rpx;
+    padding: 20rpx;
+    border-radius: 10rpx;
+}
+.right {
+    background-color: #EFEFEF;
+    margin: 0rpx 40rpx 40rpx 40rpx;
+    padding: 20rpx;
+    border-radius: 10rpx;
+}
+.pic_left {
+    justify-content: flex-start;
+}
+.pic_right {
+    justify-content: flex-end;
+}
+.name_time {
+    display: flex;
+    flex-direction: column;
+}
+.name {
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #3c3c3c;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+}
+.time {
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #999999;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: inline-block;
+}
+.pic {
+    width: 70rpx;
+    height: 70rpx;
+    vertical-align: top;
+    padding-right: 20rpx;
+    padding-left: 20rpx;
+}
+.content_view {
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    color: #CECECE;
+    list-style: none;
+    /*overflow: hidden;*/
+}
+.content_text {
+    /*color: #999999;*/
+    color: #3c3c3c;
+    font-size: 28rpx;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /*-webkit-line-clamp: 2;*/
+}
+.question_closely {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 280rpx;
+    /*border-bottom: 1rpx solid #CECECE;*/
+}
+.content_textarea {
+    width: auto;
+    height: 150rpx;
+    margin: 15rpx 15rpx 0rpx 15rpx;
+    border: 1rpx solid #ccc;
+    box-shadow: 1rpx 1rpx 1rpx #ccc;
+    border-radius: 4rpx;
+}
+.questionview {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20rpx;
+}
+.question_closely_commit {
+    display: flex;
+    margin-top: 20rpx;
+    margin-right: 10rpx;
+    border-radius: 8rpx;
+    width: 180rpx;
+    height: 60rpx;
+    background-color: #137FC1;
+    color: #fff;
+}
+.question_closely_commit_image {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 10rpx;
+}
+.question_closely_commit_btn {
+    margin-right: 10rpx;
+    font-size: 28rpx;
+    line-height: 60rpx;
 }
