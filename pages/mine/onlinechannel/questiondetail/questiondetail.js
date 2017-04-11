@@ -47,7 +47,7 @@ Page({
       this.setData({
         userID: userInfo.ID
       })
-      dic = { "ID": this.data.ID,"userID": '3144'}
+      dic = { "ID": this.data.ID,"userID": userID}
     }else{
       dic = { "ID": this.data.ID }
     }
@@ -102,7 +102,7 @@ Page({
       this.setData({
         userID: userInfo.ID
       })
-      dic = { "ID": this.data.ID,"userID": '3144'}
+      dic = { "ID": this.data.ID,"userID": userID}
     }else{
       dic = { "ID": this.data.ID }
     }
@@ -158,7 +158,7 @@ Page({
     }
     var userID = this.data.userID
     var dic
-    dic = { "AID": this.data.ID,"UserID": '3144','RContent': value.content}
+    dic = { "AID": this.data.ID,"UserID": userID,'RContent': value.content}
     console.log(dic)
     that.commitQuestion({
       parameters: dic,
