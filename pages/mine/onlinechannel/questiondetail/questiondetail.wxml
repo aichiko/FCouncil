@@ -1,41 +1,48 @@
-<!--<import src="../../../wxParse/wxParse.wxml"/> -->
+<import src="../../../../wxParse/wxParse.wxml"/> 
 <view class="page">
     <view class="page__hd">
-        <view class="question_title">{{title}}</view>
+        <view class="question_title">{{detailData.Title}}</view>
     </view>
     <view class="page__hd">
         <view class="desc_view">
-            <image class="desc_image" src="../../../../images/questiondesc.png"></image>
+            <!--<view class="desc_image_view">-->
+                <image class="desc_image" src="../../../../images/questiondesc.png"></image>
+            <!--</view>-->
             <view class="question_desc_label">问题描述:</view>
         </view>
-        <view class="question_desc">{{desc}}</view>
+        <view class="question_desc">
+        <!--{{detailData.Content}}-->
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
     </view>
-    <view class="page__bd" style="margin-bottom:{{isMyQuestion?'220rpx':'0'}}">
-        <view class="weui-panel__bd" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="page__bd" style="margin-bottom:{{isMyQuestion?'280rpx':'0'}}">
+        <view class="weui-panel__bd" wx:for="{{answerList}}" wx:key="{{index}}">
             <view class="question_view ">
             <!--这里显示回答-->
-                <view class="name_title {{list[index].isAnswer?'pic_left':'pic_right'}}">
-                    <image class="pic" style="display:{{list[index].isAnswer?'block':'none'}}" src="{{list[index].pic}}" />
-                    <view class="name_time" style="text-align: {{list[index].isAnswer?'left':'right'}};">
-                        <text class="name">{{list[index].name}}</text>
-                        <text class="time">{{list[index].time}}</text>
+                <view class="name_title {{answerList[index].Rtype==1?'pic_left':'pic_right'}}">
+                    <image class="pic" style="display:{{answerList[index].Rtype==1?'block':'none'}}" src="{{answerList[index].Picurl.lengt!=0?answerList[index].Picurl:'../../../../images/defaultimg.png'}}" />
+                    <view class="name_time" style="text-align: {{answerList[index].Rtype==1?'left':'right'}};">
+                        <text class="name">{{answerList[index].Name.length==0?'匿名':answerList[index].Name}}</text>
+                        <text class="time">{{answerList[index].AddDate.length==0?' ':answerList[index].AddDate}}</text>
                     </view>
-                    <image class="pic" style="display:{{list[index].isAnswer?'none':'block'}}" src="{{list[index].pic}}" />
+                    <image class="pic" style="display:{{answerList[index].Rtype==1?'none':'block'}}" src="{{answerList[index].Picurl.length!=0?answerList[index].Picurl:'../../../../images/defaultimg.png'}}" />
                 </view>
-                <view class="content_view {{list[index].isAnswer?'left':'right'}}">
-                    <text class="content_text">{{list[index].content}}</text>
+                <view class="content_view {{answerList[index].Rtype==1?'left':'right'}}">
+                    <text class="content_text {{answerList[index].Rtype==1?'leftalign':'rightalign'}}">{{answerList[index].RContent}}</text>
                 </view>
             </view>
         </view>
         <view class="question_closely" style="display:{{isMyQuestion?'flex':'none'}}">
+            <form bindsubmit="bindButtonSubmit" bindreset="">
             <!--<view class="">-->
-                <textarea  class="content_textarea" />
+                <textarea  class="content_textarea" name="content" value="{{content}}" bindblur="bindTextAreaBlur" />
             <!--</view>-->
-            <view class="questionview">
-                <view class="question_closely_commit">
-                    <image class="question_closely_commit_image" src="../../../../images/quest.png"></image><view class="question_closely_commit_btn">我要追问</view>
+                <view class="questionview">
+                    <view class="question_closely_commit" >
+                        <image class="question_closely_commit_image" src="../../../../images/quest.png"></image><button class="question_closely_commit_btn" formType="submit">我要追问</button>
+                    </view>
                 </view>
-            </view>
+            </form>
         </view>
     </view>
 </view>

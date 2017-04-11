@@ -24,7 +24,7 @@ Page({
   toQuestionDetail: function (e) {
     console.log(e)
     wx.navigateTo({
-      url: './questiondetail/questiondetail?id='+e.currentTarget.dataset.detailid
+      url: './questiondetail/questiondetail?id='+e.currentTarget.dataset.detailid+'&index='+this.data.activeIndex
     })
   },
   // 跳至提问页面
