@@ -10,12 +10,12 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell">
               <view class="lefttext">
-                <text>发文机关：{{law.lawscoure}}</text>
-                 <text>发文日期：{{law.PubDate}}</text>
+                <text>机关：{{law.lawscoure}}</text>
+                 <text>发文：{{law.PubDate}}</text>
                </view>
               <view class="lefttext">
-                 <text>内容分类：{{law.lawclass}}</text>
-                 <text>生效日期：{{law.UseDate}}</text>
+                 <text>分类：{{law.lawclass}}</text>
+                 <text>生效：{{law.UseDate}}</text>
               </view>
             </view>
         </view>

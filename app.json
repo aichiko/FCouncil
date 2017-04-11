@@ -16,7 +16,9 @@
     "pages/mine/onlinechannel/askquestion/askquestion",
     "pages/mine/myregisterlist/myregisterlist",
     "pages/activityList/activityList",
-    "pages/activityList/activitydetail/activitydetail"
+    "pages/activityList/activitydetail/activitydetail",
+    "pages/activityList/activitydetail/radioplayer/radioplayer",
+    "pages/activityList/activitydetail/videoplayer/videoplayer"
   ],
   "window":{
     "backgroundTextStyle":"light",

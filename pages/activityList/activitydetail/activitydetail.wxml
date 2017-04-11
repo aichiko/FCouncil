@@ -24,8 +24,8 @@
                     <view class="imgtitle">
                         <image class="title_left_img" src="../../../images/structure.png"></image>
                         <view class="title">活动概况</view>
-                        <text class="voice" wx:if="{{activity.Ismp3}}" bindtap="listenVoice">录音</text>
-                        <text class="voice" wx:if="{{activity.Ismp4}}" bindtap="watchVideo">视频</text>
+                        <text class="voice" wx:if="{{!activity.Ismp3}}" bindtap="listenVoice">录音</text>
+                        <text class="voice" wx:if="{{!activity.Ismp4}}" bindtap="watchVideo">视频</text>
                     </view>
                     <view class="struct_content">
                         <view class="struct_upper_text">
