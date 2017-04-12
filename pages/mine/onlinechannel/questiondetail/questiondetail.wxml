@@ -15,7 +15,7 @@
             <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
         </view>
     </view>
-    <view class="page__bd" style="margin-bottom:{{isMyQuestion?'280rpx':'0'}}">
+    <view class="page__bd">
         <view class="weui-panel__bd" wx:for="{{answerList}}" wx:key="{{index}}">
             <view class="question_view ">
             <!--这里显示回答-->
@@ -33,13 +33,14 @@
             </view>
         </view>
         <view class="question_closely" style="display:{{isMyQuestion?'flex':'none'}}">
-            <form bindsubmit="bindButtonSubmit" bindreset="">
+            <form catchsubmit="bindButtonSubmit" catchreset="">
             <!--<view class="">-->
-                <textarea  class="content_textarea" name="content" value="{{content}}" bindblur="bindTextAreaBlur" />
+                <textarea  class="content_textarea" placeholder="请输入内容" name="content" value="{{content}}" bindblur="bindTextAreaBlur" />
             <!--</view>-->
                 <view class="questionview">
                     <view class="question_closely_commit" >
-                        <image class="question_closely_commit_image" src="../../../../images/quest.png"></image><button class="question_closely_commit_btn" formType="submit">我要追问</button>
+                        <image class="question_closely_commit_image" src="../../../../images/quest.png"></image>
+                        <button class="question_closely_commit_btn" formType="submit">我要追问</button>
                     </view>
                 </view>
             </form>

@@ -136,13 +136,13 @@ Page({
     })
   },
   // 追问
-  bindTextAreaBlur:function(e){
-    console.log(e.detail.value)
-    this.setData({
-      questionContent: e.detail.value
-    })
-    console.log(this.data.questionContent)
-  },
+  // bindTextAreaBlur:function(e){
+  //   console.log(e.detail.value)
+  //   this.setData({
+  //     questionContent: e.detail.value
+  //   })
+  //   console.log(this.data.questionContent)
+  // },
   // 提交问题
   bindButtonSubmit:function(e){
     console.log(e.detail.value)
