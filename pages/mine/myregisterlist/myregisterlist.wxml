@@ -3,15 +3,15 @@
     <block wx:for-items="{{registerlist}}" wx:key="{{index}}">
         <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap="gotoActivity" data-activityID="{{registerlist[index].ID}}">
             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">{{registerlist[index].Name}}</view>
-                <view class="weui-media-box__desc">
+                <view class="weui-media-box__title" style="font-size: 28rpx;">{{registerlist[index].Name}}</view>
+                <view class="weui-media-box__desc" style="font-size: 24rpx;line-height: 24rpx">
                     <text class="text">费用:¥{{registerlist[index].Meetfee}}</text>
                     <text class="text">注册时间:{{registerlist[index].regAddtime}}</text>
                 </view>
             </view>
             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                 <!--<image class="weui-media-box__thumb" src="../../../images/history.png" />-->
-                <view class="{{registerlist[index].Issign?'resigned':'resign'}}" bindtap="resignAction" data-index="{{index}}">{{registerlist[index].Issign?'已签到':'签到'}}</view>
+                <view class="{{registerlist[index].Issign?'resigned':'resign'}}" style="font-size: 24rpx;" bindtap="resignAction" data-index="{{index}}">{{registerlist[index].Issign?'已签到':'签到'}}</view>
             </view>
         </view>
     </block>

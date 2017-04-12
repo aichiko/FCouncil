@@ -18,11 +18,15 @@
     <view class="weui-panel__bd">
         <block wx:for-items="{{activityList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toDetail" data-detailID="{{index}}">
-                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx;line-height:36rpx;">{{activityList[index].Name}}</view>
-                <view class="weui-media-box__info" style="font-size:32rpx;line-height:32rpx">
-                    <view class="weui-media-box__info__meta">{{activityList[index].ADate}}</view>
-                    <view class="weui-media-box__info__meta">{{activityList[index].labDesc}}</view>
-                    <view class="weui-media-box__info__meta">费用:¥{{activityList[index].fee}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{activityList[index].Name}}</view>
+                <view class="weui-media-box__info">
+                    <view class=" weui-media-box__info__meta top">
+                        <view class="time">活动时间:{{activityList[index].MeetDate}}</view>
+                        <view class="status_text" style="display: {{activityList[index].Isold?'block':'none'}}">已过期</view>
+                    </view>
+                    <view class="weui-media-box__info__meta city">地点:{{activityList[index].cityDesc}}</view>
+                    <view class="weui-media-box__info__meta classdesc">活动类型:{{activityList[index].classDesc}}</view>
+                    <view class="weui-media-box__info__meta account" style="color: {{activityList[index].Isold?'#747374':'#DF3C43'}}">¥{{activityList[index].fee}}</view>
                 </view>
             </view>
         </block>

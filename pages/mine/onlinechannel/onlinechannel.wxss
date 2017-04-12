@@ -38,11 +38,18 @@ page,
 .weui-media-box__info {
     color: gray;
 }
-
+.weui-media-box__title_in-text {
+    width:auto;
+    overflow:visible;
+    white-space: normal;
+    word-wrap:normal;
+    word-break:break-all;
+}
 .weui-media-box__info__meta {
     
     /*width: 40%;*/
     height:30rpx;
+    color: #747374;
     /*padding-right: 4em;*/
     overflow:hidden;
     text-overflow:ellipsis;

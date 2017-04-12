@@ -40,8 +40,8 @@
                                 <image class="weui-media-box__thumb" src="{{expertsList[index].PicPath}}" />
                             </view>
                             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                                <view class="weui-media-box__title">{{expertsList[index].Name}}</view>
-                                <view class="weui-media-box__desc">{{expertsList[index].Title}}</view>
+                                <view class="weui-media-box__title" style="font-size: 28rpx">{{expertsList[index].Name}}</view>
+                                <view class="weui-media-box__desc" style="font-size: 24rpx">{{expertsList[index].Title}}</view>
                             </view>
                         </navigator>
                     </block>

@@ -55,8 +55,8 @@
                             <view class="contact_text_detail">传真：{{activity.kffax}}</view>
                         </view>
                         <view class="contact_right_text">
-                            <view class="contact_text_detail">客服热线：{{activity.kftel}}</view>
-                            <view class="contact_text_detail">客服邮箱：{{activity.kfemail}}</view>
+                            <view class="contact_text_detail">热线：{{activity.kftel}}</view>
+                            <view class="contact_text_detail">邮箱：{{activity.kfemail}}</view>
                         </view>
                     </view>
                 </view>

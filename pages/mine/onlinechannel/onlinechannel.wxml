@@ -17,10 +17,10 @@
                     <view class="weui-panel__bd">
                         <block wx:for-items="{{hostQuestionList}}" wx:key="{{index}}">
                             <view class="weui-media-box weui-media-box_text" bindtap="toQuestionDetail" data-detailID="{{hostQuestionList[index].ID}}">
-                                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{hostQuestionList[index].Title}}</view>
+                                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:28rpx">{{hostQuestionList[index].Title}}</view>
                                 <view class="weui-media-box__info">
-                                    <view class="weui-media-box__info__meta timeLabel" style="font-size:32rpx;line-height:32rpx;">提问时间:{{hostQuestionList[index].AddDate}}</view>
-                                    <view class="weui-media-box__info__meta typeLabel" style="font-size:32rpx;line-height:32rpx;">类型:{{hostQuestionList[index].classDesc}}</view>
+                                    <view class="weui-media-box__info__meta timeLabel" style="font-size:20rpx;line-height:32rpx;">提问时间:{{hostQuestionList[index].AddDate}}</view>
+                                    <view class="weui-media-box__info__meta typeLabel" style="font-size:20rpx;line-height:32rpx;">类型:{{hostQuestionList[index].classDesc}}</view>
                                 </view>
                             </view>
                         </block>
@@ -31,10 +31,10 @@
                     <view class="weui-panel__bd">
                         <block wx:for-items="{{myQuestionList}}" wx:key="{{index}}">
                           <view class="weui-media-box weui-media-box_text" bindtap="toQuestionDetail" data-detailID="{{myQuestionList[index].ID}}">
-                                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:36rpx">{{myQuestionList[index].Title}}</view>
+                                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:28rpx">{{myQuestionList[index].Title}}</view>
                                 <view class="weui-media-box__info">
-                                    <view class=" weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">提问时间:{{myQuestionList[index].AddDate}}</view>
-                                    <view class="weui-media-box__info__meta" style="font-size:32rpx;line-height:32rpx;">类型:{{myQuestionList[index].classDesc}}</view>
+                                    <view class=" weui-media-box__info__meta" style="font-size:20rpx;line-height:32rpx;">提问时间:{{myQuestionList[index].AddDate}}</view>
+                                    <view class="weui-media-box__info__meta" style="font-size:20rpx;line-height:32rpx;">类型:{{myQuestionList[index].classDesc}}</view>
                                 </view>
                             </view>
                         </block>

@@ -149,13 +149,13 @@
     bottom: 0;*/
     background-color: #fff;
     width: 100%;
-    height: 280rpx;
+    height: 325rpx;
     /*border-bottom: 1rpx solid #CECECE;*/
 }
 .content_textarea {
     width: auto;
     height: 150rpx;
-    margin: 15rpx 15rpx 0rpx 15rpx;
+    margin: 60rpx 15rpx 0rpx 15rpx;
     border: 1rpx solid #ccc;
     box-shadow: 1rpx 1rpx 1rpx #ccc;
     border-radius: 4rpx;

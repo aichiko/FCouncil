@@ -104,6 +104,55 @@
     word-break:break-all; 
     overflow:visible;
 }
+.weui-media-box__title_in-text {
+    width:auto;
+    overflow:visible;
+    white-space: normal;
+    word-wrap:normal;
+    word-break:break-all;
+    font-size: 28rpx;
+    line-height: 30rpx;
+    margin-bottom: 0;
+}
+.weui-media-box__info {
+    margin-top: 10rpx;
+}
+.weui-media-box__info__meta{
+    font-size: 24rpx;
+    line-height: 24rpx;
+    float: none;
+    color: #747374;
+}
+.top {
+    padding-right: 0;
+}
+.time {
+    float: left;
+    padding: 2rpx;
+}
+.city {
+    /*display: inline-block;*/
+    float: left;
+    padding: 10rpx 10rpx 0rpx 0;
+
+}
+.classdesc {
+    padding: 10rpx 10rpx 0rpx 20rpx;
+    float: left;
+}
+.account {
+    padding: 10rpx 0 0rpx 0;
+    float: right;
+    color: #DF3C43;
+}
+.status_text{
+    float: right;
+    padding: 2rpx;
+    border-radius: 2rpx;
+    font-size: 24rpx;
+    border: 1rpx solid #B3B3B3;
+    color: #747374;
+}
 /*.weui-media-box {
     padding-bottom: 0rpx;
     font-size: 34rpx;

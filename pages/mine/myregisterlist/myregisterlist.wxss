@@ -10,13 +10,18 @@
     text-align:center;
     margin-top:20rpx;
     overflow: visible;
-}s
+}
 .weui-media-box__title {
-    font-size: 36rpx;
+    font-size: 34rpx;
+    width:auto;
+    overflow:visible;
+    white-space:normal;
+    word-wrap:normal;
+    word-break:break-all;
 }
 .weui-media-box__desc {
     font-size: 28rpx;
-    color: #B3B3B3;
+    color: #747374;
     margin-top: 20rpx;
 }
 .text {
@@ -24,20 +29,20 @@
 }
 .resign {
     width: auto;
-    height: 80rpx;
-    line-height: 80rpx;
+    height: 60rpx;
+    line-height: 60rpx;
     color: #EF5C2F;
     border: 1rpx #EF5C2F solid;
-    font-size: 32rpx;
+    font-size: 28rpx;
     border-radius: 8rpx;
     margin-right: 10rpx;
 }
 .resigned {
     width: auto;
-    height: 80rpx;
-    line-height: 80rpx;
+    height: 60rpx;
+    line-height: 60rpx;
     color: #ccc;
-    font-size: 32rpx;
+    font-size: 28rpx;
     border: 1rpx #ccc solid;
     border-radius: 8rpx;
     margin-right: 10rpx;
@@ -57,7 +62,7 @@
   border-radius:20rpx;
   background-color: rgb(114,113,113);
   color:rgb(255,255,255);
-  font-size: 36rpx;
+  font-size: 32rpx;
   text-align: center;
   position: fixed;
   z-index: 100;

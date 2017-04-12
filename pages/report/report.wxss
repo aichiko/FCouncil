@@ -97,6 +97,20 @@
     opacity: 0.5;
 }
 
+.weui-media-box__title_in-text {
+    font-size:28rpx;
+    width:auto;
+    overflow:visible;
+    /*text-overflow:ellipsis;*/
+    white-space: normal;
+    word-wrap:normal;
+    /*word-wrap:break-word;*/
+    word-break:break-all;
+}
+.weui-media-box__info__meta{
+    color: #747374;
+    font-size:20rpx;
+}
 
 @keyframes slidown{
     from{
