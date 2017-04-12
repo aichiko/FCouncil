@@ -14,9 +14,12 @@
   binderror；播放错误时调用，携带参数detail = {errMsg: MediaError.code}
 
  -->
-<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop bindplay="funplay" bindpause="funpause" bindtimeupdate="funtimeupdate" bindended="funended" binderror="funerror"></audio>
+<view class="page">
+  <audio class="audio" poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop bindplay="funplay" bindpause="funpause" bindtimeupdate="funtimeupdate" bindended="funended" binderror="funerror"></audio>
+</view>
 
-<button type="primary" bindtap="audioPlay">播放</button>
-<button type="primary" bindtap="audioPause">暂停</button>
-<button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
-<button type="primary" bindtap="audioStart">回到开头</button>
+
+<!--<button class="play_button" type="primary" bindtap="audioPlay">播放</button>
+<button class="pause_button" type="primary" bindtap="audioPause">暂停</button>
+<button class="set_playposition_button" type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+<button class="play_from_start_button" type="primary" bindtap="audioStart">回到开头</button>-->

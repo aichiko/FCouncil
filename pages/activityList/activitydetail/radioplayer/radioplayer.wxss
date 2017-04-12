@@ -1,0 +1,39 @@
+.page {
+    /*text-align: center;*/
+}
+.audio {
+    position: fixed;
+    margin-right: 0;
+    margin-left: 0;
+    /*height: 100%;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+}
+.play_button{
+    width: 160rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    background-color: #BBBBBB;
+    color: #fff;
+}
+.pause_button {
+    width: 160rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    background-color: #BBBBBB;
+    color: #fff;
+}
+.set_playposition_button {
+    width: 160rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    background-color: #BBBBBB;
+    color: #fff;
+}
+.play_from_start_button {
+    width: 160rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    background-color: #BBBBBB;
+    color: #fff;
+}
