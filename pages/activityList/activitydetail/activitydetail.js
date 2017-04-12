@@ -170,35 +170,19 @@ Page({
     }
   },
   // 看视频
-  watchVideo:function(){
+  watchVideo:function(e){
+    let activityid = e.currentTarget.dataset.activityid
     console.log('看视频')
     wx.navigateTo({
-      url: './videoplayer/videoplayer?',
-      success: function(res){
-        // success
-      },
-      fail: function(res) {
-        // fail
-      },
-      complete: function(res) {
-        // complete
-      }
+      url: './videoplayer/videoplayer?id='+activityid,
     })
   },
   // 听录音
-  listenVoice:function(){
+  listenVoice:function(e){
     console.log('听录音')
+    let activityid = e.currentTarget.dataset.activityid
     wx.navigateTo({
-      url: './radioplayer/radioplayer?',
-      success: function(res){
-        // success
-      },
-      fail: function(res) {
-        // fail
-      },
-      complete: function(res) {
-        // complete
-      }
+      url: './radioplayer/radioplayer?id='+activityid,
     })
   },
   onLoad:function(options){

@@ -14,8 +14,8 @@
   binderror；播放错误时调用，携带参数detail = {errMsg: MediaError.code}
 
  -->
-<view class="page">
-  <audio class="audio" poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop bindplay="funplay" bindpause="funpause" bindtimeupdate="funtimeupdate" bindended="funended" binderror="funerror"></audio>
+<view class="page" wx:for="{{audioUrl}}" wx:key="{{index}}">
+  <audio class="audio" poster="{{poster}}" name="{{audioName[0]}}" author="{{author}}" src="{{audioUrl[0]}}" id="myAudio" controls loop bindplay="funplay" bindpause="funpause" bindtimeupdate="funtimeupdate" bindended="funended" binderror="funerror"></audio>
 </view>
 
 

@@ -3,7 +3,7 @@
 <view class="page">
     <view class="page__hd">
         <view class="headcenter">
-            <image class="weui-grid__icon" bindtap="loginAction" src="{{isLogin?userInfo.Weixin_pic:'../../images/icon_login.png'}}" mode="scaleToFill"></image>
+            <image class="weui-grid__icon" bindtap="loginAction" src="{{isLogin?Weixin_pic:'../../images/icon_login.png'}}" mode="scaleToFill"></image>
             <text class="tip_text">{{isLogin?nickname:logintips}}</text>
         </view>
     </view>

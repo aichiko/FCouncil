@@ -8,6 +8,8 @@
     font-size: 36rpx;
     margin-top: 15rpx;
     text-align: center;
+    margin-left: 20rpx;
+    margin-right: 20rpx
 }
 .doc-part-content {
     position: relative;

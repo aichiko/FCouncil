@@ -1,5 +1,8 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
 <view class="report_page">
     <view class="doc-title">{{report.Title}}</view>
-    <view class="doc-part-content">{{report.BaoDesc}}</view>
+    <view class="doc-part-content">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
     <button class="read-wholedoc" bindtap="readCompleteDoc">在线查看</button>
 </view>

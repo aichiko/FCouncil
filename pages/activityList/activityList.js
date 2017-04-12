@@ -16,7 +16,7 @@ Page({
     page: 1,
     parameters: {},
 
-    firstType: -1,
+    firstDesc: '',
 
     // 假数据
     filterArray: ["类型", "地区", "年份", "标签"],
@@ -84,8 +84,12 @@ Page({
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
+    var filterArr = this.data.filterArray
+    filterArr[0] = options.desc
     this.setData({
-      activityType: options.index
+      activityType: options.index,
+      firstDesc: options.desc,
+      filterArray: filterArr
     })
     this.activityListRequest(options.index)
     this.videoClassRquest()

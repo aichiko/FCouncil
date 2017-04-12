@@ -7,7 +7,9 @@ Page({
     userInfo: {},
     logintips: '请登录',
     nickname: '',//登录后的昵称
+    Weixin_pic: '',
     wx_userInfo: {}
+
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -61,11 +63,13 @@ Page({
       key: 'userInfo',
       success: function(res){
         // success
-        console.log(res)
+        console.log('userInfo=====',res)
         _this.setData ({
           userInfo: res.data,
-          nickname: res.data.Weixin_Name
+          nickname: res.data.Weixin_Name,
+          Weixin_pic: res.data.Weixin_pic
         })
+        console.log('Weixin_pic=====',_this.data.Weixin_pic)
       }
     })
   },
