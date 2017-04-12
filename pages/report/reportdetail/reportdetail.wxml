@@ -1,5 +1,5 @@
 <view class="report_page">
     <view class="doc-title">{{report.Title}}</view>
-    <view class="doc-part-content">{{content}}</view>
-    <button class="read-wholedoc" bindtap="readCompleteDoc">查看完整文档</button>
+    <view class="doc-part-content">{{report.BaoDesc}}</view>
+    <button class="read-wholedoc" bindtap="readCompleteDoc">在线查看</button>
 </view>

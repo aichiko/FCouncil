@@ -164,6 +164,10 @@ Page({
       parameters: dic,
       success: function(data) {
         console.log('请求成功',data)
+        wx.showModal({
+          title: '追问成功',
+          showCancel:false
+        })
       }
     })
     console.log('提交问题')

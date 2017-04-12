@@ -16,6 +16,8 @@ Page({
     page: 1,
     parameters: {},
 
+    firstType: -1,
+
     // 假数据
     filterArray: ["类型", "地区", "年份", "标签"],
 

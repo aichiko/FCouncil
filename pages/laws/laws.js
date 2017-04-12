@@ -155,7 +155,7 @@ Page({
 
   filterItemAction: function(e) {
     let array = ["类型"]
-    let keys = [ "TypeID"]
+    let keys = [ "typeID"]
     var parameters = this.data.parameters
     let keyindex = this.data.shownavindex
     let arr = this.data.content[this.data.shownavindex]

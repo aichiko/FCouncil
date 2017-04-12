@@ -76,7 +76,7 @@ Page({
           })
         }
         that.setData({
-          myParameters: {"page": that.data.myPage, "ID": res.data.ID}
+          myParameters: {"page": that.data.myPage, "userID": res.data.ID}
         })
         that.prepareData(myQuestion, that.data.myParameters, getdata)
       }

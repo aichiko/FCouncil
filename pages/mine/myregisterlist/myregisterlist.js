@@ -14,14 +14,16 @@ Page({
     // 生命周期函数--监听页面加载
     this.getUserInfo()
   },
-  toDetail:function(e){
-    let index = e.currentTarget.dataset.detailid
-    let item = this.data.registerlist[index]
-    let ID = item.ID
+
+  gotoActivity: function(e) {
+    console.log(e)
+    console.log(e.currentTarget.dataset.activityid)
+    let ID = e.currentTarget.dataset.activityid
     wx.navigateTo({
       url: '../../activityList/activitydetail/activitydetail?id='+ID
     })
   },
+
   // 注册签到
   resignAction:function(e) {
     let index = e.currentTarget.dataset.index

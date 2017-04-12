@@ -1,7 +1,7 @@
 
 <view class="weui-panel weui-panel_access" >
     <block wx:for-items="{{registerlist}}" wx:key="{{index}}">
-        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap="toDetail" data-detailid="{{index}}">
+        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" bindtap="gotoActivity" data-activityID="{{registerlist[index].ID}}">
             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                 <view class="weui-media-box__title">{{registerlist[index].Name}}</view>
                 <view class="weui-media-box__desc">

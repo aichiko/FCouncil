@@ -38,10 +38,11 @@ Page({
     }
   },
 
-  onReady:function(){
+  onReady: function(){
     // 页面渲染完成
   },
-  onShow:function(){
+
+  onShow: function(){
     // 页面显示
     var _this = this
     // 获取登录状态
@@ -68,10 +69,10 @@ Page({
       }
     })
   },
-  onHide:function(){
+  onHide: function(){
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function(){
     // 页面关闭
   },
   loginAction: function () {

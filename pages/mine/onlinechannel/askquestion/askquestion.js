@@ -42,11 +42,17 @@ Page({
           let userID = userInfo.ID
           let typeID = that.data.typeList[value.picker].ID
           var dic = {"UserID": userID, "Title":value.title, "TypeclassID": typeID, "Content": value.content }
-          that.commitQuestion({
-            parameters: dic,
-            success: function(data) {
-              console.log('请求成功',data)
-            }
+          that.commitQuestion(dic,function(data){
+            console.log('请求成功',data)
+              wx.showModal({
+                title: "提问成功",
+                showCancel:false,
+                success: function(){
+                  wx.navigateBack({
+                    delta: 1, // 回退前 delta(默认为1) 页面
+                  })
+                }
+              })
           })
           console.log('提交问题')
         } else if (res.cancel) {
@@ -70,7 +76,7 @@ Page({
       }, // 设置请求的 header
       success: function(res){
         // success
-        console.log('commitURL',parameters,res)
+        console.log(commitURL,parameters,res)
         wx.hideLoading()
         if(res.data.status == 0){
           if (success){
@@ -92,7 +98,6 @@ Page({
         // fail
         console.log(res)
         wx.hideLoading()
-        
       }
     })
   },

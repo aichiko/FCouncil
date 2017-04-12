@@ -179,7 +179,7 @@ Page({
 
   filterItemAction: function(e) {
     let array = ["来源", "类型"]
-    let keys = ["labID", "TypeID"]
+    let keys = ["labID", "typeID"]
     var parameters = this.data.parameters
     let keyindex = this.data.shownavindex
     let arr = this.data.content[this.data.shownavindex]

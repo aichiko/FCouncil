@@ -15,16 +15,19 @@
     </view>
 </view>
 <!--联系方式-->
-<view class="section section_gap" ></view>
-<view class="section__title">联系方式</view>
-<view class="label">
-    <view>
-        <text>电话：{{expert.Tel}}</text>
-    </view>
-    <view>
-        <text>邮箱：{{expert.Email}}</text>
+<view wx:if="{{isLogin}}" class="">
+    <view class="section section_gap" ></view>
+    <view class="section__title">联系方式</view>
+    <view class="label">
+        <view>
+            <text>电话：{{expert.Tel}}</text>
+        </view>
+        <view>
+            <text>邮箱：{{expert.Email}}</text>
+        </view>
     </view>
 </view>
+
 <!--专家详细介绍-->
 <view class="section section_gap"></view>
 <view class="section__title">专家介绍</view>

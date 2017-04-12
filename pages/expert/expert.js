@@ -4,7 +4,8 @@ let requestUrl = app.globalData.host+'teacherdetail'
 Page({
   data:{
     id: 0,
-    expert: {}
+    expert: {},
+    isLogin: false,
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -15,6 +16,10 @@ Page({
       id: options.index
     })
     this.expertDetailRequest()
+    let isLogin = wx.getStorageSync('isLogin')
+    this.setData({
+      isLogin: isLogin
+    })
   },
 
   expertDetailRequest: function() {

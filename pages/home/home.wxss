@@ -76,7 +76,7 @@
     position: absolute;
     top: 50%;
     margin-top: -4px;
-    right: 2px;
+    right: 40rpx;
     margin-right: 10rpx;
 }
 /*专家*/
