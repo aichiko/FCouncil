@@ -16,7 +16,7 @@ Page({
     descHeight: '12em',
 
     showMyToast: false,
-    myToastText: ''
+    myToastText: '',
   },
   foldOrExtend:function() {
     console.log('点击折叠。。。。')
@@ -36,15 +36,18 @@ Page({
     console.log(this.data.isDescFold)
   },
   registerNow:function(){
-    if (app.globalData.isLogin == false) {
+    let islogin = wx.getStorageSync('isLogin')
+    if (islogin == false) {
       //未登录
       wx.navigateTo({
         url: '../../mine/login/login'
       })
       return
     }
-
-
+    let userInfo = wx.getStorageSync('userInfo')
+    this.setData({
+      userID: userInfo.ID
+    })
     var that = this
     if(this.data.canReg){
       // 可注册
@@ -207,7 +210,8 @@ Page({
     })
     var UID = this.data.userID
     var dic
-    if (app.globalData.isLogin) {
+    let isLogin = wx.getStorageSync('isLogin')
+    if (isLogin) {
       let userInfo = wx.getStorageSync('userInfo')
       this.setData({
         userID: userInfo.ID
