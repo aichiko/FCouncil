@@ -7,7 +7,6 @@
     color: #3c3c3c;
     border-bottom: 1rpx solid #EFEFEF;
 }
-
 /*.weui-media-box {
     padding-bottom: 0rpx;
     font-size: 34rpx;

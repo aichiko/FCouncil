@@ -10,3 +10,8 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+
+.weui-search-bar {
+    background-color: #137FC1;
+    border-top: 0
+}

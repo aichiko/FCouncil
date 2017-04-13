@@ -71,9 +71,107 @@ Page({
         "Aorder": "10"
       }
     ],
+    //不搜索时的数据源
+    activityList: [],
+    //搜索时的数据源
+    // search_activityList: [],
 
-    activityList: []
+    inputShowed: false,
+    // 搜索的word
+    inputVal: ""
   },
+
+  showInput: function (e) {
+    console.log("showInput" ,e)
+    this.setData({
+        inputShowed: true
+    });
+  },
+  hideInput: function (e) {
+    console.log("hideInput" ,e)
+    this.setData({
+        inputVal: "",
+        inputShowed: false
+    });
+    let dic = this.data.parameters
+    console.log(dic)
+    delete(dic.keyword)
+    console.log(dic)
+    dic.page = 1
+    this.prepareData(dic)
+  },
+  clearInput: function (e) {
+    console.log("clearInput" ,e)
+    this.setData({
+        inputVal: ""
+    });
+  },
+  // 暂时不需要热更新
+  inputTyping: function (e) {
+    console.log("inputTyping" ,e)
+    /*
+    this.setData({
+        inputVal: e.detail.value
+    });
+    */
+  },
+
+  searchConfirm: function(e) {
+    console.log("searchConfirm" ,e)
+    this.setData({
+        inputVal: e.detail.value
+    });
+    if (e.detail.value.length >0) {
+      // 搜索长度大于0 时， 进行搜索
+      var that = this
+      this.searchData(e.detail.value, function(data){
+        that.setData({
+          activityList: data
+        })
+      })
+    }
+  },
+
+  searchData: function(keyword, success) {
+    var that = this
+    let dic = this.data.parameters
+    dic.page = 1
+    dic.keyword = keyword
+    this.setData({
+      parameters: dic
+    })
+    wx.showLoading({
+      title: '加载中'
+    })
+    wx.request({
+      url: app.globalData.host+'videolist',
+      data: dic,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res)
+        wx.hideLoading()
+        if (res.data.status == 0){
+          if(success){
+            success(res.data.data)
+          }
+        }else{
+          that.setData({
+            activityList: []
+          })
+        }
+      },
+      fail: function(res) {
+        // fail
+        console.log(res)
+        wx.hideLoading()
+      },
+    })
+  },
+
   toDetail: function (e) {
     let index = e.currentTarget.dataset.detailid
     let item = this.data.activityList[index]
@@ -207,7 +305,7 @@ Page({
       title: '加载中',
     })
     this.setData({
-        parameters: {"page": this.data.page, "TypeID": TypeID}
+      parameters: {"page": this.data.page, "TypeID": TypeID}
     })
     console.log(this.data.parameters)
     wx.request({
@@ -234,8 +332,53 @@ Page({
             activityList: []
           })
         }
-        
+      },
+      fail: function(res) {
+        // fail
+        wx.stopPullDownRefresh()
+        console.log(res)
+        wx.hideLoading()
+      },
+      complete: function(res) {
+        // complete
+        wx.stopPullDownRefresh()
+      }
+    })
+  },
 
+  prepareData: function(parameters){
+    var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    
+    console.log(this.data.parameters)
+    wx.request({
+      url: app.globalData.host+'videolist',
+      data: this.data.parameters,
+
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: function(res){
+        // success
+        wx.stopPullDownRefresh()
+        console.log(res)
+        wx.hideLoading()
+        that.setData({
+          parameters: parameters
+        })
+        if (res.data.status == 0) {
+          that.setData({
+            activityList: res.data.data
+          })
+        }else {
+          that.setData({
+            activityList: []
+          })
+        }
       },
       fail: function(res) {
         // fail
@@ -268,11 +411,16 @@ Page({
   },
   onPullDownRefresh: function() {
     // 页面相关事件处理函数--监听用户下拉动作
-    this.activityListRequest(this.data.parameters.TypeID)
+    let dic = this.data.parameters
+    dic.page = 1
+    this.prepareData(dic)
   },
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数
-    this.loadmoreData()
+    if (this.data.nzshow) {
+      this.loadmoreData()
+    }
+    
   },
 
   loadmoreData: function() {

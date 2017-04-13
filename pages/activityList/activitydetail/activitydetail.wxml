@@ -11,7 +11,7 @@
                 <view class="content_area">
                     <view class="toptitle_view">
                         <view class="toptitle">{{activity.Name}}</view>
-                        <view class="titletime_view">时间：{{activity.ADate}} {{activity.ADatearea}}</view>
+                        <view class="titletime_view">时间：{{activity.MeetDate}}</view>
                     </view>
                 </view>
             </view>

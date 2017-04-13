@@ -29,19 +29,114 @@ Page({
 
     typeList: [],
 
+    inputShowed: false,
+    // 搜索的word
+    inputVal: ""
+
   },
+  
+  showInput: function (e) {
+    console.log("showInput" ,e)
+    this.setData({
+        inputShowed: true
+    });
+  },
+  hideInput: function (e) {
+    console.log("hideInput" ,e)
+    this.setData({
+        inputVal: "",
+        inputShowed: false
+    });
+
+    let dic = this.data.parameters
+    console.log(dic)
+    delete(dic.keyword)
+    console.log(dic)
+    dic.page = 1
+    this.reportListRquest(dic)
+  },
+  clearInput: function (e) {
+    console.log("clearInput" ,e)
+    this.setData({
+        inputVal: ""
+    });
+  },
+  // 暂时不需要热更新
+  inputTyping: function (e) {
+    console.log("inputTyping" ,e)
+    /*
+    this.setData({
+        inputVal: e.detail.value
+    });
+    */
+  },
+
+  searchConfirm: function(e) {
+    console.log("searchConfirm" ,e)
+    this.setData({
+        inputVal: e.detail.value
+    });
+    if (e.detail.value.length >0) {
+      // 搜索长度大于0 时， 进行搜索
+      var that = this
+      this.searchData(e.detail.value, function(data){
+        that.setData({
+          reportsList: data
+        })
+      })
+    }
+  },
+
+  searchData: function(keyword, success) {
+    var that = this
+    let dic = this.data.parameters
+    dic.page = 1
+    dic.keyword = keyword
+    
+    wx.showLoading({
+      title: '加载中'
+    })
+    wx.request({
+      url: requesturl,
+      data: dic,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res)
+        wx.hideLoading()
+        if (res.data.status == 0){
+          that.setData({
+            parameters: dic
+          })
+          if(success){
+            success(res.data.data)
+          }
+        }else{
+          that.setData({
+            reportsList: []
+          })
+        }
+      },
+      fail: function(res) {
+        // fail
+        console.log(res)
+        wx.hideLoading()
+      },
+    })
+  },
+
   // 专业报告列表
-  reportListRquest: function() {
+  reportListRquest: function(parameters) {
     var that = this
     wx.showLoading({
       title: '加载中',
     })
-    this.setData({
-        parameters: {"page": this.data.page}
-    })
     wx.request({
       url: requesturl,
-      data: this.data.parameters,
+      data: parameters,
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       header: {
@@ -53,7 +148,8 @@ Page({
         console.log(res)
         if (res.data.status == 0){
           that.setData({
-            reportsList: res.data.data
+            reportsList: res.data.data,
+            parameters: parameters
           })
         }
       },
@@ -125,7 +221,10 @@ Page({
   },
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数
-    this.loadmoreData()
+    if(this.data.nzshow){
+      this.loadmoreData()
+    }
+    
   },
   loadmoreData: function() {
     let page = this.data.parameters.page
@@ -333,7 +432,7 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     // 如果是网络请求或是别的方法传出的值调用“this”,不能直接用，需要用变量接收“this” 再使用(如mine.js中的用法)
-    this.reportListRquest()
+    this.reportListRquest({"page": this.data.page})
     this.sourceRquest()
     this.classifyRquest()
   },
