@@ -38,10 +38,18 @@ Page({
             })
             return
           }
+          if(value.phone == null) {
+            console.log('联系方式不能为空！！！')
+            wx.showModal({
+              title: '手机号不能为空',
+              showCancel:false
+            })
+            return
+          }
           let userInfo = wx.getStorageSync('userInfo')
           let userID = userInfo.ID
           let typeID = that.data.typeList[value.picker].ID
-          var dic = {"UserID": userID, "Title":value.title, "TypeclassID": typeID, "Content": value.content }
+          var dic = {"UserID": userID, "Title":value.title, "TypeclassID": typeID, "Content": value.content, "Tel": value.phone }
           that.commitQuestion(dic,function(data){
             console.log('请求成功',data)
               wx.showModal({

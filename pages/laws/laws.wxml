@@ -18,11 +18,11 @@
     <view class="weui-panel__bd">
         <block wx:for-items="{{lawsList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toLawDetail" data-detailid="{{index}}">
-                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:28rpx">{{lawsList[index].Title}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx">{{lawsList[index].Title}}</view>
                 <!--<view class="weui-media-box__desc">{{lawsList[index].Content}}</view>-->
                 <view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">时间:{{lawsList[index].AddDate}}</view>
-                    <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">类型：{{lawsList[index].classDesc}}</view>
+                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">时间:{{lawsList[index].AddDate}}</view>
+                    <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">类型：{{lawsList[index].classDesc}}</view>
                 </view>
             </view>
         </block>

@@ -30,6 +30,7 @@
     /*padding-bottom: -5rpx;*/
 }
 .btn_section {
+    padding-top: 30rpx;
     background-color: #fff;
 }
 .weui-btn {

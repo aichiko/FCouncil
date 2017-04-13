@@ -18,12 +18,12 @@
     <view class="weui-panel__bd">
         <block wx:for-items="{{reportsList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toReportDetail" data-detailID="{{index}}">
-                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:28rpx">{{reportsList[index].Title}}</view>
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx">{{reportsList[index].Title}}</view>
                 <!--报告内容-->
                 <!--<view class="weui-media-box__desc">{{reportsList[index].content}}</view>-->
                 <view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">{{reportsList[index].AddDate}}</view>
-                    <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">类型：{{reportsList[index].classDesc}}</view>
+                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">{{reportsList[index].AddDate}}</view>
+                    <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">类型：{{reportsList[index].classDesc}}</view>
                 </view>
             </view>
         </block>

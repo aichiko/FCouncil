@@ -8,10 +8,13 @@ Page({
     content: ''
   },
   readCompleteDoc: function() {
-
+    wx.showLoading({
+      title: '下载中'
+    })
     wx.downloadFile({
-      url: 'https://www.fcouncil.com'+ this.data.report.Content,
+      url: this.data.report.Content,
       success: function (res) {
+        wx.hideLoading()
         var filePath = res.tempFilePath
         wx.openDocument({
           filePath: filePath,
@@ -19,6 +22,9 @@ Page({
             console.log('打开文档成功')
           }
         })
+      },
+      fail: function() {
+        wx.hideLoading()
       }
     })
   },

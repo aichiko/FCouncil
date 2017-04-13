@@ -68,7 +68,7 @@
 
 <!--guradcell 模版-->
 <template name="guradcell">
-    <navigator class="weui-grid" hover-class="weui-grid_active" url="../activityList/activityList?index=0&desc={{Desc}}">
+    <navigator class="weui-grid" hover-class="weui-grid_active" url="../activityList/activityList?index={{ID}}&desc={{Desc}}">
         <image class="weui-grid__icon" src="{{PicUrl}}"/>
         <view class="weui-grid__label">{{Desc}}</view>        
     </navigator>
