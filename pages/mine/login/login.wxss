@@ -1,31 +1,57 @@
+page {
+    background-color: #137FC1;
+    height: 100%;
+    width: 100%;
+}
 .registernow {
     margin-top: 40rpx;
     margin-bottom: 40rpx;
-    width: 100%;
-    height: auto;
-    color: green;
+    width: 90%;
     text-align: center;
+    height: 100rpx;
+    font-size: 40rpx;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20rpx;
+    border: 2rpx solid #60ACF4;
+    background-color: #fff;
+    line-height: 100rpx;
+    opacity: 0.8;
 }
 .reg_text {
-    color: green;
-    font-size: 28rpx;
+    color: #60ACF4;
+    font-size: 40rpx;
 }
 .weui-label {
-    font-size: 34rpx;
+    font-size: 36rpx;
     width: 180rpx;
+    color: #747374;
 }
 .weui-input {
-    font-size: 34rpx;
+    font-size: 36rpx;
+    color: #ccc;
 }
 .weui-btn {
     width: 90%;
-    height: 88rpx;
-    font-size: 34rpx;
+    height: 100rpx;
+    font-size: 40rpx;
     border-radius: 20rpx;
+    border: 2rpx solid #fff;
     color: white;
-    background-color: #137FC1;
-    line-height: 88rpx;
+    background-color: #60ACF4;
+    line-height: 100rpx;
+    opacity: 0.8;
+}
+.weui-btn:first-child {
+    margin-top: 40rpx;
 }
 .weui-cells.weui-cells_after-title{
-    margin-top: 50rpx;
+    margin-top: 100rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    border-radius: 10rpx;
+}
+.weui-cell_input {
+    height: 120rpx;
+    width: 600rpx;
 }

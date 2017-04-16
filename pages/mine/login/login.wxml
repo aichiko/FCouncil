@@ -1,27 +1,29 @@
-<view class="weui-cells weui-cells_after-title">
-<!--输入框-->
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">用户名:</view>
+<view class="page">
+    <!--输入框-->
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">用户名:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入用户名" bindinput="nameInput"/>
+            </view>
         </view>
-        <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入用户名" bindinput="nameInput"/>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">密码:</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" password="true" placeholder="请输入密码" bindinput="passwordInput"/>
+            </view>
         </view>
     </view>
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">密码:</view>
-        </view>
-        <view class="weui-cell__bd">
-            <input class="weui-input" password="true" placeholder="请输入密码" bindinput="passwordInput"/>
-        </view>
+    <!--登录按钮-->
+    <view class="button-sp-area">
+        <button class="weui-btn" bindtap="login">登录</button>
     </view>
-</view>
-<!--立即注册-->
-<view class="registernow" bindtap="registerNow">
-    <text class="reg_text">立即注册</text>
-</view>
-<!--登录按钮-->
-<view class="button-sp-area">
-    <button class="weui-btn" bindtap="login">登录</button>
+    <!--立即注册-->
+    <view class="registernow" bindtap="registerNow">
+        <text class="reg_text">注册</text>
+    </view>
 </view>
