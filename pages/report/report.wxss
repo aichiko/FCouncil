@@ -85,7 +85,7 @@
 
 .fullbg{
     position: fixed;
-    top:0;
+    top:40;
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -114,7 +114,7 @@
 
 @keyframes slidown{
     from{
-        transform:  translateY(-100%);
+        transform:  translateY(0%); /*-100%*/
     }
     to{
         transform:  translateY(0%);
@@ -129,7 +129,7 @@
         transform:  translateY(0%);
     }
     to{
-        transform:  translateY(-100%);
+        transform:  translateY(0%); /*-100%*/
     }
 }
 .slidup{

@@ -1,25 +1,27 @@
 page {
-    background-color: #137FC1;
+    background-color: #F5F5F5;
     height: 100%;
     width: 100%;
 }
 .registernow {
-    margin-top: 40rpx;
-    margin-bottom: 40rpx;
-    width: 90%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 200rpx;
+    width: 35%;
     text-align: center;
     height: 100rpx;
     font-size: 40rpx;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 20rpx;
-    border: 2rpx solid #60ACF4;
-    background-color: #fff;
+    border-radius: 4rpx;
+    border: 2rpx solid #137FC1;
+    /*background-color: #fff;*/
     line-height: 100rpx;
     opacity: 0.8;
 }
 .reg_text {
-    color: #60ACF4;
+    color: #137FC1;
     font-size: 40rpx;
 }
 .weui-label {
@@ -32,26 +34,33 @@ page {
     color: #ccc;
 }
 .weui-btn {
-    width: 90%;
+    width: 96%;
     height: 100rpx;
     font-size: 40rpx;
-    border-radius: 20rpx;
+    border-radius: 4rpx;
     border: 2rpx solid #fff;
     color: white;
-    background-color: #60ACF4;
+    background-color: #137FC1;
     line-height: 100rpx;
     opacity: 0.8;
 }
 .weui-btn:first-child {
-    margin-top: 40rpx;
+    margin-top: 60rpx;
 }
 .weui-cells.weui-cells_after-title{
-    margin-top: 100rpx;
-    margin-left: 40rpx;
-    margin-right: 40rpx;
-    border-radius: 10rpx;
+    margin-top: 200rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    border-radius: 4rpx;
+    border: 1rpx solid #ccc;
 }
 .weui-cell_input {
-    height: 120rpx;
+    height: 100rpx;
     width: 600rpx;
+}
+.weui-cells::after {
+    border-bottom: 0;
+}
+.weui-cells::before  {
+    border-top: 0;
 }

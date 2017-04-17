@@ -24,7 +24,7 @@
             <view class="icon"></view>
         </view>
     </view>
-    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}" style="backgroud-color:#DF3C43;">
         <view data-filter="{{index}}" wx:for="{{content[shownavindex]}}" bindtap="filterItemAction" class="weui-cell__bd weui-cell_primary">
             {{item}}
         </view>

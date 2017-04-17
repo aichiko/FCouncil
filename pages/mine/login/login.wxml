@@ -24,6 +24,6 @@
     </view>
     <!--立即注册-->
     <view class="registernow" bindtap="registerNow">
-        <text class="reg_text">注册</text>
+        <text class="reg_text">立即注册</text>
     </view>
 </view>
