@@ -47,7 +47,7 @@
       },
       {
         "pagePath": "pages/laws/laws",
-        "text": "法律法规",
+        "text": "热点问题",
         "iconPath": "images/laws1.png",
         "selectedIconPath": "images/laws.png"
       },

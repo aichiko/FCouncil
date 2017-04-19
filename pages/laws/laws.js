@@ -1,7 +1,8 @@
 // pages/laws/laws.js
 var app = getApp()
-let requesturl = app.globalData.host+'law'
-let typeUrl = app.globalData.host+'lawclass'
+// let requesturl = app.globalData.host+'law'
+// let typeUrl = app.globalData.host+'lawclass'
+let requesturl = app.globalData.host+'answerhot'
 
 Page({
   data:{
@@ -120,7 +121,7 @@ Page({
       },
     })
   },
-
+  /*
   typeRquest: function() {
     var that = this
     wx.request({
@@ -149,7 +150,7 @@ Page({
       }
     })
   },
-
+  */
   // 法律法规列表
   lawsListRquest: function(parameters) {
     var that = this
@@ -241,8 +242,8 @@ Page({
     let item = this.data.lawsList[index]
     let ID = item.ID
     wx.navigateTo({
-
-      url: './lawdetail/lawdetail?id='+ID
+      url: '../mine/onlinechannel/questiondetail/questiondetail?id='+ID+'&index=0'
+      // url: './lawdetail/lawdetail?id='+ID
     })
   },
 
@@ -395,7 +396,7 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     // 如果是网络请求或是别的方法传出的值调用“this”,不能直接用，需要用变量接收“this” 再使用(如mine.js中的用法)
     this.lawsListRquest({"page": this.data.page})
-    this.typeRquest()
+    // this.typeRquest()
   },
   onReady:function(){
     // 页面渲染完成

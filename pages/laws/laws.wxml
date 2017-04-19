@@ -1,6 +1,6 @@
 <!--pages/laws/laws.wxml-->
 <!--顶部的搜索栏-->
-<view class="weui-search-bar">
+<!--<view class="weui-search-bar">
     <view class="weui-search-bar__form">
         <view class="weui-search-bar__box">
             <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
@@ -15,9 +15,9 @@
         </label>
     </view>
     <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-</view>
+</view>-->
 <!--筛选功能-->
-<view class="page">
+<!--<view class="page">
     <view class="filter__bg">
         <view bindtap="filterAction" data-hi="{{index}}" class="filter__item {{shownavindex == index? 'active' : ''}}" wx:for-items="{{filterArray}}" wx:key="{{index}}">
             <view id="filter_{{index}}" class="content">{{filterArray[index]}}</view>
@@ -30,15 +30,15 @@
         </view>
     </view>
     <view hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
-</view>
+</view>-->
 <view class="weui-panel weui-panel_access {{nzopen ?'hidden':''}}">
     <view class="weui-panel__bd">
         <block wx:for-items="{{lawsList}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toLawDetail" data-detailid="{{index}}">
-                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx">{{lawsList[index].Title}}</view>
+                <text class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx">{{lawsList[index].Title}}</text><text style="font-size:30rpx; color: #ccc; padding-left: 15rpx">({{lawsList[index].rpcount}})</text>
                 <!--<view class="weui-media-box__desc">{{lawsList[index].Content}}</view>-->
                 <view class="weui-media-box__info">
-                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">时间:{{lawsList[index].AddDate}}</view>
+                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">提问时间:{{lawsList[index].AddDate}}</view>
                     <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">类型：{{lawsList[index].classDesc}}</view>
                 </view>
             </view>

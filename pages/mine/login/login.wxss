@@ -31,7 +31,7 @@ page {
 }
 .weui-input {
     font-size: 36rpx;
-    color: #ccc;
+    /*color: #ccc;*/
 }
 .weui-btn {
     width: 96%;
