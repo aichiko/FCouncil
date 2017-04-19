@@ -10,8 +10,8 @@ Page({
     page: 1,
     parameters: {},
 
-    nzopen:false,
-    nzshow:false,
+    // nzopen:false,
+    // nzshow:false,
     /// 筛选点击的 button
     shownavindex: -1,
     filterindex: -1,
@@ -191,9 +191,9 @@ Page({
   },
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数
-    if (this.data.nzshow){
+    // if (this.data.nzshow){
       this.loadmoreData()
-    }
+    // }
   },
   loadmoreData: function() {
     let page = this.data.parameters.page
