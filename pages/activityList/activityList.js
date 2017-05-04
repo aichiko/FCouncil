@@ -78,7 +78,8 @@ Page({
 
     inputShowed: false,
     // 搜索的word
-    inputVal: ""
+    inputVal: "",
+    userID: ""
   },
 
   showInput: function (e) {
@@ -307,6 +308,16 @@ Page({
     this.setData({
       parameters: {"page": this.data.page, "TypeID": TypeID}
     })
+    let isLogin = wx.getStorageSync('isLogin')
+    if (isLogin) {
+      let userInfo = wx.getStorageSync('userInfo')
+      let id = userInfo.ID
+      let dic = this.data.parameters
+      dic.userID = id
+      this.setData({
+        parameters: dic
+      })
+    }
     console.log(this.data.parameters)
     wx.request({
       url: app.globalData.host+'videolist',
@@ -411,9 +422,12 @@ Page({
   },
   onPullDownRefresh: function() {
     // 页面相关事件处理函数--监听用户下拉动作
-    let dic = this.data.parameters
-    dic.page = 1
-    this.prepareData(dic)
+    
+    if (this.data.nzshow) {
+      let dic = this.data.parameters
+      dic.page = 1
+      this.prepareData(dic)
+    }
   },
   onReachBottom: function() {
     // 页面上拉触底事件的处理函数
