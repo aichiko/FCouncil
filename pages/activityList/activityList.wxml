@@ -44,7 +44,7 @@
                     </view>
                     <view class="weui-media-box__info__meta city">地点:{{activityList[index].cityDesc}}</view>
                     <view class="weui-media-box__info__meta classdesc">活动类型:{{activityList[index].classDesc}}</view>
-                    <view class="weui-media-box__info__meta account" style="color: {{activityList[index].Isold?'#747374':'#DF3C43'}}">¥{{activityList[index].fee}}</view>
+                    <view class="weui-media-box__info__meta account" style="color: {{activityList[index].Isold?'#747374':'#DF3C43'}}">¥{{activityList[index].Meetfee}}</view>
                 </view>
             </view>
         </block>

@@ -103,7 +103,7 @@
     </view>
     <!--立即注册-->
     <view class="register_view">
-        <view class="tagview">会员价：¥{{activity.fee}}</view>
+        <view class="tagview">会员价：¥{{activity.Meetfee}}</view>
         <view wx:if="{{!canReg}}" class="disabled_registernow_btn" bindtap="registerNow">{{regBtnText}}</view>
         <view wx:if="{{canReg}}" class="registernow_btn" bindtap="registerNow">立即注册</view>
     </view>
