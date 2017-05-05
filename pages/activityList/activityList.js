@@ -3,7 +3,7 @@ var app = getApp()
 Page({
   data:{
     nzopen:false,
-    nzshow:false,
+    nzshow:true,
     /// 筛选点击的 button
     shownavindex: -1,
     filterindex: -1,
