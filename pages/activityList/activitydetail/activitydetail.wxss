@@ -169,7 +169,7 @@
     font-size: 24rpx;
     float: left;
     text-align: center;
-    width: 50%;
+    width: 60%;
     height: 90rpx;
     line-height: 90rpx;
     border-top: 1rpx solid #EFEFEF;
@@ -177,7 +177,7 @@
 .registernow_btn {
     float: right;
     font-size: 36rpx;
-    width: 50%;
+    width: 40%;
     height: 90rpx;
     line-height: 90rpx;
     z-index: 100;
@@ -189,7 +189,7 @@
 .disabled_registernow_btn {
     float: right;
     font-size: 36rpx;
-    width: 50%;
+    width: 40%;
     height: 90rpx;
     line-height: 90rpx;
     z-index: 100;
