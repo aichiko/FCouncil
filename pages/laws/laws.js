@@ -1,7 +1,7 @@
 // pages/laws/laws.js
 var app = getApp()
 // let requesturl = app.globalData.host+'law'
-// let typeUrl = app.globalData.host+'lawclass'
+let typeUrl = app.globalData.host +'answerclass'
 let requesturl = app.globalData.host+'answerhot'
 
 Page({
@@ -121,7 +121,6 @@ Page({
       },
     })
   },
-  /*
   typeRquest: function() {
     var that = this
     wx.request({
@@ -150,7 +149,7 @@ Page({
       }
     })
   },
-  */
+  
   // 法律法规列表
   lawsListRquest: function(parameters) {
     var that = this
