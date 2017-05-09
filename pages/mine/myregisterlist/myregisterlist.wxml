@@ -11,7 +11,7 @@
             </view>
             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                 <!--<image class="weui-media-box__thumb" src="../../../images/history.png" />-->
-                <view class="{{registerlist[index].Issign?'resigned':'resign'}}" style="font-size: 24rpx;" bindtap="resignAction" data-index="{{index}}">{{registerlist[index].Issign?'已签到':'签到'}}</view>
+                <view class="{{registerlist[index].Issign?'resigned':'resign'}}" style="font-size: 24rpx;" catchtap="resignAction" data-index="{{index}}">{{registerlist[index].Issign?'已签到':'签到'}}</view>
             </view>
         </view>
     </block>

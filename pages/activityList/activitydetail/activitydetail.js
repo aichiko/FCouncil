@@ -190,10 +190,11 @@ Page({
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
-    
-    this.setData({
+    if (this.data.id == "") {
+      this.setData({
         id: options.id
-    })
+      })
+    }
     console.log(options.id)
     this.getRegParams()
   },
@@ -208,7 +209,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    var UID = this.data.userID
+    
     var dic
     let isLogin = wx.getStorageSync('isLogin')
     if (isLogin) {
@@ -220,6 +221,7 @@ Page({
     }else{
       dic = { "ID": this.data.id }
     }
+    var UID = this.data.userID
     console.log('请求详情的userID参数'+UID)
     wx.request({
       url: app.globalData.host+'videodetail',
@@ -311,7 +313,7 @@ Page({
     // 用户点击右上角分享
     return {
       // title: '活动详情', // 分享标题
-      path: 'pages/activityList/activitydetail/activitydetail' // 分享路径
+      path: 'pages/activityList/activitydetail/activitydetail?id='+this.data.id // 分享路径
     }
   },
 })

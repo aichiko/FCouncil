@@ -1,6 +1,10 @@
 
 var app = getApp()
 
+function sayHello(name) {
+  console.log(`Hello ${name} !`)
+}
+
 function CCRequest(path, parameters, success, fail) {
   wx.showLoading({})
   wx.request({
@@ -29,5 +33,8 @@ function CCRequest(path, parameters, success, fail) {
   })
 }
 
-
+module.exports = {
+  request: CCRequest,
+  sayHello: sayHello
+}
 

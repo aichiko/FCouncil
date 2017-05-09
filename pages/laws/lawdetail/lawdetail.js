@@ -86,7 +86,7 @@ Page({
     return {
       // title: 'title', // 分享标题
       // desc: 'desc', // 分享描述
-      path: 'pages/laws/lawdetail/lawdetail' // 分享路径
+      path: 'pages/laws/lawdetail/lawdetail?id='+this.data.id // 分享路径
     }
   }
 })

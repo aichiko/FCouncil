@@ -70,7 +70,7 @@ Page({
     return {
       // title: '专家详情', // 分享标题
       // desc: '专家详情', // 分享描述
-      path: 'pages/expert/expert' // 分享路径
+      path: 'pages/expert/expert?index='+this.data.id // 分享路径
     }
   }
 })

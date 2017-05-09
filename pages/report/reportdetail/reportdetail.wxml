@@ -1,4 +1,6 @@
 <import src="../../../wxParse/wxParse.wxml"/> 
+<import src="../../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
 <view class="report_page">
     <view class="doc-title">{{report.Title}}</view>
     <view class="doc-part-content">

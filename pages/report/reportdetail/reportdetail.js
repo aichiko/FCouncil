@@ -1,6 +1,8 @@
 var app = getApp()
 let requesturl = app.globalData.host+'reportdetail'
 var WxParse = require('../../../wxParse/wxParse.js');
+//var CCRequest = require('../../../utils/CCReqeust.js');
+import { $wuxToast } from '../../../components/wux'
 Page({
   data:{
     id: '',
@@ -20,12 +22,38 @@ Page({
           filePath: filePath,
           success: function (res) {
             console.log('打开文档成功')
+          },
+          fail: function(res) {
+            console.log('打开文档失败')
+            wx.showToast({
+              title: '打开文档失败'
+            })
           }
         })
       },
       fail: function() {
         wx.hideLoading()
+        console.log('下载文档失败')
+        function showToastText(message) {
+          $wuxToast.show({
+            type: 'text',
+            timer: 1500,
+            color: '#fff',
+            text: message,
+            success: () => console.log(message)
+          })
+        }
+        showToastText('下载文档失败');
       }
+    })
+  },
+  showToastText(message) {
+    $wuxToast.show({
+      type: 'text',
+      timer: 1500,
+      color: '#fff',
+      text: message,
+      success: () => console.log(message)
     })
   },
   onLoad:function(options){
@@ -34,6 +62,8 @@ Page({
         id: options.id
     })
     this.detailRequest()
+
+    // CCRequest.sayHello('ash')
   },
 
   detailRequest: function() {
@@ -106,7 +136,7 @@ Page({
     return {
       // title: 'title', // 分享标题
       // desc: 'desc', // 分享描述
-      path: 'pages/report/reportdetail/reportdetail' // 分享路径
+      path: 'pages/report/reportdetail/reportdetail?id='+this.data.id // 分享路径
     }
   }
 })
