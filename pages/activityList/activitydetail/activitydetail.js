@@ -108,9 +108,10 @@ Page({
       })
       // ==============华丽分割线====================
     }else{
-      if(!this.data.activity.Isold){
+      if (!this.data.activity.Isold && !this.data.activity.Issign ){
         // 不可注册的两种情况（1.已过期，2.未过期已经注册可取消）
         // 未过期
+        //已签到不可取消
         wx.showModal({
           title: '提示',
           content: '您确定要取消注册吗？',
@@ -168,6 +169,7 @@ Page({
         // ================华丽分割线================
       }else{
         // 已过期,不做任何操作
+        //已签到，不作作何处理  【-by alimoon】
         console.log('已过期')
       }
     }
@@ -243,15 +245,20 @@ Page({
           // 判断按钮是否可注册
           var canReg 
           var regBtnText
-          if(!activity.Isreg && !activity.Isold){
+          if (!activity.Isreg && !activity.Isold && !activity.Issign){
             // 未注册未过期
             canReg = true
             regBtnText = '立即注册'
-          }else if(activity.Isreg && !activity.Isold){
+          } else if (activity.Isreg && !activity.Isold && !activity.Issign){
             // 已注册未过期
             canReg = false
             regBtnText = '取消注册'
-          }else {
+          } else if (activity.Issign) {
+            // 已注册已签到，不能取消不能注册
+            canReg = false
+            regBtnText = '已签到'
+          }
+          else {
             // 过期
             canReg = false
             regBtnText = '已过期'

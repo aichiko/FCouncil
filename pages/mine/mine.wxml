@@ -54,6 +54,7 @@
             </view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
+        
     </view>
 
     <!---个人中心-->
