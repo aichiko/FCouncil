@@ -18,7 +18,8 @@
     "pages/activityList/activityList",
     "pages/activityList/activitydetail/activitydetail",
     "pages/activityList/activitydetail/radioplayer/radioplayer",
-    "pages/activityList/activitydetail/videoplayer/videoplayer"
+    "pages/activityList/activitydetail/videoplayer/videoplayer",
+    "pages/mine/mineorder/mineorder"
   ],
   "window":{
     "backgroundTextStyle":"light",
