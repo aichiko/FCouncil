@@ -247,6 +247,7 @@ Page({
   },
 
   filterItemAction: function(e) {
+    console.log('filterItemAction。。。。。')
     let array = ["类型"]
     let keys = [ "typeID"]
     var parameters = this.data.parameters
@@ -287,6 +288,7 @@ Page({
   },
 
   filterRequest: function() {
+    console.log('filterrequest。。。。。。')
     var that = this
     wx.showLoading({
       title: '加载中',
@@ -305,6 +307,7 @@ Page({
       success: function(res){
         // success
         wx.hideLoading()
+        console.log('筛选请求结果')
         console.log(res)
         if (res.data.status == 0) {
           that.setData({
@@ -321,6 +324,7 @@ Page({
       },
       fail: function(res) {
         // fail
+        console.log('筛选失败')
         wx.hideLoading()
       },
       complete: function(res) {
@@ -331,6 +335,7 @@ Page({
 
 
   filterAction: function(view) {
+    console.log('filterAction........')
     console.log(view)
     let index = view.currentTarget.dataset.hi
     if (this.data.shownavindex == -1) {
@@ -395,7 +400,7 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     // 如果是网络请求或是别的方法传出的值调用“this”,不能直接用，需要用变量接收“this” 再使用(如mine.js中的用法)
     this.lawsListRquest({"page": this.data.page})
-    // this.typeRquest()
+    this.typeRquest()
   },
   onReady:function(){
     // 页面渲染完成
