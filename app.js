@@ -1,5 +1,4 @@
 //app.js
-import 'utils/CCRequest.js'
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据

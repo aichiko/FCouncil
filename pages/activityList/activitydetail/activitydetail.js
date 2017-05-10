@@ -17,6 +17,8 @@ Page({
 
     showMyToast: false,
     myToastText: '',
+    // 判断是否 为分享的页面，如果是分享的页面则加入一个黑色的小 button
+    isShare: false
   },
   foldOrExtend:function() {
     console.log('点击折叠。。。。')
@@ -190,14 +192,27 @@ Page({
       url: './radioplayer/radioplayer?id='+activityid,
     })
   },
+  gotoHome:function(){
+    wx.switchTab({
+      url: '../../home/home',
+    })
+  },
+
   onLoad:function(options){
     // 生命周期函数--监听页面加载
     if (this.data.id == "") {
+      console.log(options.id)
       this.setData({
         id: options.id
       })
     }
-    console.log(options.id)
+    console.log(options.isShare)
+    if (options.isShare) {
+      this.setData({
+        isShare: options.isShare
+      })
+    }
+
     this.getRegParams()
   },
   getRegParams:function() {
@@ -320,7 +335,7 @@ Page({
     // 用户点击右上角分享
     return {
       // title: '活动详情', // 分享标题
-      path: 'pages/activityList/activitydetail/activitydetail?id='+this.data.id // 分享路径
+      path: 'pages/activityList/activitydetail/activitydetail?id='+this.data.id+"&isShare=true" // 分享路径
     }
   },
 })

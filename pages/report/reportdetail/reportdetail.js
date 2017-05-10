@@ -1,7 +1,6 @@
-var app = getApp()
-let requesturl = app.globalData.host+'reportdetail'
+let path = 'reportdetail'
 var WxParse = require('../../../wxParse/wxParse.js');
-//var CCRequest = require('../../../utils/CCReqeust.js');
+var utils = require('../../../utils/util.js');
 import { $wuxToast } from '../../../components/wux'
 Page({
   data:{
@@ -10,6 +9,15 @@ Page({
     content: ''
   },
   readCompleteDoc: function() {
+    function showToastText(message) {
+      $wuxToast.show({
+        type: 'text',
+        timer: 1500,
+        color: '#fff',
+        text: message,
+        success: () => console.log(message)
+      })
+    }
     wx.showLoading({
       title: '下载中'
     })
@@ -31,18 +39,10 @@ Page({
           }
         })
       },
-      fail: function() {
+      fail: function(res) {
+        console.log(res)
         wx.hideLoading()
         console.log('下载文档失败')
-        function showToastText(message) {
-          $wuxToast.show({
-            type: 'text',
-            timer: 1500,
-            color: '#fff',
-            text: message,
-            success: () => console.log(message)
-          })
-        }
         showToastText('下载文档失败');
       }
     })
@@ -61,49 +61,26 @@ Page({
     this.setData({
         id: options.id
     })
-    this.detailRequest()
-
-    // CCRequest.sayHello('ash')
-  },
-
-  detailRequest: function() {
+    //this.detailRequest()
+    let id = this.data.id
     var that = this
-    wx.request({
-      url: requesturl,
-      data: {"ID": this.data.id},
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      success: function(res){
-        // success
-        console.log(res)
-        if (res.data.status == 0){
-          that.setData({
-            report: res.data.data
-          })
-
-          // console.log(WxParse)
-          var article = '<div>'+that.data.report.BaoDesc+'</div>';
-          /**
-          * WxParse.wxParse(bindName , type, data, target,imagePadding)
-          * 1.bindName绑定的数据名(必填)
-          * 2.type可以为html或者md(必填)
-          * 3.data为传入的具体数据(必填)
-          * 4.target为Page对象,一般为this(必填)
-          * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
-          */
-          WxParse.wxParse('article', 'html', article, that, 5);
-        }
-      },
-      fail: function(res) {
-        // fail
-        console.log(res)
-      },
-      complete: function(res) {
-        // complete
-      }
+    utils.ccRequest(path, { "ID": id }, function completion(data){
+      that.setData({
+        report: data
+      })
+      // console.log(WxParse)
+      var article = '<div>' + that.data.report.BaoDesc + '</div>';
+      /**
+      * WxParse.wxParse(bindName , type, data, target,imagePadding)
+      * 1.bindName绑定的数据名(必填)
+      * 2.type可以为html或者md(必填)
+      * 3.data为传入的具体数据(必填)
+      * 4.target为Page对象,一般为this(必填)
+      * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
+      */
+      WxParse.wxParse('article', 'html', article, that, 5);
+    }, function failure(data){
+      console.log("failure",data)
     })
   },
 

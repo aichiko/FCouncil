@@ -220,3 +220,13 @@
 .wxParse-div {
     overflow: visible;
 }
+
+
+.shareButton {
+  width: 80rpx;
+  height: 80rpx;
+  z-index: 9999;
+  position: fixed;
+  right: 0;
+  bottom: 150rpx;
+}
