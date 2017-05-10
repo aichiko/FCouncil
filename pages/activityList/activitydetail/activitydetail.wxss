@@ -229,4 +229,6 @@
   position: fixed;
   right: 0;
   bottom: 150rpx;
+  border-radius:20rpx;
+  background-color: rgb(114,113,113);
 }
