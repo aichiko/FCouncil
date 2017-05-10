@@ -26,4 +26,6 @@
     <view class="registernow" bindtap="registerNow">
         <text class="reg_text">立即注册</text>
     </view>
+    <!--我的提示框-->
+    <view class="myToast" style="display:{{showMyToast?'block':'none'}}">{{myToastText}}</view>
 </view>

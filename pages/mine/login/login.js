@@ -4,6 +4,8 @@ let weixinpic = app.globalData.host+'weixinpic'
 // var util = require('../../utils/util.js')
 Page({
   data:{
+    showMyToast: false,
+    myToastText: '',
     name: '',
     password: ''
   },
@@ -16,6 +18,9 @@ Page({
   },
     // 登录
   login: function () {
+      wx.showLoading({
+        title: '加载中',
+      })
     console.log('登录啦!用户名和密码分别是' + this.data.name + '/' + this.data.password)
     // 用户名和密码均不为空时可以登录
     var name = this.data.name
@@ -41,6 +46,7 @@ Page({
           if(res.data.status==0){
             // 请求登录成功
             // 提示用户登录成功
+            wx.hideLoading()
             wx.showToast({
               title: '登录成功！',
               icon: 'success',
@@ -73,12 +79,39 @@ Page({
             }
           }else{
             // 登录失败
+            wx.hideLoading()
             console.log(res.data.info)
+            // wx.showToast({
+            //   title: '登录失败！',
+            //   icon: 'success',
+            //   duration: 2000
+            // })
+            that.setData({
+              showMyToast: true,
+              myToastText: res.data.info
+            })
+            setTimeout(function(){
+              that.setData({
+                showMyToast: false
+              }) //1秒之后弹窗隐藏
+            },2000)
           }
         },
         fail: function(res) {
           // fail
+          wx.hideLoading()
           console.log(res)
+          wx.hideLoading()
+            console.log(res.data.info)
+            that.setData({
+              showMyToast: true,
+              myToastText: res.data.info
+            })
+            setTimeout(function(){
+              that.setData({
+                showMyToast: false
+              }) //1秒之后弹窗隐藏
+            },2000)
         },
         complete: function(res) {
           // complete

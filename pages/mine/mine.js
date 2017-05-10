@@ -7,6 +7,8 @@ Page({
     userInfo: {},
     logintips: '请登录',
     nickname: '',//登录后的昵称
+    userType: '类型',
+    validity: '',
     Weixin_pic: '',
     wx_userInfo: {}
 
@@ -67,6 +69,8 @@ Page({
         _this.setData ({
           userInfo: res.data,
           nickname: res.data.Weixin_Name,
+          userType: res.data.UsertypeName,
+          validity: res.data.Enddate,
           Weixin_pic: res.data.Weixin_pic
         })
         console.log('Weixin_pic=====',_this.data.Weixin_pic)

@@ -64,3 +64,21 @@ page {
 .weui-cells::before  {
     border-top: 0;
 }
+/*提示框*/
+.myToast{
+  width:auto;
+  height:130rpx;
+  line-height: 130rpx;
+  padding: 0 10rpx 0 10rpx;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  border-radius:20rpx;
+  background-color: rgb(114,113,113);
+  color:rgb(255,255,255);
+  font-size: 32rpx;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.85;
+}
