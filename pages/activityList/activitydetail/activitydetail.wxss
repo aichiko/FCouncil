@@ -181,8 +181,8 @@
     height: 90rpx;
     line-height: 90rpx;
     z-index: 100;
-     vertical-align: center;
-     text-align:center;
+    vertical-align: center;
+    text-align:center;
     color: #fff;
     background-color: #DF3C43;
 }
@@ -221,14 +221,20 @@
     overflow: visible;
 }
 
-
 .shareButton {
-  width: 80rpx;
-  height: 80rpx;
-  z-index: 9999;
-  position: fixed;
-  right: 0;
-  bottom: 150rpx;
-  border-radius:20rpx 0rpx 0rpx 20rpx;
-  background-color: rgb(114,113,113);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 80rpx;
+    height: 80rpx;
+    z-index: 9999;
+    position: fixed;
+    right: 10rpx;
+    bottom: 150rpx;
+    border-radius: 20rpx;
+    background-color: rgb(114,113,113);
+}
+.homepic {
+    width: 40rpx;
+    height: 40rpx;
 }

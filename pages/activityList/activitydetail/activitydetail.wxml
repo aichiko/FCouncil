@@ -1,5 +1,7 @@
 <import src="../../../wxParse/wxParse.wxml"/> 
-<button wx:if="{{isShare}}" class="shareButton" bindtap="gotoHome"><image src="../../images/backhome.png" style="width: 20px;height: 20px;margin-right: 5px" /></button>
+<view wx:if="{{isShare}}" class="shareButton" bindtap="gotoHome">
+    <image src="../../../images/backhome.png" class="homepic" />
+</view>
 <view class="page">
     <!--<view class="page__hd">
         <view class="page__title"></view>
