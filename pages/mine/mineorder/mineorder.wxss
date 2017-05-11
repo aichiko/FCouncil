@@ -1,5 +1,11 @@
 /* pages/mine/mineorder/mineorder.wxss */
-
+.page {
+    background-color: #EFEFEF;
+    height: 100%
+}
+.weui-navbar {
+  background-color: #fff;
+}
 .weui-media-box {
   padding: 10px;
   color: #E7E7E7
@@ -20,4 +26,17 @@
 .statusText {
     position: relative;
     
+}
+
+.weui-cells__title {
+  background-color: #fff;
+  margin-top: .5em;
+}
+
+.weui-media-box__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+  white-space: normal;
 }
