@@ -1,6 +1,9 @@
 // pages/mine/mineorder/mineorder.js
 var utils = require('../../../utils/util.js');
 let path = "orderlist"
+let appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
+let secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret  
+
 Page({
   data:{
     tabs: ["全部", "未付款", "已付款"],
@@ -140,7 +143,53 @@ Page({
   },
 
   payTap: function(button) {
+    console.log(button)
+    let id = button.currentTarget.dataset.id
+    console.log("id=",id)
 
+    wx.login({
+      success: function (loginCode){
+        //调用request请求api转换登录凭证  
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&grant_type=authorization_code&js_code=' + loginCode.code,
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function(res){
+            console.log(res.data.openid);
+            utils.ccRequestWithURL("https://www.fcouncil.com/index.php/Home/pay/getprepay", {
+              bookingNo: '20178888',  /*订单号*/
+              total_fee: 1,   /*订单金额*/
+              openid: res.data.openid
+
+            }, function success(data){
+              console.log(data);
+              var obj = {
+                'timeStamp': data.timeStamp,
+                'nonceStr': data.nonceStr,
+                'package': data.package,
+                'signType': 'MD5',
+                'total_fee': 1,
+                'paySign': data.paySign,
+                'success': function (res) {
+                  console.log("success");
+                  console.log(res);
+                },
+                'fail': function (res) {
+                  console.log('fail:' + JSON.stringify(res));
+                },
+              };
+              console.log(obj)
+              wx.requestPayment(obj);
+            }, function fail(){} )
+          }, 
+          fail: function (err) {
+            console.log(err)
+          }
+        })
+
+      }
+    })
   },
 
   onReady:function(){

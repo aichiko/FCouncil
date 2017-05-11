@@ -47,13 +47,19 @@
         <view class="weui-media-box weui-media-box_text" style="padding: 0px; padding-left: 10px">
         <view class="orderStatus_view">
             <text class="cell_text" style="color: #808080">状态：</text>
-            <text class="cell_text" style="color: red">{{paystatus}}</text>
+
+            <text wx:if="{{paystatuscode == 0}}" class="cell_text" style="color: red">{{paystatus}}</text>
+            <text wx:elif="{{paystatuscode == 1}}" class="cell_text" style="color: green">{{paystatus}}</text>
+            <text wx:elif="{{paystatuscode == 2}}" class="cell_text" style="color: #808080">{{paystatus}}</text>
         </view>
         <view class="orderStatus_view">
             <text class="cell_text" style="color: #808080">价格：</text>
-            <text class="cell_text" style="color: red">¥{{Meetfee}}</text>
+
+            <text wx:if="{{paystatuscode == 0}}" class="cell_text" style="color: red">¥{{Meetfee}}</text>
+            <text wx:elif="{{paystatuscode == 1}}" class="cell_text" style="color: green">¥{{Meetfee}}</text>
+            <text wx:elif="{{paystatuscode == 2}}" class="cell_text" style="color: #808080">¥{{Meetfee}}</text>
         </view>
-        <button class="weui-btn mini-btn orderButton" size="mini" type="warn" bindtap="payTap">立即支付</button>
+        <button wx:if="{{paystatuscode == 0}}" class="weui-btn mini-btn orderButton" size="mini" type="warn" bindtap="payTap" data-id="{{ID}}">立即支付</button>
         </view>
         <view class="weui-media-box weui-media-box_text">
         <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx; color: #888888">{{Name}}</view>

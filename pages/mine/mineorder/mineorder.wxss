@@ -25,7 +25,6 @@
 
 .statusText {
     position: relative;
-    
 }
 
 .weui-cells__title {

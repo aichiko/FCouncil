@@ -18,65 +18,62 @@ Page({
     this.saveWxInfo()
   },
 
-    tapName: function(event) {
-      
-     
-      wx.login({
-        success: function (loginCode) {
-          var appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
-          var secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret  
+  tapName: function(event) {
+    wx.login({
+      success: function (loginCode) {
+        var appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
+        var secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret  
 
-          //调用request请求api转换登录凭证  
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&grant_type=authorization_code&js_code=' + loginCode.code,
-            header: {
-              'content-type': 'application/json'
-            },
-            success: function (res) {
-              console.log(res.data.openid);
+        //调用request请求api转换登录凭证  
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&grant_type=authorization_code&js_code=' + loginCode.code,
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (res) {
+            console.log(res.data.openid);
 
-              wx.request({
-                url: 'https://www.fcouncil.com/index.php/Home/pay/getprepay',
-                
-                method: 'POST',
-                data: {
-                  bookingNo: '20178888',  /*订单号*/
-                  total_fee: 1,   /*订单金额*/
-                  openid: res.data.openid
-               
-                },
-                header: { "Content-Type": "application/x-www-form-urlencoded" },
-                success: function (res) {
-                  console.log(res.data);
-                  var obj = {
-                    'timeStamp': res.data.timeStamp,
-                    'nonceStr': res.data.nonceStr,
-                    'package':  res.data.package,
-                    'signType': 'MD5',
-                    'total_fee': 1,
-                    'paySign': res.data.paySign,
-                    'success': function (res) {
-                      console.log("success");
-                      console.log(res);
-                    },
-                    'fail': function (res) {
-                      console.log('fail:' + JSON.stringify(res));
-                    }
-                  };
-                  console.log(obj);
-                  wx.requestPayment(obj);
-                },
-                fail: function (err) {
-                  console.log(err)
-                }
-              })
+            wx.request({
+              url: 'https://www.fcouncil.com/index.php/Home/pay/getprepay',
+              
+              method: 'POST',
+              data: {
+                bookingNo: '20178888',  /*订单号*/
+                total_fee: 1,   /*订单金额*/
+                openid: res.data.openid
+              
+              },
+              header: { "Content-Type": "application/x-www-form-urlencoded" },
+              success: function (res) {
+                console.log(res.data);
+                var obj = {
+                  'timeStamp': res.data.timeStamp,
+                  'nonceStr': res.data.nonceStr,
+                  'package':  res.data.package,
+                  'signType': 'MD5',
+                  'total_fee': 1,
+                  'paySign': res.data.paySign,
+                  'success': function (res) {
+                    console.log("success");
+                    console.log(res);
+                  },
+                  'fail': function (res) {
+                    console.log('fail:' + JSON.stringify(res));
+                  }
+                };
+                console.log(obj);
+                wx.requestPayment(obj);
+              },
+              fail: function (err) {
+                console.log(err)
+              }
+            })
 
-            }
-          })
-        }
-      }) ;  
-    }
-    ,
+          }
+        })
+      }
+    }) ;  
+  },
   saveWxInfo: function(){
     var that = this
 

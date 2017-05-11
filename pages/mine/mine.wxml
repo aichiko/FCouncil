@@ -47,13 +47,6 @@
             </view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
-         <navigator  bindtap="tapName" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd"><image src="../../images/pay.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
-            <view class="weui-cell__bd weui-cell_primary">
-                <view>付款测试1</view>
-            </view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-        </navigator>
     </view>
 
     <!--关于我们-->
