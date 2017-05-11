@@ -16,44 +16,23 @@
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                     <view class="weui-panel__bd">
                         <block wx:for-items="{{allOrderList}}" wx:key="{{index}}">
-                            <view class="weui-media-box weui-media-box_text" bindtap="toQuestionDetail" data-detailID="{{allOrderList[index].ID}}">
-                                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx">
-                                    <text>{{allOrderList[index].Title}}</text>
-                                    <text style="font-size:30rpx; color: #ccc; padding-left: 15rpx">({{hostQuestionList[index].rpcount}})</text>
-                                </view>
-                                <view class="weui-media-box__info">
-                                    <view class="weui-media-box__info__meta timeLabel" style="font-size:24rpx;line-height:28rpx;">提问时间:{{allOrderList[index].AddDate}}</view>
-                                    <view class="weui-media-box__info__meta typeLabel" style="font-size:24rpx;line-height:28rpx;">类型:{{allOrderList[index].classDesc}}</view>
-                                </view>
-                            </view>
+                            <template is="orderCell" data="{{...item}}"/>
                         </block>
                     </view>
                 </view>
                 <!--选项二的内容-->
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                     <view class="weui-panel__bd">
-                        <block wx:for-items="{{payOrderList}}" wx:key="{{index}}">
-                          <view class="weui-media-box weui-media-box_text" bindtap="toQuestionDetail" data-detailID="{{myQuestionList[index].ID}}">
-                                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:28rpx">{{payOrderList[index].Title+"("+payOrderList[index].rpcount+")"}}</view>
-                                <view class="weui-media-box__info">
-                                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">提问时间:{{payOrderList[index].AddDate}}</view>
-                                    <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">类型:{{payOrderList[index].classDesc}}</view>
-                                </view>
-                            </view>
+                        <block wx:for-items="{{nopayOrderList}}" wx:key="{{index}}">
+                          <template is="orderCell" data="{{...item}}"/>
                         </block>
                     </view>
                 </view>
                 <!--选项三的内容-->
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                     <view class="weui-panel__bd">
-                        <block wx:for-items="{{nopayOrderList}}" wx:key="{{index}}">
-                          <view class="weui-media-box weui-media-box_text" bindtap="toQuestionDetail" data-detailID="{{nopayOrderList[index].ID}}">
-                                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:28rpx">{{nopayOrderList[index].Title+"("+nopayOrderList[index].rpcount+")"}}</view>
-                                <view class="weui-media-box__info">
-                                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">提问时间:{{nopayOrderList[index].AddDate}}</view>
-                                    <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:24rpx;">类型:{{nopayOrderList[index].classDesc}}</view>
-                                </view>
-                            </view>
+                        <block wx:for-items="{{payOrderList}}" wx:key="{{index}}">
+                          <template is="orderCell" data="{{...item}}"/>
                         </block>
                     </view>
                 </view>
@@ -61,3 +40,24 @@
         </view>
     </view>
 </view>
+
+<template name="orderCell">
+    <view class="weui-media-box weui-media-box_text" style="padding: 0px; padding-left: 10px">
+      <view class="orderStatus_view">
+        <text class="cell_text" style="color: #808080">状态：</text>
+        <text class="cell_text" style="color: red">{{paystatus}}</text>
+      </view>
+      <view class="orderStatus_view">
+        <text class="cell_text" style="color: #808080">价格：</text>
+        <text class="cell_text" style="color: red">¥{{Meetfee}}</text>
+      </view>
+      <button class="weui-btn mini-btn orderButton" size="mini" type="warn" bindtap="payTap">立即支付</button>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx; color: #888888">{{Name}}</view>
+      <view class="weui-media-box__info">
+          <view class=" weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">费用:¥{{Meetfee}}</view>
+          <view class="weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">活动时间:{{MeetDate}}</view>
+      </view>
+    </view>
+</template>

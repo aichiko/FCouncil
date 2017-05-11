@@ -9,6 +9,7 @@
     "pages/expert/expert",
     "pages/expertList/expertList",
     "pages/mine/mine",
+    "pages/mine/mineInfo/mineInfo",
     "pages/mine/aboutus/aboutus",
     "pages/mine/register/register",
     "pages/mine/login/login",

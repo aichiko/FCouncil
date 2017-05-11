@@ -1,1 +1,23 @@
 /* pages/mine/mineorder/mineorder.wxss */
+
+.weui-media-box {
+  padding: 10px;
+  color: #E7E7E7
+}
+
+.orderStatus_view text {
+  font-size: 30rpx;
+}
+
+.orderButton{
+  margin-top: 0px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-20%,-50%);
+  right: 10rpx;
+}
+
+.statusText {
+    position: relative;
+    
+}

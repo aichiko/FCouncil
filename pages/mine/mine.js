@@ -87,6 +87,9 @@ Page({
     if(this.data.isLogin){
       // 已经登录不跳至登录页面
       console.log('您已经登录!')
+      wx.navigateTo({
+        url: './mineInfo/mineInfo?id=' + this.data.userInfo.ID
+      })
     }else{
       // 未登录，跳至登录页面
       wx.navigateTo({
