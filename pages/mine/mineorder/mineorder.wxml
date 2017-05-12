@@ -1,5 +1,7 @@
 <!--pages/mine/mineorder/mineorder.wxml-->
 <!--头标题-->
+<import src="../../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
 <view class="page">
     <view class="page__bd">
         <view class="weui-tab">
@@ -47,14 +49,14 @@
         <view class="weui-media-box weui-media-box_text" style="padding: 0px; padding-left: 10px">
         <view class="orderStatus_view">
             <text class="cell_text" style="color: #808080">状态：</text>
-
+            <!--显示不同的颜色-->
             <text wx:if="{{paystatuscode == 0}}" class="cell_text" style="color: red">{{paystatus}}</text>
             <text wx:elif="{{paystatuscode == 1}}" class="cell_text" style="color: green">{{paystatus}}</text>
             <text wx:elif="{{paystatuscode == 2}}" class="cell_text" style="color: #808080">{{paystatus}}</text>
         </view>
         <view class="orderStatus_view">
             <text class="cell_text" style="color: #808080">价格：</text>
-
+            <!--显示不同的颜色-->
             <text wx:if="{{paystatuscode == 0}}" class="cell_text" style="color: red">¥{{Meetfee}}</text>
             <text wx:elif="{{paystatuscode == 1}}" class="cell_text" style="color: green">¥{{Meetfee}}</text>
             <text wx:elif="{{paystatuscode == 2}}" class="cell_text" style="color: #808080">¥{{Meetfee}}</text>

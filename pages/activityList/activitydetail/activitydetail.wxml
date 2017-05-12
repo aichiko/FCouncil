@@ -1,4 +1,7 @@
 <import src="../../../wxParse/wxParse.wxml"/> 
+<import src="../../../components/toast/toast.wxml"/>
+
+<template is="toast" data="{{ ...$wux.toast }}"/>
 <view wx:if="{{isShare}}" class="shareButton" bindtap="gotoHome">
     <image src="../../../images/backhome.png" class="homepic" />
 </view>

@@ -1,5 +1,6 @@
 // pages/mine/mineorder/mineorder.js
 var utils = require('../../../utils/util.js');
+import { $wuxToast } from '../../../components/wux'
 let path = "orderlist"
 let appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
 let secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret  
@@ -36,19 +37,39 @@ Page({
     this.setData({
       userID: ID
     })
-    console.log(this.data.userID)
-    this.prepareData()
+    console.log('userid=',this.data.userID)
+    console.log('activeIndex=',options.activeIndex)
+    var width
+    try {
+      var res = wx.getSystemInfoSync()
+      width = res.windowWidth
+    } catch (e) {
+      // Do something when catch error
+    }
+    this.setData({
+      sliderOffset: width*options.activeIndex/3,
+      activeIndex: options.activeIndex
+    });
+    if (options.activeIndex == 1){
+      this.nopayOrderListRequest()
+    } else if (options.activeIndex == 2){
+      this.payOrderListRequest()
+    }
   },
 
   tabClick: function (e) {
+    console.log(e)
     this.setData({
         sliderOffset: e.currentTarget.offsetLeft,
         activeIndex: e.currentTarget.id
     });
+
     if (this.data.activeIndex == 2 && this.data.payOrderList.length==0) {
       this.payOrderListRequest()
     }else if (this.data.activeIndex == 1 && this.data.nopayOrderList.length==0) {
       this.nopayOrderListRequest()
+    }else if (this.data.activeIndex == 0 && this.data.allOrderList.length == 0) {
+      this.prepareData()
     }
   },
 
@@ -143,10 +164,10 @@ Page({
   },
 
   payTap: function(button) {
+    var that = this
     console.log(button)
     let id = button.currentTarget.dataset.id
     console.log("id=",id)
-
     wx.login({
       success: function (loginCode){
         //调用request请求api转换登录凭证  
@@ -158,10 +179,9 @@ Page({
           success: function(res){
             console.log(res.data.openid);
             utils.ccRequestWithURL("https://www.fcouncil.com/index.php/Home/pay/getprepay", {
-              bookingNo: '20178888',  /*订单号*/
+              bookingNo: '201788222',  /*订单号*/
               total_fee: 1,   /*订单金额*/
               openid: res.data.openid
-
             }, function success(data){
               console.log(data);
               var obj = {
@@ -174,9 +194,11 @@ Page({
                 'success': function (res) {
                   console.log("success");
                   console.log(res);
+                  that.paySuccess();
                 },
                 'fail': function (res) {
                   console.log('fail:' + JSON.stringify(res));
+                  that.payfailure()
                 },
               };
               console.log(obj)
@@ -187,9 +209,34 @@ Page({
             console.log(err)
           }
         })
-
       }
     })
+  },
+
+  paySuccess: function(){
+    console.log("支付成功")
+    wx.showToast({
+      title: '支付成功',
+      icon: 'success',
+      duration: 2000
+    })
+    setTimeout(function(){
+      wx.navigateBack({
+      })
+    }, 2000)
+  },
+
+  payfailure:function(){
+    function showToastCancel(message) {
+      $wuxToast.show({
+        type: 'cancel',
+        timer: 1500,
+        color: '#fff',
+        text: message,
+        success: () => console.log(message)
+      })
+    };
+    showToastCancel('付款失败');
   },
 
   onReady:function(){

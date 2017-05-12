@@ -33,14 +33,14 @@
     <!--已付款和未付款-->
     <view class="weui-cells__title"></view>
     <view class="weui-cells weui-cells_after-title">
-        <navigator url="{{isLogin?'./mineorder/mineorder':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <navigator url="{{isLogin?'./mineorder/mineorder?activeIndex=1':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__hd"><image src="../../images/nopay.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
             <view class="weui-cell__bd weui-cell_primary">
                 <view>未付款</view>
             </view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
-        <navigator url="{{isLogin?'./mineorder/mineorder':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <navigator url="{{isLogin?'./mineorder/mineorder?activeIndex=2':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__hd"><image src="../../images/pay.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
             <view class="weui-cell__bd weui-cell_primary">
                 <view>已付款</view>

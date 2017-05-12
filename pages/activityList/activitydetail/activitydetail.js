@@ -1,7 +1,13 @@
 var app = getApp()
-let regVideoUrl = app.globalData.host+'regvideo'
-let videoRegCancelUrl = app.globalData.host+'videoregcancel'
+let regVideoPath = 'regvideo'
+let videoRegCancelPath = 'videoregcancel'
 var WxParse = require('../../../wxParse/wxParse.js');
+import { $wuxToast } from '../../../components/wux'
+
+let appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
+let secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret 
+var utils = require('../../../utils/util.js');
+
 Page({
   data:{
     // 活动id,用来请求详情
@@ -20,6 +26,114 @@ Page({
     // 判断是否 为分享的页面，如果是分享的页面则加入一个黑色的小 button
     isShare: false
   },
+
+  paySuccess: function () {
+    console.log("支付成功")
+    wx.showToast({
+      title: '支付成功',
+      icon: 'success',
+      duration: 2000
+    })
+    setTimeout(function () {
+      wx.navigateBack({
+      })
+    }, 2000)
+  },
+
+  payfailure: function () {
+    function showToastCancel(message) {
+      $wuxToast.show({
+        type: 'cancel',
+        timer: 1500,
+        color: '#fff',
+        text: message,
+        success: () => console.log(message)
+      })
+    };
+    showToastCancel('付款失败');
+  },
+
+  showPayToast:function(id){
+    var that = this
+    function wx_pay(id){
+      console.log("id=", id)
+      wx.login({
+        success: function (loginCode) {
+          //调用request请求api转换登录凭证  
+          wx.request({
+            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&grant_type=authorization_code&js_code=' + loginCode.code,
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              console.log(res.data.openid);
+              utils.ccRequestWithURL("https://www.fcouncil.com/index.php/Home/pay/getprepay", {
+                bookingNo: '20178888',  /*订单号*/
+                total_fee: 1,   /*订单金额*/
+                openid: res.data.openid
+              }, function success(data) {
+                console.log(data);
+                var obj = {
+                  'timeStamp': data.timeStamp,
+                  'nonceStr': data.nonceStr,
+                  'package': data.package,
+                  'signType': 'MD5',
+                  'total_fee': 1,
+                  'paySign': data.paySign,
+                  'success': function (res) {
+                    console.log("success");
+                    console.log(res);
+                    that.paySuccess();
+                  },
+                  'fail': function (res) {
+                    console.log('fail:' + JSON.stringify(res));
+                    that.payfailure()
+                  },
+                };
+                console.log(obj)
+                wx.requestPayment(obj);
+              }, function fail() { })
+            },
+            fail: function (err) {
+              console.log(err)
+            }
+          })
+        }
+      })
+    }
+
+    if (this.data.activity.Isold == 0 && this.data.activity.Meetfee > 0){
+      //提示付费
+      console.log('提示付费')
+      wx.showModal({
+        title: '提示',
+        content: '参加活动需要付费，您需要进行支付吗？',
+        confirmText: "确定",
+        cancelText: "取消",
+        success: function (res) {
+          console.log(res);
+          if (res.confirm) {
+            console.log('确定')
+            wx_pay(id)
+          } else {
+            console.log('取消')
+          }
+        }
+      });
+    }
+  },
+
+  showToastText: function(message) {
+    $wuxToast.show({
+      type: 'text',
+      timer: 1500,
+      color: '#fff',
+      text: message,
+      success: () => console.log(message)
+    })
+  },
+
+
   foldOrExtend:function() {
     console.log('点击折叠。。。。')
     var isFold = this.data.isDescFold
@@ -59,52 +173,35 @@ Page({
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')
-            wx.request({
-              url: regVideoUrl,
-              data: {"userID": that.data.userID,"VideoID": that.data.id},
-              method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-              header: {
-                "Content-Type": "application/x-www-form-urlencoded"
-              },
-              success: function(res){
-                // success
-                // 提示用户注册成功
-                if(res.data.status==0){
-                  // wx.showToast({
-                  // title: '注册成功！',
-                  // icon: 'success',
-                  // duration: 2000
-                  // })
-                  that.setData({
-                    showMyToast: true,
-                    myToastText: '注册成功！'
-                  })
-                  setTimeout(function(){
-                    that.setData({
-                      showMyToast: false
-                    }) //1秒之后弹窗隐藏
-                  },2000)
-                  // 将显示文字修改成取消注册
-                  that.setData({
-                    canReg: false,
-                    regBtnText: '取消注册',
-                    'activity.Isreg': 1
-                  })
-                }else{
-                  console.log(res.data.info)
-                }
-              },
-              fail: function(res) {
-                // fail
-                console.log(res)
-              },
-              complete: function(res) {
-                // complete
+            utils.ccRequest(regVideoPath, { "userID": that.data.userID, "VideoID": that.data.id },
+             function(data){
+              // 提示用户注册成功
+              wx.showToast({
+                title: '注册成功！',
+                icon: 'success',
+                duration: 2000
+              })
+              console.log(res)
+              // that.showToastText('注册成功！')
+              // 将显示文字修改成取消注册
+              that.setData({
+                canReg: false,
+                regBtnText: '取消注册',
+                'activity.Isreg': 1
+              })
+              // 注册成功后需要提示是否去付钱（meetfee > 0 并且没有过期的）
+              // 传入注册ID 用于支付
+              setTimeout(function () {
+                that.showPayToast('222')
+              }, 2000);
+            }, function(data){
+              if (data.info){
+                that.showToastText(data.info)
+                console.log(data.info)
               }
             })
           } else if (res.cancel) {
             console.log('用户点击取消')
-            
           }
         }
       })
@@ -120,47 +217,21 @@ Page({
           success: function(res) {
             if (res.confirm) {
               console.log('取消关注')
-              wx.request({
-                url: videoRegCancelUrl,
-                data: {"userID": that.data.userID,"VideoID": that.data.id},
-                method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-                header: {
-                  "Content-Type": "application/x-www-form-urlencoded"
-                },
-                success: function(res){
-                  // success
-                  // 提示用户注册成功
-                  if(res.data.status==0){
-                    // wx.showToast({
-                    //   title: '取消注册成功！',
-                    //   icon: 'success',
-                    //   duration: 2000
-                    // })
-                    that.setData({
-                      showMyToast: true,
-                      myToastText: '取消注册成功！'
-                    })
-                    setTimeout(function(){
-                      that.setData({
-                        showMyToast: false
-                      })//1秒之后弹窗隐藏
-                    },2000)
-                    // 将显示文字修改成取消注册
-                    that.setData({
-                      canReg: true,
-                      regBtnText: '立即注册',
-                      'activity.Isreg': 0
-                    })
-                  }else{
-                    console.log(res.data.info)
-                  }
-                },
-                fail: function(res) {
-                  // fail
-                  console.log(res)
-                },
-                complete: function(res) {
-                  // complete
+              utils.ccRequest(videoRegCancelPath, { 
+                "userID": that.data.userID, 
+                "VideoID": that.data.id 
+              }, function(data){
+                that.showToastText("取消注册成功")
+                // 将显示文字修改成取消注册
+                that.setData({
+                  canReg: true,
+                  regBtnText: '立即注册',
+                  'activity.Isreg': 0
+                })
+              }, function(data){
+                if (data.info){
+                  that.showToastText(data.info)
+                  console.log(data.info)
                 }
               })
             } else if (res.cancel) {
