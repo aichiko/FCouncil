@@ -77,8 +77,7 @@ Page({
                   'timeStamp': data.timeStamp,
                   'nonceStr': data.nonceStr,
                   'package': data.package,
-                  'signType': 'MD5',
-                  'total_fee': 1,
+                  'signType': data.signType,
                   'paySign': data.paySign,
                   'success': function (res) {
                     console.log("success");

@@ -179,8 +179,7 @@ Page({
           success: function(res){
             console.log(res.data.openid);
             utils.ccRequestWithURL("https://www.fcouncil.com/index.php/Home/pay/getprepay", {
-              bookingNo: '201788222',  /*订单号*/
-              total_fee: 1,   /*订单金额*/
+              orderID: id,  /*订单号*/
               openid: res.data.openid
             }, function success(data){
               console.log(data);
@@ -188,8 +187,7 @@ Page({
                 'timeStamp': data.timeStamp,
                 'nonceStr': data.nonceStr,
                 'package': data.package,
-                'signType': 'MD5',
-                'total_fee': 1,
+                'signType': data.signType,
                 'paySign': data.paySign,
                 'success': function (res) {
                   console.log("success");
@@ -201,7 +199,7 @@ Page({
                   that.payfailure()
                 },
               };
-              console.log(obj)
+              console.log('obj==='+obj)
               wx.requestPayment(obj);
             }, function fail(){} )
           }, 

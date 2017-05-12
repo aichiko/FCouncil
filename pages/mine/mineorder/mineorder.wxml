@@ -61,12 +61,12 @@
             <text wx:elif="{{paystatuscode == 1}}" class="cell_text" style="color: green">¥{{Meetfee}}</text>
             <text wx:elif="{{paystatuscode == 2}}" class="cell_text" style="color: #808080">¥{{Meetfee}}</text>
         </view>
-        <button wx:if="{{paystatuscode == 0}}" class="weui-btn mini-btn orderButton" size="mini" type="warn" bindtap="payTap" data-id="{{ID}}">立即支付</button>
+        <button wx:if="{{paystatuscode == 0}}" class="weui-btn mini-btn orderButton" size="mini" type="warn" bindtap="payTap" data-id="{{regID}}">立即支付</button>
         </view>
         <view class="weui-media-box weui-media-box_text">
         <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx; color: #888888">{{Name}}</view>
         <view class="weui-media-box__info">
-            <!--<view class=" weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">费用:¥{{Meetfee}}</view>-->
+            <view class=" weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">费用:¥{{Meetfee}}</view>
             <view class="weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">活动时间:{{MeetDate}}</view>
         </view>
         </view>

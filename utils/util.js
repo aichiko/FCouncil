@@ -35,17 +35,15 @@ function ccRequestWithURL(url, parameters, success, fail) {
       if (res.data.status == 0) {
         if (success) {
           console.log("parameters", parameters)
-          console.log("success", res.data.data)
+          console.log("success", res.data)
           typeof success == "function" && success(res.data.data)
         }
       } else {
-        fail(res.data.info)
         if (fail) {
           console.log("parameters", parameters)
-          console.log("failInfo", res.data.info)
+          console.log("failInfo", res.data)
           typeof fail == "function" && fail(res.data.info)
         }
-
       }
     },
     fail: function (error) {
@@ -83,10 +81,9 @@ function ccRequest(path, parameters, success, fail) {
           typeof success == "function" && success(res.data.data)
         }
       } else {
-        fail(res.data.info)
         if (fail){
           console.log("parameters", parameters)
-          console.log("failInfo", res.data.info)
+          console.log("failInfo", res.data)
           typeof fail == "function" && fail(res.data.info)
         }
         
