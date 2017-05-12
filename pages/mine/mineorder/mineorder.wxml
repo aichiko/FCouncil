@@ -66,7 +66,7 @@
         <view class="weui-media-box weui-media-box_text">
         <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx; color: #888888">{{Name}}</view>
         <view class="weui-media-box__info">
-            <view class=" weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">费用:¥{{Meetfee}}</view>
+            <!--<view class=" weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">费用:¥{{Meetfee}}</view>-->
             <view class="weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">活动时间:{{MeetDate}}</view>
         </view>
         </view>

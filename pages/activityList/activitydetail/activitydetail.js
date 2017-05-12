@@ -173,6 +173,7 @@ Page({
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')
+
             utils.ccRequest(regVideoPath, { "userID": that.data.userID, "VideoID": that.data.id },
              function(data){
               // 提示用户注册成功
