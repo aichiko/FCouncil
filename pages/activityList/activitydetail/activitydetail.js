@@ -68,8 +68,7 @@ Page({
             success: function (res) {
               console.log(res.data.openid);
               utils.ccRequestWithURL("https://www.fcouncil.com/index.php/Home/pay/getprepay", {
-                bookingNo: '20178888',  /*订单号*/
-                total_fee: 1,   /*订单金额*/
+                orderID: id,  /*订单号*/
                 openid: res.data.openid
               }, function success(data) {
                 console.log(data);
@@ -91,7 +90,12 @@ Page({
                 };
                 console.log(obj)
                 wx.requestPayment(obj);
-              }, function fail() { })
+              }, function fail(data) {
+                if (data.info) {
+                  that.showToastText(data.info)
+                  console.log(data.info)
+                }
+              })
             },
             fail: function (err) {
               console.log(err)
@@ -192,7 +196,7 @@ Page({
               // 注册成功后需要提示是否去付钱（meetfee > 0 并且没有过期的）
               // 传入注册ID 用于支付
               setTimeout(function () {
-                that.showPayToast('222')
+                that.showPayToast(data.OrderID)
               }, 2000);
             }, function(data){
               if (data.info){
@@ -216,7 +220,7 @@ Page({
           content: '您确定要取消注册吗？',
           success: function(res) {
             if (res.confirm) {
-              console.log('取消关注')
+              console.log('取消注册')
               utils.ccRequest(videoRegCancelPath, { 
                 "userID": that.data.userID, 
                 "VideoID": that.data.id 
@@ -229,7 +233,7 @@ Page({
                   'activity.Isreg': 0
                 })
               }, function(data){
-                if (data.info){
+                if (data.info) {
                   that.showToastText(data.info)
                   console.log(data.info)
                 }

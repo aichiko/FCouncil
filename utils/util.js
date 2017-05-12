@@ -42,7 +42,7 @@ function ccRequestWithURL(url, parameters, success, fail) {
         if (fail) {
           console.log("parameters", parameters)
           console.log("failInfo", res.data)
-          typeof fail == "function" && fail(res.data.info)
+          typeof fail == "function" && fail(res.data)
         }
       }
     },
@@ -52,7 +52,7 @@ function ccRequestWithURL(url, parameters, success, fail) {
       console.log("parameters", parameters)
       console.log("error", error)
       if (fail) {
-        fail(error)
+        typeof fail == "function" && fail(error)
       }
     }
   })
@@ -84,7 +84,7 @@ function ccRequest(path, parameters, success, fail) {
         if (fail){
           console.log("parameters", parameters)
           console.log("failInfo", res.data)
-          typeof fail == "function" && fail(res.data.info)
+          typeof fail == "function" && fail(res.data)
         }
         
       }
@@ -95,7 +95,7 @@ function ccRequest(path, parameters, success, fail) {
       console.log("parameters", parameters)
       console.log("error", error)
       if (fail) {
-        fail(error)
+        typeof fail == "function" && fail(error)
       }
     }
   })
