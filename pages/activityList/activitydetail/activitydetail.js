@@ -92,6 +92,15 @@ Page({
                   })
                 }else{
                   console.log(res.data.info)
+                  that.setData({
+                      showMyToast: true,
+                      myToastText: res.data.info
+                    })
+                    setTimeout(function(){
+                      that.setData({
+                        showMyToast: false
+                      })//1秒之后弹窗隐藏
+                    },2000)
                 }
               },
               fail: function(res) {
@@ -153,11 +162,29 @@ Page({
                     })
                   }else{
                     console.log(res.data.info)
+                    that.setData({
+                      showMyToast: true,
+                      myToastText: res.data.info
+                    })
+                    setTimeout(function(){
+                      that.setData({
+                        showMyToast: false
+                      })//1秒之后弹窗隐藏
+                    },2000)
                   }
                 },
                 fail: function(res) {
                   // fail
                   console.log(res)
+                  that.setData({
+                      showMyToast: true,
+                      myToastText: res.data.info
+                    })
+                    setTimeout(function(){
+                      that.setData({
+                        showMyToast: false
+                      })//1秒之后弹窗隐藏
+                    },2000)
                 },
                 complete: function(res) {
                   // complete
