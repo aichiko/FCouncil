@@ -43,7 +43,11 @@ Page({
         console.log(res)
         wx.hideLoading()
         console.log('下载文档失败')
-        showToastText('下载文档失败');
+        if (res.errMsg.includes("downloadFile:fail exceed max file size")){
+          showToastText('文档过大，您可以去官网进行下载');
+        }else {
+          showToastText('下载文档失败');
+        }
       }
     })
   },
