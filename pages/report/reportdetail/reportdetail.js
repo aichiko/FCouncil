@@ -44,7 +44,7 @@ Page({
         wx.hideLoading()
         console.log('下载文档失败')
         if (res.errMsg.includes("downloadFile:fail exceed max file size")){
-          showToastText('文档过大，您可以去官网进行下载');
+          showToastText('此报告已超过微信下载限制，建议您通过官网进行浏览查看');
         }else {
           showToastText('下载文档失败');
         }
