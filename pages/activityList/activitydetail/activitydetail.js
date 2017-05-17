@@ -3,7 +3,7 @@ let regVideoPath = 'regvideo'
 let videoRegCancelPath = 'videoregcancel'
 var WxParse = require('../../../wxParse/wxParse.js');
 import { $wuxToast } from '../../../components/wux'
-
+import { $wuxDialog } from '../../../components/wux'
 let appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
 let secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret 
 var utils = require('../../../utils/util.js');
@@ -170,6 +170,56 @@ Page({
     var that = this
     if(this.data.canReg){
       // 可注册
+      const that = this
+      const alert = (content) => {
+        $wuxDialog.alert({
+          title: '提示', 
+          content: content, 
+        })
+      }
+
+      $wuxDialog.prompt({
+        title: '提示', 
+        content: '您确定要注册吗？', 
+        fieldtype: 'text', 
+        password: false, 
+        defaultText: '', 
+        placeholder: '请输入注册备注', 
+        maxlength: 30, 
+        onConfirm(e) {
+          const value = that.data.$wux.dialog.prompt.response
+          // alert(content)
+          console.log('用户点击确定')
+          console.log(e, value)
+          utils.ccRequest(regVideoPath, { "userID": that.data.userID, "VideoID": that.data.id, "regcontent": value },
+            function(data){
+            // 提示用户注册成功
+            wx.showToast({
+              title: '注册成功！',
+              icon: 'success',
+              duration: 2000
+            })
+            // that.showToastText('注册成功！')
+            // 将显示文字修改成取消注册
+            that.setData({
+              canReg: false,
+              regBtnText: '取消注册',
+              'activity.Isreg': 1
+            })
+            // 注册成功后需要提示是否去付钱（meetfee > 0 并且没有过期的）
+            // 传入注册ID 用于支付
+            setTimeout(function () {
+              that.showPayToast(data.OrderID)
+            }, 2000);
+          }, function(data){
+            if (data.info){
+              that.showToastText(data.info)
+              console.log(data.info)
+            }
+          })
+        },
+      })
+    /*
       wx.showModal({
         title: '提示',
         content: '您确定要注册吗？',
@@ -208,7 +258,8 @@ Page({
             console.log('用户点击取消')
           }
         }
-      })
+        
+      })*/
       // ==============华丽分割线====================
     }else{
       if (!this.data.activity.Isold && !this.data.activity.Issign ){

@@ -4,7 +4,7 @@ import { $wuxToast } from '../../../components/wux'
 let path = "orderlist"
 let appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
 let secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret  
-
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
   data:{
     tabs: ["全部", "未付款", "已付款"],
@@ -35,7 +35,8 @@ Page({
     let userInfo = wx.getStorageSync('userInfo')
     var ID = userInfo.ID
     this.setData({
-      userID: ID
+      userID: ID,
+      activeIndex: options.activeIndex,
     })
     console.log('userid=',this.data.userID)
     console.log('activeIndex=',options.activeIndex)
@@ -43,13 +44,14 @@ Page({
     try {
       var res = wx.getSystemInfoSync()
       width = res.windowWidth
+      this.setData({
+        sliderLeft: (width/this.data.tabs.length - sliderWidth) / 2,
+        sliderOffset: width / this.data.tabs.length * this.data.activeIndex,
+      });
     } catch (e) {
       // Do something when catch error
     }
-    this.setData({
-      sliderOffset: width*options.activeIndex/3,
-      activeIndex: options.activeIndex
-    });
+    
     if (options.activeIndex == 1){
       this.nopayOrderListRequest()
     } else if (options.activeIndex == 2){
