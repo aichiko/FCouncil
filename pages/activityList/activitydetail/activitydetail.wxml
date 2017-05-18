@@ -96,7 +96,7 @@
                         <image class="title_left_img" src="../../../images/attention.png"></image>
                         <view class="title">注意事项</view>
                     </view>
-                    <view class="attention_content">1、如确认参加此活动，请尽快报名以便我们为您安排席位；</view>
+                    <view class="attention_content">1、如确认参加，请尽快报名以便我们为您安排席位；</view>
                     <!--<br/>-->
                     <view class="attention_content"> 2、如您有相关问题希望与活动嘉宾互动，请尽快将您的问题提交给F-Council，我们将尽量为您安排；</view>
                     <!--<br/>-->
